@@ -1,5 +1,3 @@
-Dokumentation für unser Abschlussprojekt:
+# Van Ventura Abschlussprojekt
 
-Inhaltsverzeichnis:
-
-- Vision
+- Readme folgt...
