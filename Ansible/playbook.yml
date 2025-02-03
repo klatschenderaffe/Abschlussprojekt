@@ -1,4 +1,4 @@
-- name: Deployen der React App mit Docker
+- name: Deployen von VanVentura mit Docker
   hosts: webserver
   become: true
   collections:

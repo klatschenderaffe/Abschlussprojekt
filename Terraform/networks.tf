@@ -1,18 +1,21 @@
+# VPC und Subnetze
+module "vpc" {
+  source  = "terraform-aws-modules/vpc/aws"
+  version = "3.18.1"
 
-# Sicherheitsgruppe erstellen
-resource "aws_security_group" "docker_sg" {
-  name        = "docker_security_group"
-  description = "Security group for Docker on EC2" # Beschreibung angepasst
-  
-  # SSH-Zugriff erlauben, ggf. IP-Bereich anpassen
-  ingress {
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
+  name = "vanventura-vpc"
+  cidr = "10.0.0.0/16"
+  azs  = ["eu-centra-1a", "eu-centra-1b", "eu-centra-1c"]
 
-  # HTTP-Zugriff erlauben - für NGINX Relevant
+  public_subnets  = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
+}
+
+# Sicherheitsgruppe für ALB
+resource "aws_security_group" "alb_sg" {
+  name        = "alb-sg"
+  description = "Allow HTTP traffic"
+  vpc_id      = module.vpc.vpc_id
+
   ingress {
     from_port   = 80
     to_port     = 80
@@ -20,11 +23,17 @@ resource "aws_security_group" "docker_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  # Ausgehender Verkehr erlauben
+    ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
   egress {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"] 
+    cidr_blocks = ["0.0.0.0/0"]
   }
 }
