@@ -24,6 +24,3 @@ build
 .prettier* 
 .editorconfig 
 .DS_Store
-
-# Ignorieren der Variablendatei
-.env
