@@ -29,9 +29,12 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
           aws-region: eu-central-1
-      # Terraform installieren
+        # Terraform installieren
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
+      # Zur Kontrolle
+      - name: Dateipfade anzeigen lassen
+        uses: ls -la
         # Terraform Init mit API-Token
       - name: Terraform Init
         working-directory: ./terraform
