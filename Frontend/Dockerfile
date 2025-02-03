@@ -15,6 +15,11 @@ WORKDIR  /usr/src/app
 # Kopieren Sie package.json und package-lock.json in den Container 
 COPY  package*.json  package-lock.json  ./ 
 
+#!!!!!!!!!!!!!ÜBERGANGSLÖSUNG!!!!!!!!!!!!!!!!!!!
+# solange kein Backend steht wird die Json Datei mit kopiert.
+COPY ./Backend/sleepspots.json ./src/data/sleepspots.json
+
+
 # Installieren Sie Abhängigkeiten mit npm. 
 RUN  npm  ci 
 
