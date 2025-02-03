@@ -1,0 +1,105 @@
+# Terraform Pipeline: Wird die Infrastruktur für unsere Anwendung erstellen und einreisen können.
+name: Terraform CI/CD Pipeline
+on:
+  # Darf erst auslösen, nachdem der Workflow "Image erstellen und pushen" durchgelaufen ist.
+  workflow_run:
+    workflows:
+      - Image erstellen und pushen
+    types:
+      - completed
+  # Ermöglicht das manuelle Auslösen des Workflows - für den Job "terraform_destroy"
+  workflow_dispatch:
+jobs:
+  # Die Infrastruktur wird erstellt und Ansible wird ausgeführt
+  terraform_apply:
+    name: Terraform Apply
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      # Repository auschecken
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      # AWS-Anmeldedaten konfigurieren
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
+          aws-region: eu-central-1
+      # Terraform installieren
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        # Terraform Init mit API-Token
+      - name: Terraform Init
+        working-directory: ./terraform
+        run: terraform init
+        # Terraform Apply - die Infrastruktur wird erschaffen.
+      - name: Terraform Apply
+        working-directory: ./terraform
+        run: terraform apply -auto-approve
+        # Ansible installieren
+      - name: Install Ansible
+        run: |
+          sudo apt update
+          sudo apt install -y ansible
+        # Die öffentliche IP-Adresse der EC2 Instanz wird in der inventory.ini file hinzugefügt
+      - name: Generiere Ansible Inventory
+        working-directory: ./terraform
+        run: |
+          echo "[webserver]" >> ../ansible/inventory.ini
+          cat ../ansible/inventory.ini
+          terraform output -json >> meineOutputs.json
+          if [ -s meineOutputs.json ]; then
+          jq -r ".public_ips.value[]" meineOutputs.json >> ../ansible/inventory.ini
+          cat ../ansible/inventory.ini
+          else
+            echo "Terraform outputs are empty or invalid."
+          fi
+        # Die SSH Verbindung zur EC2 Instanz wird hergestellt.
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/private_key.pem
+          chmod 600 ~/.ssh/private_key.pem
+        # Ansible Playbook ausführen
+      - name: Run Ansible Playbook
+        env:
+          ANSIBLE_USER: ubuntu
+          ANSIBLE_HOST_KEY_CHECKING: False
+        working-directory: ./ansible
+        run: |
+          ansible-playbook -i ./inventory.ini ./playbook.yml --ssh-common-args='-o StrictHostKeyChecking=no' -v
+
+  # Dieser Job löscht die gesamte Infrastruktur
+  terraform_destroy:
+    name: Terraform Destroy
+    runs-on: ubuntu-latest
+    needs: terraform_apply
+    # Wird nur ausgeführt, wenn der Workflow manuell gestartet wurde.
+    if: github.event_name == 'workflow_dispatch'
+    steps:
+      # Code auschecken
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        # AWS-Anmeldedaten konfigurieren
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
+          aws-region: eu-central-1
+        # Terraform installieren
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        # Terraform Init mit API-Token
+      - name: Terraform Init
+        working-directory: ./terraform
+        run: terraform init
+        # Terraform Infrastruktur löschen
+      - name: Terraform destroy
+        working-directory: ./terraform
+        run: terraform destroy -auto-approve
