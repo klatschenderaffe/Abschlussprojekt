@@ -24,9 +24,11 @@ jobs:
         run: ls -la
         # Alle Abhängigkeiten installieren
       - name: Abhängigkeiten installieren
+        working-directory: ./Frontend
         run: npm install
         # React Tests ausführen
       - name: React Test ausführung
+        working-directory: ./Frontend
         run: npm run test
 
   # Das Image wird auf Dockerhub gepushed
@@ -47,9 +49,11 @@ jobs:
           node-version: 22
       # schritt 3: Abhängigkeiten installieren
       - name: Abhängigkeiten installieren
+        working-directory: ./Frontend
         run: npm install
       # Schritt 3: Projekt-Build bauen und Image erstellen
       - name: Docker Image erstellen und taggen
+        working-directory: ./Frontend
         env:
           IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/vanventura
           IMAGE_TAG: ${{ github.sha }}
@@ -66,6 +70,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
         # Schritt 5: Docker Image pushen
       - name: Docker Image pushen
+        working-directory: ./Frontend
         env:
           IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/vanventura
           IMAGE_TAG: ${{ github.sha }}
