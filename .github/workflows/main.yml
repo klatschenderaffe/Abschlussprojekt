@@ -44,7 +44,7 @@ jobs:
           node-version: 22
         # Zur Kontrolle
       - name: Dateipfade anzeigen lassen
-        uses: ls -la
+        run: ls -la
       # schritt 3: Abhängigkeiten installieren
       - name: Abhängigkeiten installieren
         run: npm install

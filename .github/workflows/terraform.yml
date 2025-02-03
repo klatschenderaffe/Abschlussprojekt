@@ -34,7 +34,7 @@ jobs:
         uses: hashicorp/setup-terraform@v3
       # Zur Kontrolle
       - name: Dateipfade anzeigen lassen
-        uses: ls -la
+        run: ls -la
         # Terraform Init mit API-Token
       - name: Terraform Init
         working-directory: ./terraform
