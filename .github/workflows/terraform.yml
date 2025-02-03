@@ -37,11 +37,11 @@ jobs:
         run: ls -la
         # Terraform Init mit API-Token
       - name: Terraform Init
-        working-directory: ./terraform
+        working-directory: ./Terraform
         run: terraform init
         # Terraform Apply - die Infrastruktur wird erschaffen.
       - name: Terraform Apply
-        working-directory: ./terraform
+        working-directory: ./Terraform
         run: terraform apply -auto-approve
         # Ansible installieren
       - name: Install Ansible
@@ -50,7 +50,7 @@ jobs:
           sudo apt install -y ansible
         # Die öffentliche IP-Adresse der EC2 Instanz wird in der inventory.ini file hinzugefügt
       - name: Generiere Ansible Inventory
-        working-directory: ./terraform
+        working-directory: ./Terraform
         run: |
           echo "[webserver]" >> ../ansible/inventory.ini
           cat ../ansible/inventory.ini
@@ -100,9 +100,9 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         # Terraform Init mit API-Token
       - name: Terraform Init
-        working-directory: ./terraform
+        working-directory: ./Terraform
         run: terraform init
         # Terraform Infrastruktur löschen
       - name: Terraform destroy
-        working-directory: ./terraform
+        working-directory: ./Terraform
         run: terraform destroy -auto-approve
