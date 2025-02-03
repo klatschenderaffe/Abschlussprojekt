@@ -6,8 +6,8 @@
 
 - vorhandene VanVentura Dateien in dieses Repo kopiert.
 - Mit Github Actions angefangen.
-  - Recherche für die Dockerfile unter Vite.
-  - Dockerfile und Dockerignore erstellt.
+  - Recherche für die `Dockerfile` unter Vite.
+  - `Dockerfile` und `.dockerignore` erstellt.
   - Workflows an den jetzigen Stand angepasst, was noch nicht benutzt wird auskommentiert.
   - Recherche tests ausführen unter Vite.
   - Für Vitest alles vorbereitet.
