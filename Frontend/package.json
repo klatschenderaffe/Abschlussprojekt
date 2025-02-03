@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "test": "cypress open",
+    "test": "vitest",
     "start": "live-server",
     "dev": "vite",
     "build": "vite build",
@@ -31,6 +31,7 @@
     "eslint-plugin-react-refresh": "^0.4.9",
     "globals": "^15.9.0",
     "live-server": "^1.2.2",
-    "vite": "^5.4.1"
+    "vite": "^5.4.1",
+    "vitest": "^3.0.5"
   }
 }
