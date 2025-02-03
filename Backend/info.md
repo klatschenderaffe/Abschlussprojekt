@@ -1,1 +1,1 @@
-<!-- Ordner für das Backend  -->
+> Ordner für das Backend. Hier ist Platz für Notizen.

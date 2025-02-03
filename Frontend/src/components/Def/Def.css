@@ -1,0 +1,23 @@
+.definitionen {
+    margin: 80px auto;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.definition {
+    text-align: center;
+    color: white;
+    flex-basis: 31%;
+    position: relative;
+}
+
+.definition h4 {
+    font-size: 20px;
+}
+
+.definition p {
+    list-style: 0.3;
+}
