@@ -4,7 +4,7 @@
 resource "aws_s3_bucket" "terraform_state" {
   bucket = "vanventura"
   tags = {
-    Name        = "Backend VanVentura"
+    Name        =  "Terraform State Bucket"
   }
 }
 
