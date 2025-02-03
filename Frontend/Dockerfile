@@ -17,7 +17,7 @@ COPY  package*.json  package-lock.json  ./
 
 #!!!!!!!!!!!!!ÜBERGANGSLÖSUNG!!!!!!!!!!!!!!!!!!!
 # solange kein Backend steht wird die Json Datei mit kopiert.
-COPY ./Backend/sleepspots.json ./src/data/sleepspots.json
+COPY ../Backend/sleepspots.json ./src/data/sleepspots.json
 
 
 # Installieren Sie Abhängigkeiten mit npm. 
