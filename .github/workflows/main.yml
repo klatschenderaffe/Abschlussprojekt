@@ -42,6 +42,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
+        # Zur Kontrolle
+      - name: Dateipfade anzeigen lassen
+        run: ls -la
       # schritt 3: Abhängigkeiten installieren
       - name: Abhängigkeiten installieren
         run: npm install
