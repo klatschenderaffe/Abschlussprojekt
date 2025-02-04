@@ -52,16 +52,18 @@ jobs:
       - name: Generiere Ansible Inventory
         working-directory: ./Terraform
         run: |
-          echo "[webserver]" >> ../Ansible/inventory.ini
-          cat ../Ansible/inventory.ini
-          terraform output -json >> meineOutputs.json
+          echo "[webserver]" > ../Ansible/inventory.ini
+          terraform output -json > meineOutputs.json
           if [ -s meineOutputs.json ]; then
-          jq -r ".public_ips.value[]" meineOutputs.json >> ../Ansible/inventory.ini
-          cat ../Ansible/inventory.ini
+            jq -r ".frontend_alb_dns.value" meineOutputs.json >> ../Ansible/inventory.ini
+            cat ../Ansible/inventory.ini
           else
             echo "Terraform outputs are empty or invalid."
           fi
-        # Die SSH Verbindung zur EC2 Instanz wird hergestellt.
+      # Warum funktioniert das so?
+      # Auto Scaling Group: Die EC2-Instanzen in einer Auto Scaling Group sind dynamisch und können sich ändern (z. B. bei Skalierung oder Ersatz von Instanzen). Es ist daher schwierig, ihre IP-Adressen direkt zu erfassen.
+      # Load Balancer: Der Load Balancer bleibt konstant und leitet den gesamten Traffic an die EC2-Instanzen weiter. Daher ist es sinnvoller, den DNS-Namen des Load Balancers zu verwenden.
+      # Die SSH Verbindung zur EC2 Instanz wird hergestellt.
       - name: Set up SSH
         run: |
           mkdir -p ~/.ssh
