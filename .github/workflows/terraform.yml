@@ -52,12 +52,12 @@ jobs:
       - name: Generiere Ansible Inventory
         working-directory: ./Terraform
         run: |
-          echo "[webserver]" >> ../ansible/inventory.ini
-          cat ../ansible/inventory.ini
+          echo "[webserver]" >> ../Ansible/inventory.ini
+          cat ../Ansible/inventory.ini
           terraform output -json >> meineOutputs.json
           if [ -s meineOutputs.json ]; then
-          jq -r ".public_ips.value[]" meineOutputs.json >> ../ansible/inventory.ini
-          cat ../ansible/inventory.ini
+          jq -r ".public_ips.value[]" meineOutputs.json >> ../Ansible/inventory.ini
+          cat ../Ansible/inventory.ini
           else
             echo "Terraform outputs are empty or invalid."
           fi
@@ -72,7 +72,7 @@ jobs:
         env:
           ANSIBLE_USER: ubuntu
           ANSIBLE_HOST_KEY_CHECKING: False
-        working-directory: ./ansible
+        working-directory: ./Ansible
         run: |
           ansible-playbook -i ./inventory.ini ./playbook.yml --ssh-common-args='-o StrictHostKeyChecking=no' -v
 
