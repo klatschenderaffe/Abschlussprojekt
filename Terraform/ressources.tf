@@ -69,7 +69,7 @@ resource "aws_launch_template" "frontend_lt" {
   
   network_interfaces {
     associate_public_ip_address = false
-    security_groups             = [aws_security_group.asg_sg.id]
+    security_groups             = [aws_security_group.alb_sg.id]
     subnet_id                   = [aws_subnet.public_subnet_1.id, aws_subnet.public_subnet_2.id, aws_subnet.public_subnet_3.id]
   }
 
