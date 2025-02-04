@@ -1,4 +1,3 @@
-import React from 'react';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import Fussleiste from './components/Fussleiste/Fussleiste';
@@ -16,17 +15,17 @@ const App = () => {
     <div>
       <Navbar />
       <Hero />
-      <div className="container">
+      <div className='container'>
         <Title
-          subtitle="Suche deinen nächsten Stellplatz"
-          title="Stellplatz Sucher"
+          subtitle='Suche deinen nächsten Stellplatz'
+          title='Stellplatz Sucher'
         />
         <Map />
 
         <Contact />
         <Title
-          subtitle="Du willst wissen wo es erlaubt ist zu stehen?"
-          title="Länder und ihre Regeln"
+          subtitle='Du willst wissen wo es erlaubt ist zu stehen?'
+          title='Länder und ihre Regeln'
         />
         <Def />
         <Laenderregeln />

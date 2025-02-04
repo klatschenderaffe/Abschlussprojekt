@@ -3,7 +3,8 @@ import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import './Map.css';
 import icon from '../../assets/markericon.png';
-import locations from '../../../../data/sleepspots.json';
+// Soll später in MongoDB
+import locations from '../../data/sleepspots.json';
 
 const Map = () => {
   // API Key for Mapbox

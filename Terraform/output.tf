@@ -1,4 +1,5 @@
-# Ausgabe der öffentlichen IP-Adresse der EC2-Instanz
+# Ausgabe der öffentlichen IPs der Instanzen
 output "public_ips" {
-  value = aws_instance.docker_instance.*.public_ip
+  value       = aws_instances.nginx-asg-instance.*.public_ips
+  description = "Öffentliche IP-Adressen der EC2-Instanzen im Frontend"
 }
