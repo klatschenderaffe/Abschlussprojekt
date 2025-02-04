@@ -1,21 +1,21 @@
 ########## LOG RESSOURCES ########## 
 
-# S3-Bucket für das Backend
-resource "aws_s3_bucket" "terraform_state" {
-  bucket = "vanventura"
-  tags = {
-    Name        =  "Terraform State Bucket"
-  }
-}
+# # S3-Bucket für das Backend
+# resource "aws_s3_bucket" "terraform_state" {
+#   bucket = "vanventura"
+#   tags = {
+#     Name        =  "Terraform State Bucket"
+#   }
+# }
 
-# Versionierung vom S3 Bucket
-resource "aws_s3_bucket_versioning" "terraform_state" {
-  bucket = aws_s3_bucket.terraform_state.id
+# # Versionierung vom S3 Bucket
+# resource "aws_s3_bucket_versioning" "terraform_state" {
+#   bucket = aws_s3_bucket.terraform_state.id
 
-  versioning_configuration {
-    status = "Enabled"
-  }
-}
+#   versioning_configuration {
+#     status = "Enabled"
+#   }
+# }
 
 ########## FRONTEND RESSOURCES ########## 
 
