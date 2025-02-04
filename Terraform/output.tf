@@ -10,5 +10,5 @@
 # }
 
 output "public_ips" {
-  value = data.aws_instances.frontend_instances.public_ips
+  value = data.aws_instances.frontend_instances.*.public_ips
 }

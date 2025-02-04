@@ -121,8 +121,7 @@ tag {
 
 # Um die IP-Adressen, der erstellen Instanzen für Ansible zu bekommen
 data "aws_instances" "frontend_instances" {
-  filter {
-    name   = "tag:Name"
-    values = ["nginx-asg-instance"] # Filter basierend auf dem Launch Template Namen
+  instance_tags = {
+    Name = "nginx-asg-instance" # Tag der Instanzen
   }
 }
