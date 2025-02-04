@@ -4,11 +4,16 @@
 
 ### Alleine:
 
+- Terraform Fehler korrigiert
+  - noch vorhanderer Fehler IP-Adressen werden nicht in die inventory.ini File geschrieben (Es gibt keinen richitigen Output der IP-Adressen). Ohne diesen Fehler läuft die Pipeline aber mittlerweile Fehlerfrei durch.
+- Ansible Code verbessert und korrigiert
+- Workflows angepasst
 -
 
 ### Alle zusammen:
 
-- ***
+- Aufgaben verteilt
+- Erste Gedanken um das Vorher innerhalb der Präsentation ( Ausgangslage )
 
 > 03.02.2025
 
