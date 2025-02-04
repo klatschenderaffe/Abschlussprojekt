@@ -35,7 +35,7 @@ resource "aws_lb_target_group" "frontend_tg" {
   name     = "frontend-tg"
   port     = 80
   protocol = "HTTP"
-  vpc_id   = module.vpc.vpc_id
+  vpc_id   = aws_vpc.main.id
 
   health_check {
     path                = "/"

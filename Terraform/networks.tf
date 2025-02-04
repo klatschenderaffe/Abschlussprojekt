@@ -106,7 +106,7 @@ resource "aws_route_table_association" "public_2" {
 resource "aws_security_group" "alb_sg" {
   name        = "alb-sg"
   description = "Allow HTTP traffic"
-  vpc_id      = module.vpc.vpc_id
+  vpc_id      = aws_vpc.main.id
 
   ingress {
     from_port   = 80
