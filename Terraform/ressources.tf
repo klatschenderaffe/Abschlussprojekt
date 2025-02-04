@@ -25,7 +25,7 @@ resource "aws_lb" "frontend_alb" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.alb_sg.id]
-  subnets            = module.vpc.public_subnets
+  subnets            = [aws_subnet.public_subnet_1.id, aws_subnet.public_subnet_2.id, aws_subnet.public_subnet_3.id]
 
   enable_deletion_protection = false
 }
@@ -78,7 +78,7 @@ resource "aws_autoscaling_group" "frontend_asg" {
     version = "$Latest"
   }
 
-  vpc_zone_identifier   = module.vpc.public_subnets
+  vpc_zone_identifier   = [aws_subnet.public_subnet_1.id, aws_subnet.public_subnet_2.id, aws_subnet.public_subnet_3.id]
 
   target_group_arns     = [aws_lb_target_group.frontend_tg.arn]
 
