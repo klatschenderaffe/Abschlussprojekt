@@ -21,3 +21,9 @@ AWS Architekturdiagramm + Beschreibung
 
 
 https://github.com/klatschenderaffe/VAN_VENTURA  Dokumentation weiter führen
+---
+# Tag2 
+- Video zur Erstellung von Canva geschaut um die Präsentation anzufangen
+- Präsentation ( Folien) anfangen mit vorher nachher.
+- Auf Canva unsere Folien angefangen zu erstellen
+- Seiten 1 - 3 sind soweit fertig 
