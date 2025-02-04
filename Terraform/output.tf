@@ -4,7 +4,11 @@
 #   description = "Öffentliche IP-Adressen der EC2-Instanzen im Frontend"
 # }
 
-output "frontend_alb_dns" {
-  value       = aws_lb.frontend_alb.dns_name
-  description = "Die DNS-Adresse des Application Load Balancers"
+# output "frontend_alb_dns" {
+#   value       = aws_lb.frontend_alb.dns_name
+#   description = "Die DNS-Adresse des Application Load Balancers"
+# }
+
+output "public_ips" {
+  value = data.aws_instances.frontend_instances.public_ips
 }

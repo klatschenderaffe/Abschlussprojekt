@@ -119,10 +119,10 @@ tag {
 #    owners           = ["amazon"]
 # }
 
-# # Um die IP-Adressen, der erstellen Instanzen für Ansible zu bekommen
-# data "aws_instances" "frontend_instances" {
-#   filter {
-#     name   = "tag:Name"
-#     values = ["frontend-lt*"] # Filter basierend auf dem Launch Template Namen
-#   }
-# }
+# Um die IP-Adressen, der erstellen Instanzen für Ansible zu bekommen
+data "aws_instances" "frontend_instances" {
+  filter {
+    name   = "tag:Name"
+    values = ["nginx-asg-instance"] # Filter basierend auf dem Launch Template Namen
+  }
+}
