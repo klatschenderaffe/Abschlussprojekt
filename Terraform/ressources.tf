@@ -1,21 +1,21 @@
 ########## LOG RESSOURCES ########## 
 
-# S3-Bucket für das Backend
-resource "aws_s3_bucket" "terraform_state" {
-  bucket = "vanventura"
-  tags = {
-    Name        =  "Terraform State Bucket"
-  }
-}
+# # S3-Bucket für das Backend
+# resource "aws_s3_bucket" "terraform_state" {
+#   bucket = "vanventura"
+#   tags = {
+#     Name        =  "Terraform State Bucket"
+#   }
+# }
 
-# Versionierung vom S3 Bucket
-resource "aws_s3_bucket_versioning" "terraform_state" {
-  bucket = aws_s3_bucket.terraform_state.id
+# # Versionierung vom S3 Bucket
+# resource "aws_s3_bucket_versioning" "terraform_state" {
+#   bucket = aws_s3_bucket.terraform_state.id
 
-  versioning_configuration {
-    status = "Enabled"
-  }
-}
+#   versioning_configuration {
+#     status = "Enabled"
+#   }
+# }
 
 ########## FRONTEND RESSOURCES ########## 
 
@@ -25,7 +25,7 @@ resource "aws_lb" "frontend_alb" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.alb_sg.id]
-  subnets            = module.vpc.public_subnets
+  subnets            = [aws_subnet.public_subnet_1.id, aws_subnet.public_subnet_2.id, aws_subnet.public_subnet_3.id]
 
   enable_deletion_protection = false
 }
@@ -35,7 +35,7 @@ resource "aws_lb_target_group" "frontend_tg" {
   name     = "frontend-tg"
   port     = 80
   protocol = "HTTP"
-  vpc_id   = module.vpc.vpc_id
+  vpc_id   = aws_vpc.main.id
 
   health_check {
     path                = "/"
@@ -61,10 +61,21 @@ resource "aws_lb_listener" "frontend_listener" {
 
 # Launch Template für EC2-Instanzen
 resource "aws_launch_template" "frontend_lt" {
-  name_prefix   = "frontend-lt"
-  
-  image_id      = data.aws_ami.amazon_linux.id # Amazon Linux AMI ID automatisch abrufen
+  name          = "nginx-launch-template"
+  image_id      = "ami-02ccbe126fe6afe82" # Amazon Linux User: ec2-user
   instance_type = "t2.micro"
+  key_name      = "aws"
+
+  
+  network_interfaces {
+    associate_public_ip_address = false
+    security_groups             = [aws_security_group.alb_sg.id]
+    subnet_id                   = aws_subnet.public_subnet_1.id
+  }
+
+  tags = {
+    Name = "nginx-launch-template"
+  }
 }
 
 # Auto Scaling Group (ASG)
@@ -78,10 +89,16 @@ resource "aws_autoscaling_group" "frontend_asg" {
     version = "$Latest"
   }
 
-  vpc_zone_identifier   = module.vpc.public_subnets
+  vpc_zone_identifier   = [aws_subnet.public_subnet_1.id, aws_subnet.public_subnet_2.id, aws_subnet.public_subnet_3.id]
 
   target_group_arns     = [aws_lb_target_group.frontend_tg.arn]
 
+tag {
+    key                 = "Name"
+    value               = "nginx-asg-instance"
+    propagate_at_launch = true
+
+}
 }
 
 ########## BACKEND RESSOURCES ########## 
@@ -90,14 +107,22 @@ resource "aws_autoscaling_group" "frontend_asg" {
 
 ########## CONFIGURATIONS ########## 
 
-# Datenquelle für Amazon Linux AMI (optional)
-data "aws_ami" "amazon_linux" {
-   most_recent      = true
+# # Datenquelle für Amazon Linux AMI (optional)
+# data "aws_ami" "amazon_linux" {
+#    most_recent      = true
 
-   filter {
-     name   = "name"
-     values = ["amzn2-ami-hvm-*-x86_64-gp2"]
-   }
+#    filter {
+#      name   = "name"
+#      values = ["amzn2-ami-hvm-*-x86_64-gp2"]
+#    }
 
-   owners           = ["amazon"]
+#    owners           = ["amazon"]
+# }
+
+# Um die IP-Adressen, der erstellen Instanzen für Ansible zu bekommen
+data "aws_instances" "frontend_instances" {
+  filter {
+    name   = "tag:Name"
+    values = ["nginx-asg-instance"] # Filter basierend auf dem Launch Template Namen
+  }
 }
