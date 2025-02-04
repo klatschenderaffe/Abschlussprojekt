@@ -8,6 +8,7 @@ dotenv.config();
 
 // Erstelle eine Express-App
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 // Verbinde mit MongoDB
