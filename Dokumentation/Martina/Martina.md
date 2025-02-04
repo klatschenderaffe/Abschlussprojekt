@@ -27,3 +27,4 @@ https://github.com/klatschenderaffe/VAN_VENTURA  Dokumentation weiter führen
 - Präsentation ( Folien) anfangen mit vorher nachher.
 - Auf Canva unsere Folien angefangen zu erstellen
 - Seiten 1 - 3 sind soweit fertig 
+- an seite 4 - 5 gearbeitet
