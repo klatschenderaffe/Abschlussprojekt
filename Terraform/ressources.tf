@@ -61,10 +61,21 @@ resource "aws_lb_listener" "frontend_listener" {
 
 # Launch Template für EC2-Instanzen
 resource "aws_launch_template" "frontend_lt" {
-  name_prefix   = "frontend-lt"
-  
-  image_id      = data.aws_ami.amazon_linux.id # Amazon Linux AMI ID automatisch abrufen
+  name          = "nginx-launch-template"
+  image_id      = "ami-02ccbe126fe6afe82" # Amazon Linux User: ec2-user
   instance_type = "t2.micro"
+  key_name      = "aws"
+
+  
+  network_interfaces {
+    associate_public_ip_address = false
+    security_groups             = [aws_security_group.asg_sg.id]
+    subnet_id                   = [aws_subnet.public_subnet_1.id, aws_subnet.public_subnet_2.id, aws_subnet.public_subnet_3.id]
+  }
+
+  tags = {
+    Name = "nginx-launch-template"
+  }
 }
 
 # Auto Scaling Group (ASG)
@@ -82,6 +93,12 @@ resource "aws_autoscaling_group" "frontend_asg" {
 
   target_group_arns     = [aws_lb_target_group.frontend_tg.arn]
 
+tag {
+    key                 = "Name"
+    value               = "nginx-asg-instance"
+    propagate_at_launch = true
+
+}
 }
 
 ########## BACKEND RESSOURCES ########## 
@@ -90,22 +107,22 @@ resource "aws_autoscaling_group" "frontend_asg" {
 
 ########## CONFIGURATIONS ########## 
 
-# Datenquelle für Amazon Linux AMI (optional)
-data "aws_ami" "amazon_linux" {
-   most_recent      = true
+# # Datenquelle für Amazon Linux AMI (optional)
+# data "aws_ami" "amazon_linux" {
+#    most_recent      = true
 
-   filter {
-     name   = "name"
-     values = ["amzn2-ami-hvm-*-x86_64-gp2"]
-   }
+#    filter {
+#      name   = "name"
+#      values = ["amzn2-ami-hvm-*-x86_64-gp2"]
+#    }
 
-   owners           = ["amazon"]
-}
+#    owners           = ["amazon"]
+# }
 
-# Um die IP-Adressen, der erstellen Instanzen für Ansible zu bekommen
-data "aws_instances" "frontend_instances" {
-  filter {
-    name   = "tag:Name"
-    values = ["frontend-lt*"] # Filter basierend auf dem Launch Template Namen
-  }
-}
+# # Um die IP-Adressen, der erstellen Instanzen für Ansible zu bekommen
+# data "aws_instances" "frontend_instances" {
+#   filter {
+#     name   = "tag:Name"
+#     values = ["frontend-lt*"] # Filter basierend auf dem Launch Template Namen
+#   }
+# }
