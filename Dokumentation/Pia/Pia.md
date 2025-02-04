@@ -12,7 +12,7 @@
 ### Alle zusammen:
 
 - Aufgaben verteilt
-- Erste Gedanken um das Vorher innerhalb der Präsentation ( Ausgangslage )
+- Erste Gedanken über das Vorher innerhalb der Präsentation ( Ausgangslage )
 
 ---
 
