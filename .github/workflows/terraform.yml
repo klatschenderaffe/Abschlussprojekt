@@ -60,6 +60,7 @@ jobs:
           else
             echo "Terraform outputs are empty or invalid."
           fi
+      ############# INFO #############
       # Warum funktioniert das so?
       # Auto Scaling Group: Die EC2-Instanzen in einer Auto Scaling Group sind dynamisch und können sich ändern (z. B. bei Skalierung oder Ersatz von Instanzen). Es ist daher schwierig, ihre IP-Adressen direkt zu erfassen.
       # Load Balancer: Der Load Balancer bleibt konstant und leitet den gesamten Traffic an die EC2-Instanzen weiter. Daher ist es sinnvoller, den DNS-Namen des Load Balancers zu verwenden.
