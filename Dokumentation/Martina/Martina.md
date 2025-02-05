@@ -28,3 +28,9 @@ https://github.com/klatschenderaffe/VAN_VENTURA  Dokumentation weiter führen
 - Auf Canva unsere Folien angefangen zu erstellen
 - Seiten 1 - 3 sind soweit fertig 
 - an seite 4 - 5 gearbeitet
+
+# Tag 3
+
+- weiter an der Präsentation gearbeitet
+- in Draw.io eine Architektur erstellt
+- draw.io in visual code hochgeladen
