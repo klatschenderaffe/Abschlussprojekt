@@ -1,6 +1,7 @@
 // Importiere notwendige Module
 const express = require('express');
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
+const cors = require("cors");  // CORS importieren 
 const dotenv = require('dotenv');
 
 // Lade Umgebungsvariablen
@@ -8,7 +9,7 @@ dotenv.config();
 
 // Erstelle eine Express-App
 const app = express();
-app.use(cors());
+app.use(cors()); // Middleware aktivieren
 app.use(express.json());
 
 // Verbinde mit MongoDB
@@ -36,6 +37,10 @@ app.post('/items', async (req, res) => {
     await newItem.save();
     res.json(newItem);
 });
+
+// API-Route einbinden
+const sleepspotsRoutes = require("./routes/sleepspots");
+app.use("/api/sleepspots", sleepspotsRoutes);
 
 // Starte den Server
 const PORT = process.env.PORT || 5000;
