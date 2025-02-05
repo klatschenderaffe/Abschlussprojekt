@@ -44,40 +44,40 @@ jobs:
         working-directory: ./Terraform
         run: terraform apply -auto-approve
         # Ansible installieren
-      - name: Install Ansible
-        run: |
-          sudo apt update
-          sudo apt install -y ansible
-        # Die öffentliche IP-Adresse der EC2 Instanz wird in der inventory.ini file hinzugefügt
-      - name: Generiere Ansible Inventory
-        working-directory: ./Terraform
-        run: |
-          echo "[webserver]" > ../Ansible/inventory.ini
-          terraform output -json > meineOutputs.json
-          if [ -s meineOutputs.json ]; then
-            jq -r ".frontend_alb_dns.value" meineOutputs.json >> ../Ansible/inventory.ini
-            cat ../Ansible/inventory.ini
-          else
-            echo "Terraform outputs are empty or invalid."
-          fi
+      # - name: Install Ansible
+      #   run: |
+      #     sudo apt update
+      #     sudo apt install -y ansible
+      #   # Die öffentliche IP-Adresse der EC2 Instanz wird in der inventory.ini file hinzugefügt
+      # - name: Generiere Ansible Inventory
+      #   working-directory: ./Terraform
+      #   run: |
+      #     echo "[webserver]" > ../Ansible/inventory.ini
+      #     terraform output -json > meineOutputs.json
+      #     if [ -s meineOutputs.json ]; then
+      #       jq -r ".frontend_alb_dns.value" meineOutputs.json >> ../Ansible/inventory.ini
+      #       cat ../Ansible/inventory.ini
+      #     else
+      #       echo "Terraform outputs are empty or invalid."
+      #     fi
       ############# INFO #############
       # Warum funktioniert das so?
       # Auto Scaling Group: Die EC2-Instanzen in einer Auto Scaling Group sind dynamisch und können sich ändern (z. B. bei Skalierung oder Ersatz von Instanzen). Es ist daher schwierig, ihre IP-Adressen direkt zu erfassen.
       # Load Balancer: Der Load Balancer bleibt konstant und leitet den gesamten Traffic an die EC2-Instanzen weiter. Daher ist es sinnvoller, den DNS-Namen des Load Balancers zu verwenden.
       # Die SSH Verbindung zur EC2 Instanz wird hergestellt.
-      - name: Set up SSH
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/private_key.pem
-          chmod 600 ~/.ssh/private_key.pem
-        # Ansible Playbook ausführen
-      - name: Run Ansible Playbook
-        env:
-          ANSIBLE_USER: ubuntu
-          ANSIBLE_HOST_KEY_CHECKING: False
-        working-directory: ./Ansible
-        run: |
-          ansible-playbook -i ./inventory.ini ./playbook.yml --ssh-common-args='-o StrictHostKeyChecking=no' -v
+      # - name: Set up SSH
+      #   run: |
+      #     mkdir -p ~/.ssh
+      #     echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/private_key.pem
+      #     chmod 600 ~/.ssh/private_key.pem
+      #   # Ansible Playbook ausführen
+      # - name: Run Ansible Playbook
+      #   env:
+      #     ANSIBLE_USER: ubuntu
+      #     ANSIBLE_HOST_KEY_CHECKING: False
+      #   working-directory: ./Ansible
+      #   run: |
+      #     ansible-playbook -i ./inventory.ini ./playbook.yml --ssh-common-args='-o StrictHostKeyChecking=no' -v
 
   # Dieser Job löscht die gesamte Infrastruktur
   terraform_destroy:
@@ -96,7 +96,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
+          # aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
           aws-region: eu-central-1
         # Terraform installieren
       - name: Setup Terraform

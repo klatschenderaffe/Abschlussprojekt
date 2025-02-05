@@ -66,7 +66,19 @@ resource "aws_launch_template" "frontend_lt" {
   instance_type = "t2.micro"
   key_name      = "aws"
 
-  
+   # User Data Script für Cloud-Init
+  user_data = <<-EOF
+    #!/bin/bash
+    # Updates und Installation von Docker
+    apt-get update -y
+    apt-get install -y docker.io
+
+    # Docker-Image pullen und starten
+    docker pull klatschenderaffe/vanventura:latest
+    docker run -d --name vanventura -p 80:80 klatschenderaffe/vanventura:latest
+  EOF
+
+
   network_interfaces {
     associate_public_ip_address = false
     security_groups             = [aws_security_group.alb_sg.id]
