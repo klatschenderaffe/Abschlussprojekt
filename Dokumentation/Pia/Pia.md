@@ -1,3 +1,18 @@
+> 05.02.2025
+
+# Tag 3:
+
+### Alleine:
+
+- AWS Benutzer Bob erstellt, um dauerhafte Zugriffsschlüssel zu bekommen.
+- Ansible aus dem Workflow auskommentiert
+- dem Launch Template UserData hinzugefügt um direkt auf den Instanzen einen Docker Container laufen zu lassen.
+-
+
+### Alle zusammen:
+
+---
+
 > 04.02.2025
 
 # Tag 2:
