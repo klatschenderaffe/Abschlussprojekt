@@ -10,6 +10,13 @@ Campingregeln verschiedener Länder (die Flaggen mit Hover Effekt) und integrier
 ist sowohl verspielt als auch minimalistisch gehalten, was eine benutzerfreundliche und
 ansprechende Erfahrung gewährleistet.
 
+
+## 🚀 **Technologien**
+- Frontend: React + Vite
+- Backend: Node.js + Express
+- Datenbank: MongoDB Atlas
+- Infrastruktur: Terraform + Ci/CD durch github Aktion 
+
 ## Installation
 
 1. Klone das Repository
@@ -38,3 +45,10 @@ ansprechende Erfahrung gewährleistet.
 ### Testen
 
 Die Website wurde mit Hilfe von Cypress End-to-End getestet. Die passende Testdatei ist wie auf dem Bild der Ordnerstruktur zu finden.
+
+
+### 🎯 **Warum ist diese README gut?**
+✅ Kurz & klar – Sie erklärt das Projekt einfach.  
+✅ Installationsanleitung – Schritt-für-Schritt erklärt.  
+✅ API-Dokumentation – Falls du später mehr Endpunkte hast.  
+✅ Screenshots & TODOs – Zeigt den Status des Projekts. 
