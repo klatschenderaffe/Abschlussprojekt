@@ -9,7 +9,7 @@
 - dem Launch Template UserData hinzugefügt um direkt auf den Instanzen einen Docker Container laufen zu lassen.
 - Den Fehler der Credentials von AWS in den Workflows gelöst.
 - "Bob" die passenden Berechtigungen erteilt.
--
+- Instanzen die durch die Auto-Scaling-Group erstellt werden Öffentliche IP-Adressen frei gegeben.
 
 ### Alle zusammen:
 
