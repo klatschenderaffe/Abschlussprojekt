@@ -9,6 +9,6 @@
 #   description = "Die DNS-Adresse des Application Load Balancers"
 # }
 
-output "public_ips" {
-  value = data.aws_instances.frontend_instances.*.public_ips
-}
+# output "public_ips" {
+#   value = data.aws_instances.frontend_instances.*.public_ips
+# }

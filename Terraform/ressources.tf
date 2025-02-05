@@ -131,9 +131,9 @@ tag {
 #    owners           = ["amazon"]
 # }
 
-# Um die IP-Adressen, der erstellen Instanzen für Ansible zu bekommen
-data "aws_instances" "frontend_instances" {
-  instance_tags = {
-    Name = "nginx-asg-instance" # Tag der Instanzen
-  }
-}
+# # Um die IP-Adressen, der erstellen Instanzen für Ansible zu bekommen
+# data "aws_instances" "frontend_instances" {
+#   instance_tags = {
+#     Name = "nginx-asg-instance" # Tag der Instanzen
+#   }
+# }
