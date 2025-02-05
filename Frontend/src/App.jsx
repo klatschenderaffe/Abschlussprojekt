@@ -7,9 +7,11 @@ import Contact from './components/Contact/Contact';
 import Def from './components/Def/Def';
 import Map from './components/Map/Map';
 import Impressum from './components/Impressum/Impressum';
+import Sleepspots from "./components/Sleepspots.jsx";
+import React from "react";
 
-// here is the structure of the website
-// the various components are called one after the other here
+// Hier ist die Struktur der Website
+// Die verschiedenen Komponenten werden hier nacheinander aufgerufen
 const App = () => {
   return (
     <div>
