@@ -7,7 +7,9 @@
 - AWS Benutzer "Bob" erstellt, um dauerhafte Zugriffsschlüssel zu bekommen.
 - Ansible aus dem Workflow auskommentiert
 - dem Launch Template UserData hinzugefügt um direkt auf den Instanzen einen Docker Container laufen zu lassen.
-- Probiert den Fehler der Credentials von AWS in den Workflows zu lösen.
+- Den Fehler der Credentials von AWS in den Workflows gelöst.
+- "Bob" die passenden Berechtigungen erteilt.
+-
 
 ### Alle zusammen:
 
