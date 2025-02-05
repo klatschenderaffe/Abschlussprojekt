@@ -5,4 +5,5 @@ apt-get install -y docker.io
 
 # Docker-Image pullen und starten
 docker pull klatschenderaffe/vanventura:latest
+systemctl start docker
 docker run -d --name vanventura -p 80:80 klatschenderaffe/vanventura:latest

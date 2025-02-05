@@ -55,23 +55,23 @@ resource "aws_internet_gateway" "gw" {
   }
 }
 
-# NAT Gateway
-resource "aws_eip" "nat" {
-  domain = "vpc" # Verwendet das neue Argument
+# # NAT Gateway
+# resource "aws_eip" "nat" {
+#   domain = "vpc" # Verwendet das neue Argument
 
-  tags = {
-    Name = "NAT-Gateway-EIP"
-  }
-}
+#   tags = {
+#     Name = "NAT-Gateway-EIP"
+#   }
+# }
 
-resource "aws_nat_gateway" "nat" {
-  allocation_id = aws_eip.nat.id
-  subnet_id     = aws_subnet.public_subnet_1.id
+# resource "aws_nat_gateway" "nat" {
+#   allocation_id = aws_eip.nat.id
+#   subnet_id     = aws_subnet.public_subnet_1.id
 
-  tags = {
-    Name = "NAT-Gateway"
-  }
-}
+#   tags = {
+#     Name = "NAT-Gateway"
+#   }
+# }
 
 ############ Routing Tabellen ############
 
