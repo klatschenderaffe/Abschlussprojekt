@@ -1,7 +1,7 @@
 #!/bin/bash
 # Updates und Installation von Docker
 apt-get update -y
-apt-get install -y docker.io
+apt-get install -y docker
 
 # Docker-Image pullen und starten
 docker pull klatschenderaffe/vanventura:latest

@@ -62,7 +62,7 @@ resource "aws_lb_listener" "frontend_listener" {
 # Launch Template für EC2-Instanzen
 resource "aws_launch_template" "frontend_lt" {
   name          = "nginx-launch-template"
-  image_id      = "ami-02ccbe126fe6afe82" # Amazon Linux User: ec2-user
+  image_id      = "ami-07eef52105e8a2059" # Ubuntu User: ubuntu
   instance_type = "t2.micro"
   key_name      = "aws"
 
