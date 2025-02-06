@@ -26,3 +26,4 @@ systemctl enable docker-ce
 # Docker-Image pullen und starten
 docker pull klatschenderaffe/vanventura:latest
 docker run -d --name vanventura -p 80:80 klatschenderaffe/vanventura:latest
+
