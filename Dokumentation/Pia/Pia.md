@@ -7,6 +7,8 @@
 - Recherche `depends_on` für terraform.
 - Terraform apply auslösung auf push wieder eingefügt.
 - `depends_on` in Terraform ergänzt.
+- Terraform apply und Terraform destroy laufen nun fehlerfrei durch
+- Probiert herauszufinden warum meine Instanzen als "unhealthy" gekennzeichnet sind.
 
 ### Alle zusammen:
 
