@@ -11,4 +11,9 @@
  
  # Tag 3
 
- 
+ - weiter am Backend gearbeitet
+ - tools dazu angeschaut
+
+ # Tag 4
+ -  mit der Dockerfile beschäftigt das sie sich verbindet
+  
