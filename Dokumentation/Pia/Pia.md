@@ -9,7 +9,7 @@
 - `depends_on` in Terraform ergänzt.
 - Terraform apply und Terraform destroy laufen nun fehlerfrei durch
 - Probiert herauszufinden warum meine Instanzen als "unhealthy" gekennzeichnet sind.
-  - Händisch die Schritte der Userdata nachgegangen, dabei herausgefunden, dass es docker nicht mehr auf dem apt Paketmanager verfügbar ist also musste ich auf snap wechseln.
+  - Händisch die Schritte der Userdata nachgegangen, dabei herausgefunden, dass es docker nicht mehr so leicht auf dem apt Paketmanager verfügbar ist also musste ich die `Userdata.tpl` umändern
   -
 
 ### Alle zusammen:
