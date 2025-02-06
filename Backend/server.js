@@ -9,13 +9,13 @@ dotenv.config();
 
 // Erstelle eine Express-App
 const app = express();
-app.use(cors()); // Middleware aktivieren
+app.use(cors()); // damit das frondend auf die api zugreifen kann 
 app.use(express.json());
 
-// automatisch auf das Frontend weiterleite
-// app.get("/", (req, res) => {
-//  res.redirect("http://localhost:3001");
-// });
+// massage das es geht "bin da" 
+app.get("/", (req, res) => {
+    res.json({ massage: "Bin da"})
+});
 
 // Verbinde mit MongoDB
 mongoose.connect(process.env.MONGO_URI, {
