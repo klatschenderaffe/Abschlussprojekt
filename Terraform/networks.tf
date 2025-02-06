@@ -13,10 +13,14 @@ resource "aws_vpc" "main" {
 # Public Subnets
 resource "aws_subnet" "public_subnet_1" {
   vpc_id                  = aws_vpc.main.id
-  depends_on = [ aws_vpc.main ]
+  # depends_on = [ aws_vpc.main ]
   cidr_block              = "10.0.1.0/24"
   map_public_ip_on_launch = true
   availability_zone       = "eu-central-1a"
+
+  lifecycle {
+  create_before_destroy = true
+  }
 
   tags = {
     Name = "Public_Subnet_1"
@@ -25,10 +29,14 @@ resource "aws_subnet" "public_subnet_1" {
 
 resource "aws_subnet" "public_subnet_2" {
   vpc_id                  = aws_vpc.main.id
-  depends_on = [ aws_vpc.main ]
+  # depends_on = [ aws_vpc.main ]
   cidr_block              = "10.0.2.0/24"
   map_public_ip_on_launch = true
   availability_zone       = "eu-central-1b"
+
+  lifecycle {
+  create_before_destroy = true
+  }
 
   tags = {
     Name = "Public_Subnet_2"
@@ -37,10 +45,15 @@ resource "aws_subnet" "public_subnet_2" {
 
 resource "aws_subnet" "public_subnet_3" {
   vpc_id                  = aws_vpc.main.id
-  depends_on = [ aws_vpc.main ]
+  # depends_on = [ aws_vpc.main ]
   cidr_block              = "10.0.3.0/24"
   map_public_ip_on_launch = true
   availability_zone       = "eu-central-1c"
+
+
+  lifecycle {
+  create_before_destroy = true
+  }
 
   tags = {
     Name = "Public_Subnet_3"
@@ -53,7 +66,7 @@ resource "aws_subnet" "public_subnet_3" {
 resource "aws_internet_gateway" "gw" {
   vpc_id = aws_vpc.main.id
 
-  depends_on = [ aws_vpc.main ]
+  # depends_on = [ aws_vpc.main ]
   tags = {
     Name = "VanVentura-VPC-IG"
   }
@@ -82,7 +95,7 @@ resource "aws_internet_gateway" "gw" {
 # Public Route Table
 resource "aws_route_table" "public" {
   vpc_id = aws_vpc.main.id
-  depends_on = [ aws_vpc.main ]
+  depends_on = [ aws_internet_gateway.gw ]
 
   route {
     cidr_block = "0.0.0.0/0"
@@ -113,6 +126,11 @@ resource "aws_security_group" "alb_sg" {
   description = "Allow HTTP traffic"
   vpc_id      = aws_vpc.main.id
   depends_on = [ aws_vpc.main ]
+
+  lifecycle {
+  create_before_destroy = true
+  }
+
 
   ingress {
     from_port   = 80
