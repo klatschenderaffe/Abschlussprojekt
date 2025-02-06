@@ -1,6 +1,6 @@
 // Importiere notwendige Module
 const express = require('express');
-// const mongoose = require('mongoose');
+const mongoose = require('mongoose');
 const cors = require("cors");  // CORS importieren 
 const dotenv = require('dotenv');
 
