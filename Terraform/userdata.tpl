@@ -2,6 +2,7 @@
 # Updates und Installation von Docker
 apt-get update -y
 apt-get upgrade -y
+# Docker ist nicht mehr auf apt verfügbar!!!
 snap install docker
 
 # Docker-Dienst starten und aktivieren
