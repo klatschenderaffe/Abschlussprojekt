@@ -32,5 +32,13 @@ https://github.com/klatschenderaffe/VAN_VENTURA  Dokumentation weiter führen
 # Tag 3
 
 - weiter an der Präsentation gearbeitet
-- in Draw.io eine Architektur erstellt
+- in Draw.io eine Architektur von Van Vantura erstellt
 - draw.io in visual code hochgeladen
+
+# Tag 4
+ - weiter an der Folie gearbeitet
+ - Meeting mit Christiane gehabt
+ - tools zu Vite Tests schreiben erforscht, zur unterstützung von Pia
+ - https://victorbruce82.medium.com/vitest-with-react-testing-library-in-react-created-with-vite-3552f0a9a19a
+ - https://dev.to/teyim/effortless-testing-setup-for-react-with-vite-typescript-jest-and-react-testing-library-1c48
+ - Notizen dazu rausgeschrieben. 
