@@ -69,10 +69,10 @@ resource "aws_launch_template" "frontend_lt" {
   image_id      = "ami-07eef52105e8a2059" # Ubuntu User: ubuntu
   instance_type = "t2.micro"
   key_name      = "aws"
-  depends_on = [ 
-    aws_subnet.public_subnet_1,
-    aws_security_group.alb_sg 
-    ]
+  # depends_on = [ 
+  #   aws_subnet.public_subnet_1,
+  #   aws_security_group.alb_sg 
+  #   ]
 
    # User Data Script für Cloud-Init
    user_data = base64encode(file("${path.module}/userdata.tpl"))
@@ -95,13 +95,13 @@ resource "aws_autoscaling_group" "frontend_asg" {
   desired_capacity     = 2
   max_size             = 3
   min_size             = 1
-  depends_on = [ 
-    aws_launch_template.frontend_lt,
-    aws_subnet.public_subnet_1,
-    aws_subnet.public_subnet_2, 
-    aws_subnet.public_subnet_3, 
-    aws_lb_target_group.frontend_tg 
-    ]
+  # depends_on = [ 
+  #   aws_launch_template.frontend_lt,
+  #   aws_subnet.public_subnet_1,
+  #   aws_subnet.public_subnet_2, 
+  #   aws_subnet.public_subnet_3, 
+  #   aws_lb_target_group.frontend_tg 
+  #   ]
 
   launch_template {
     id      = aws_launch_template.frontend_lt.id
