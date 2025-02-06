@@ -1,3 +1,17 @@
+> 06.02.2025
+
+# Tag 4:
+
+### Alleine:
+
+- Recherche `depends_on` für terraform.
+- Terraform apply auslösung auf push wieder eingefügt.
+- `depends_on` in Terraform ergänzt.
+
+### Alle zusammen:
+
+---
+
 > 05.02.2025
 
 # Tag 3:
