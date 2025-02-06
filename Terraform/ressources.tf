@@ -26,7 +26,11 @@ resource "aws_lb" "frontend_alb" {
   load_balancer_type = "application"
   security_groups    = [aws_security_group.alb_sg.id]
   subnets            = [aws_subnet.public_subnet_1.id, aws_subnet.public_subnet_2.id, aws_subnet.public_subnet_3.id]
-  depends_on = [aws_subnet.public_subnet_1.id, aws_subnet.public_subnet_2.id, aws_subnet.public_subnet_3.id]
+  depends_on = [
+    aws_subnet.public_subnet_1, 
+    aws_subnet.public_subnet_2, 
+    aws_subnet.public_subnet_3
+    ]
 
   enable_deletion_protection = false
 }
@@ -91,7 +95,13 @@ resource "aws_autoscaling_group" "frontend_asg" {
   desired_capacity     = 2
   max_size             = 3
   min_size             = 1
-  depends_on = [ aws_launch_template.frontend_lt, aws_subnet.public_subnet_1, awaws_subnet.public_subnet_2, aws_subnet.public_subnet_3, aws_lb_target_group.frontend_tg ]
+  depends_on = [ 
+    aws_launch_template.frontend_lt,
+    aws_subnet.public_subnet_1,
+    aws_subnet.public_subnet_2, 
+    aws_subnet.public_subnet_3, 
+    aws_lb_target_group.frontend_tg 
+    ]
 
   launch_template {
     id      = aws_launch_template.frontend_lt.id
