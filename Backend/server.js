@@ -12,6 +12,11 @@ const app = express();
 app.use(cors()); // Middleware aktivieren
 app.use(express.json());
 
+// automatisch auf das Frontend weiterleite
+// app.get("/", (req, res) => {
+//  res.redirect("http://localhost:3001");
+// });
+
 // Verbinde mit MongoDB
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
@@ -32,11 +37,11 @@ app.get('/items', async (req, res) => {
     res.json(items);
 });
 
-app.post('/items', async (req, res) => {
-    const newItem = new Item(req.body);
-    await newItem.save();
-    res.json(newItem);
-});
+//napp.post('/items', async (req, res) => {
+   // const newItem = new Item(req.body);
+  //  await newItem.save();
+   // res.json(newItem);
+//});
 
 // API-Route einbinden
 const sleepspotsRoutes = require("./routes/sleepspots");
