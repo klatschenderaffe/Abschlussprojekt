@@ -36,7 +36,7 @@ https://github.com/klatschenderaffe/VAN_VENTURA  Dokumentation weiter führen
 - draw.io in visual code hochgeladen
 
 # Tag 4
- - weiter an der Folie gearbeitet
+ 
  - Meeting mit Christiane gehabt
  - tools zu Vite Tests schreiben erforscht, zur unterstützung von Pia
  - https://victorbruce82.medium.com/vitest-with-react-testing-library-in-react-created-with-vite-3552f0a9a19a

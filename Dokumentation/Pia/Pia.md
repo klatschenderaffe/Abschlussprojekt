@@ -9,6 +9,10 @@
 - `depends_on` in Terraform ergänzt.
 - Terraform apply und Terraform destroy laufen nun fehlerfrei durch
 - Probiert herauszufinden warum meine Instanzen als "unhealthy" gekennzeichnet sind.
+  - Händisch die Schritte der Userdata nachgegangen, dabei herausgefunden, dass es docker nicht mehr so leicht auf dem apt Paketmanager verfügbar ist also musste ich die `Userdata.tpl` umändern.
+  - Routing Tabelle von Subnet 3 nachgetragen.
+- VanVentura Seite ohne Map zum auf den EC2 Instanzen zum laufen gebracht. Beide Instanzen sind Healthy und der DNS Link des LoadBalancer läuft auch.
+  ![Screenshot VanVentura](./Bilder/vanventura-screenshot.png)
 
 ### Alle zusammen:
 
