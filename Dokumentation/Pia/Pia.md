@@ -13,6 +13,8 @@
   - Routing Tabelle von Subnet 3 nachgetragen.
 - VanVentura Seite ohne Map zum auf den EC2 Instanzen zum laufen gebracht. Beide Instanzen sind Healthy und der DNS Link des LoadBalancer läuft auch.
   ![Screenshot VanVentura](./Bilder/vanventura-screenshot.png)
+- Amazon Cognito Recherche.
+- README.md Technologien ergänzt
 
 ### Alle zusammen:
 

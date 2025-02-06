@@ -12,10 +12,11 @@ ansprechende Erfahrung gewährleistet.
 
 ## 🚀 **Technologien**
 
-- Frontend: React + Vite
+- Frontend: React, Vite, AWS Cognito
 - Backend: Node.js + Express
 - Datenbank: MongoDB Atlas
-- Infrastruktur: Terraform + Ci/CD durch github Aktion
+- Infrastruktur: Terraform, Ansible + Ci/CD durch github Aktion
+- Testing: Vitest
 
 ## Installation
 
@@ -44,7 +45,7 @@ ansprechende Erfahrung gewährleistet.
 
 ### Testen
 
-Die Website wurde mit Hilfe von Cypress End-to-End getestet. Die passende Testdatei ist wie auf dem Bild der Ordnerstruktur zu finden.
+- auf vitest ändern
 
 ### 🎯 **Warum ist diese README gut?**
 
