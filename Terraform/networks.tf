@@ -13,9 +13,14 @@ resource "aws_vpc" "main" {
 # Public Subnets
 resource "aws_subnet" "public_subnet_1" {
   vpc_id                  = aws_vpc.main.id
+  # depends_on = [ aws_vpc.main ]
   cidr_block              = "10.0.1.0/24"
   map_public_ip_on_launch = true
   availability_zone       = "eu-central-1a"
+
+  lifecycle {
+  create_before_destroy = true
+  }
 
   tags = {
     Name = "Public_Subnet_1"
@@ -24,9 +29,14 @@ resource "aws_subnet" "public_subnet_1" {
 
 resource "aws_subnet" "public_subnet_2" {
   vpc_id                  = aws_vpc.main.id
+  # depends_on = [ aws_vpc.main ]
   cidr_block              = "10.0.2.0/24"
   map_public_ip_on_launch = true
   availability_zone       = "eu-central-1b"
+
+  lifecycle {
+  create_before_destroy = true
+  }
 
   tags = {
     Name = "Public_Subnet_2"
@@ -35,9 +45,15 @@ resource "aws_subnet" "public_subnet_2" {
 
 resource "aws_subnet" "public_subnet_3" {
   vpc_id                  = aws_vpc.main.id
+  # depends_on = [ aws_vpc.main ]
   cidr_block              = "10.0.3.0/24"
   map_public_ip_on_launch = true
   availability_zone       = "eu-central-1c"
+
+
+  lifecycle {
+  create_before_destroy = true
+  }
 
   tags = {
     Name = "Public_Subnet_3"
@@ -50,34 +66,36 @@ resource "aws_subnet" "public_subnet_3" {
 resource "aws_internet_gateway" "gw" {
   vpc_id = aws_vpc.main.id
 
+  # depends_on = [ aws_vpc.main ]
   tags = {
     Name = "VanVentura-VPC-IG"
   }
 }
 
-# NAT Gateway
-resource "aws_eip" "nat" {
-  domain = "vpc" # Verwendet das neue Argument
+# # NAT Gateway
+# resource "aws_eip" "nat" {
+#   domain = "vpc" # Verwendet das neue Argument
 
-  tags = {
-    Name = "NAT-Gateway-EIP"
-  }
-}
+#   tags = {
+#     Name = "NAT-Gateway-EIP"
+#   }
+# }
 
-resource "aws_nat_gateway" "nat" {
-  allocation_id = aws_eip.nat.id
-  subnet_id     = aws_subnet.public_subnet_1.id
+# resource "aws_nat_gateway" "nat" {
+#   allocation_id = aws_eip.nat.id
+#   subnet_id     = aws_subnet.public_subnet_1.id
 
-  tags = {
-    Name = "NAT-Gateway"
-  }
-}
+#   tags = {
+#     Name = "NAT-Gateway"
+#   }
+# }
 
 ############ Routing Tabellen ############
 
 # Public Route Table
 resource "aws_route_table" "public" {
   vpc_id = aws_vpc.main.id
+  depends_on = [ aws_internet_gateway.gw ]
 
   route {
     cidr_block = "0.0.0.0/0"
@@ -107,6 +125,12 @@ resource "aws_security_group" "alb_sg" {
   name        = "alb-sg"
   description = "Allow HTTP traffic"
   vpc_id      = aws_vpc.main.id
+  depends_on = [ aws_vpc.main ]
+
+  lifecycle {
+  create_before_destroy = true
+  }
+
 
   ingress {
     from_port   = 80

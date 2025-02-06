@@ -1,3 +1,17 @@
+> 06.02.2025
+
+# Tag 4:
+
+### Alleine:
+
+- Recherche `depends_on` für terraform.
+- Terraform apply auslösung auf push wieder eingefügt.
+- `depends_on` in Terraform ergänzt.
+
+### Alle zusammen:
+
+---
+
 > 05.02.2025
 
 # Tag 3:
@@ -10,8 +24,14 @@
 - Den Fehler der Credentials von AWS in den Workflows gelöst.
 - "Bob" die passenden Berechtigungen erteilt.
 - Instanzen die durch die Auto-Scaling-Group erstellt werden Öffentliche IP-Adressen frei gegeben.
+- Terraform apply verändert, das es nur noch auf den Push ausgelöst wird.
+- Versucht die Infrastruktur wieder zu destroyen, Leider mit Fehlermeldungen.
+  ![Fehlermeldung bei destroyen der Infrastruktur](./Bilder/destroy-fail.png)
+- Terraform Apply auf Push auskommentiert, das ich mich erstmal um die Fehlermeldungen bei Terraform destroy kümmern kann.
 
 ### Alle zusammen:
+
+- wenn es kleinere Fehler oder Probleme gab uns gegenseitig unterstützt.
 
 ---
 

@@ -2,7 +2,7 @@
 
 ![Screenshot der Website](./img/Screenshot.png)
 
-## Projektbeschreibung
+### Projektbeschreibung
 
 Van Ventura ist ein innovatives Projekt, das sich an leidenschaftliche Camper und solche
 richtet, die es noch werden möchten. Die Website bietet eine umfassende Übersicht über die
@@ -10,12 +10,12 @@ Campingregeln verschiedener Länder (die Flaggen mit Hover Effekt) und integrier
 ist sowohl verspielt als auch minimalistisch gehalten, was eine benutzerfreundliche und
 ansprechende Erfahrung gewährleistet.
 
-
 ## 🚀 **Technologien**
+
 - Frontend: React + Vite
 - Backend: Node.js + Express
 - Datenbank: MongoDB Atlas
-- Infrastruktur: Terraform + Ci/CD durch github Aktion 
+- Infrastruktur: Terraform + Ci/CD durch github Aktion
 
 ## Installation
 
@@ -46,9 +46,9 @@ ansprechende Erfahrung gewährleistet.
 
 Die Website wurde mit Hilfe von Cypress End-to-End getestet. Die passende Testdatei ist wie auf dem Bild der Ordnerstruktur zu finden.
 
-
 ### 🎯 **Warum ist diese README gut?**
+
 ✅ Kurz & klar – Sie erklärt das Projekt einfach.  
 ✅ Installationsanleitung – Schritt-für-Schritt erklärt.  
 ✅ API-Dokumentation – Falls du später mehr Endpunkte hast.  
-✅ Screenshots & TODOs – Zeigt den Status des Projekts. 
+✅ Screenshots & TODOs – Zeigt den Status des Projekts.

@@ -1,12 +1,16 @@
 # Terraform Pipeline: Wird die Infrastruktur für unsere Anwendung erstellen und einreisen können.
 name: Terraform CI/CD Pipeline
 on:
+  push:
+    branches:
+      - main
   # Darf erst auslösen, nachdem der Workflow "Image erstellen und pushen" durchgelaufen ist.
-  workflow_run:
-    workflows:
-      - Image erstellen und pushen
-    types:
-      - completed
+  ################# Künstlich Unterdrückt #################
+  # workflow_run:
+  #   workflows:
+  #     - Image erstellen und pushen
+  #   types:
+  #     - completed
   # Ermöglicht das manuelle Auslösen des Workflows - für den Job "terraform_destroy"
   workflow_dispatch:
 jobs:
@@ -14,9 +18,10 @@ jobs:
   terraform_apply:
     name: Terraform Apply
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pull-requests: write
+    if: github.event_name == 'push'
+    # permissions:
+    #   contents: read
+    #   pull-requests: write
     steps:
       # Repository auschecken
       - name: Checkout repository

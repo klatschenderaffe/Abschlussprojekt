@@ -5,7 +5,7 @@ on:
   # Wird mit einem Push auf den Branch "Main" ausgelöst.
   push:
     branches:
-      - main
+      - test
 jobs:
   # Die Anwendung wird getestet.
   # test:
