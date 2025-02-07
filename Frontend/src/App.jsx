@@ -7,8 +7,9 @@ import Contact from './components/Contact/Contact';
 import Def from './components/Def/Def';
 import Map from './components/Map/Map';
 import Impressum from './components/Impressum/Impressum';
-import Sleepspots from "./components/Sleepspots.jsx";
 import React from "react";
+import Sleepspots from './components/Sleepspots.jsx';
+import MapboxMap from './components/Map';
 
 // Hier ist die Struktur der Website
 // Die verschiedenen Komponenten werden hier nacheinander aufgerufen
@@ -31,6 +32,8 @@ const App = () => {
         />
         <Def />
         <Laenderregeln />
+
+       {/* <Sleepspots/> */}
       </div>
       <Fussleiste />
       <Impressum />
