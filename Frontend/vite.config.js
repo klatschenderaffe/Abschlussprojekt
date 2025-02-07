@@ -9,7 +9,12 @@ export default defineConfig({
     port: 3001, // Frondend 
     proxy: {
       "/api": "http://localhost:5000", // Backend-Server Proxy
-    
+  },
+  //  Vite test-konfiguration 
+  test: { 
+    globals: true,
+    environment: "jsdom", // wichtig für React-test
+    include: ['**/*.test.{js,jsx}'], // Sucht in allen überordner 
   },
   // Home Pfade des Projektes
   base: '/',
