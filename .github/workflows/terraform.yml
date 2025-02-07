@@ -6,11 +6,11 @@ on:
       - main
   # Darf erst auslösen, nachdem der Workflow "Image erstellen und pushen" durchgelaufen ist.
   ################# Künstlich Unterdrückt #################
-  # workflow_run:
-  #   workflows:
-  #     - Image erstellen und pushen
-  #   types:
-  #     - completed
+  workflow_run:
+    workflows:
+      - Image erstellen und pushen
+    types:
+      - completed
   # Ermöglicht das manuelle Auslösen des Workflows - für den Job "terraform_destroy"
   workflow_dispatch:
 jobs:

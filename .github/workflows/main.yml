@@ -5,7 +5,7 @@ on:
   # Wird mit einem Push auf den Branch "Main" ausgelöst.
   push:
     branches:
-      - test
+      - main
 jobs:
   # Die Anwendung wird getestet.
   # test:
@@ -51,6 +51,13 @@ jobs:
       - name: Abhängigkeiten installieren
         working-directory: ./Frontend
         run: npm install
+
+      # Set the environment variable from the secret
+      - name: Set environment variable
+        run: |
+          echo "VITE_MAP_KEY=${{ secrets.VITE_MAP_KEY }}" >> $GITHUB_ENV
+          echo "VITE_API_KEY=${{ secrets.VITE_API_KEY }}" >> $GITHUB_ENV
+
       # Schritt 3: Projekt-Build bauen und Image erstellen
       - name: Docker Image erstellen und taggen
         working-directory: ./Frontend
