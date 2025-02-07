@@ -42,3 +42,6 @@ https://github.com/klatschenderaffe/VAN_VENTURA  Dokumentation weiter führen
  - https://victorbruce82.medium.com/vitest-with-react-testing-library-in-react-created-with-vite-3552f0a9a19a
  - https://dev.to/teyim/effortless-testing-setup-for-react-with-vite-typescript-jest-and-react-testing-library-1c48
  - Notizen dazu rausgeschrieben. 
+
+# Tag 5
+ - Vitest geschrieben 
