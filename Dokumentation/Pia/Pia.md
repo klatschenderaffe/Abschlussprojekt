@@ -11,6 +11,11 @@
 
 ### Alle zusammen:
 
+- uns mit Vitest auseinander gesetzt.
+- Tests geschrieben und ausprobiert.
+
+---
+
 > 06.02.2025
 
 # Tag 4:
@@ -28,8 +33,6 @@
   ![Screenshot VanVentura](./Bilder/vanventura-screenshot.png)
 - Amazon Cognito Recherche.
 - README.md Technologien ergänzt
-
-### Alle zusammen:
 
 ---
 
