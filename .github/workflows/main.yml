@@ -54,6 +54,7 @@ jobs:
 
       # Set the environment variable from the secret
       - name: Create .env
+        working-directory: ./Frontend
         run: |
           echo "VITE_MAP_KEY=${{ secrets.VITE_MAP_KEY }}" > .env
           echo "VITE_API_KEY=${{ secrets.VITE_API_KEY }}" >> .env
