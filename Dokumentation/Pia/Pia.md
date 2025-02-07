@@ -5,6 +5,9 @@
 ### Alleine:
 
 - envs in Secrets gespeichert und geschaut, dass die Map auf den Instanzen angezeigt werden.
+  ![Screenshot VanVentura](./Bilder/map-func.png)
+- die Auslösung der Workflows überarbeitet.
+- AWS Cognito Videos geschaut
 
 ### Alle zusammen:
 

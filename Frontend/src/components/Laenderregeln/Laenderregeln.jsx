@@ -1,4 +1,3 @@
-import React from 'react';
 import './Laenderregeln.css';
 import Deutschland from '../../assets/Deutschland.png';
 import Daenemark from '../../assets/Daenemark.jpeg';
@@ -13,10 +12,10 @@ import Luxembourg from '../../assets/Luxembourg.jpeg';
 // Country flags with hover function
 const Laenderregeln = () => {
   return (
-    <div className="laender">
-      <div className="land">
+    <div className='laender'>
+      <div className='land'>
         <img src={Deutschland} />
-        <div className="caption">
+        <div className='caption'>
           <h3>Deutschland</h3>
           <p>
             Campen <br />
@@ -32,9 +31,9 @@ const Laenderregeln = () => {
           </p>
         </div>
       </div>
-      <div className="land">
+      <div className='land'>
         <img src={Daenemark} />
-        <div className="caption">
+        <div className='caption'>
           <h3>Dänemark</h3>
           <p>
             Campen <br />
@@ -49,9 +48,9 @@ const Laenderregeln = () => {
           </p>
         </div>
       </div>
-      <div className="land">
+      <div className='land'>
         <img src={Tschechien} />
-        <div className="caption">
+        <div className='caption'>
           <h3>Tschechien</h3>
           <p>
             Campen <br />
@@ -67,9 +66,9 @@ const Laenderregeln = () => {
           </p>
         </div>
       </div>
-      <div className="land">
+      <div className='land'>
         <img src={Polen} />
-        <div className="caption">
+        <div className='caption'>
           <h3>Polen</h3>
           <p>
             Campen <br />
@@ -85,9 +84,9 @@ const Laenderregeln = () => {
           </p>
         </div>
       </div>
-      <div className="land">
+      <div className='land'>
         <img src={Österreich} />
-        <div className="caption">
+        <div className='caption'>
           <h3>Österreich</h3>
           <p>
             Campen <br />
@@ -103,9 +102,9 @@ const Laenderregeln = () => {
           </p>
         </div>
       </div>
-      <div className="land">
+      <div className='land'>
         <img src={Schweiz} />
-        <div className="caption">
+        <div className='caption'>
           <h3>Schweiz</h3>
           <p>
             Campen <br />
@@ -121,9 +120,9 @@ const Laenderregeln = () => {
           </p>
         </div>
       </div>
-      <div className="land">
+      <div className='land'>
         <img src={Belgien} />
-        <div className="caption">
+        <div className='caption'>
           <h3>Belgien</h3>
           <p>
             Campen <br />
@@ -140,9 +139,9 @@ const Laenderregeln = () => {
           </p>
         </div>
       </div>
-      <div className="land">
+      <div className='land'>
         <img src={Niederlande} />
-        <div className="caption">
+        <div className='caption'>
           <h3>Niederlande</h3>
           <p>
             Campen <br />
@@ -159,9 +158,9 @@ const Laenderregeln = () => {
           </p>
         </div>
       </div>
-      <div className="land">
+      <div className='land'>
         <img src={Luxembourg} />
-        <div className="caption">
+        <div className='caption'>
           <h3>Luxembourg</h3>
           <p>
             Campen <br />
