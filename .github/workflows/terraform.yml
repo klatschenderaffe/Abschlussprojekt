@@ -1,9 +1,9 @@
 # Terraform Pipeline: Wird die Infrastruktur für unsere Anwendung erstellen und einreisen können.
 name: Terraform CI/CD Pipeline
 on:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
   # Darf erst auslösen, nachdem der Workflow "Image erstellen und pushen" durchgelaufen ist.
   ################# Künstlich Unterdrückt #################
   workflow_run:
