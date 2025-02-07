@@ -1,3 +1,13 @@
+> 07.02.2025
+
+# Tag 5:
+
+### Alleine:
+
+- envs in Secrets gespeichert und geschaut, dass die Map auf den Instanzen angezeigt werden.
+
+### Alle zusammen:
+
 > 06.02.2025
 
 # Tag 4:
