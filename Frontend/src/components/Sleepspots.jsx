@@ -4,7 +4,7 @@ const Sleepspots = () => {
     const [sleepspots, setSleepspots] = useState([]);
 
     useEffect(() => {
-        fetch("/api/sleepspots") // API-Endpunkt aufrufen
+        fetch("http://localhost:5000/api/sleepspots") // API-Endpunkt aufrufen
             .then(response => response.json())
             .then(data => setSleepspots(data))
             .catch(error => console.error("Fehler beim Laden:", error));
