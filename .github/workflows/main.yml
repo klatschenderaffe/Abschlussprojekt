@@ -53,10 +53,10 @@ jobs:
         run: npm install
 
       # Set the environment variable from the secret
-      - name: Set environment variable
+      - name: Create .env
         run: |
-          echo "VITE_MAP_KEY=${{ secrets.VITE_MAP_KEY }}" >> $GITHUB_ENV
-          echo "VITE_API_KEY=${{ secrets.VITE_API_KEY }}" >> $GITHUB_ENV
+          echo "VITE_MAP_KEY=${{ secrets.VITE_MAP_KEY }}" > .env
+          echo "VITE_API_KEY=${{ secrets.VITE_API_KEY }}" >> .env
 
       # Schritt 3: Projekt-Build bauen und Image erstellen
       - name: Docker Image erstellen und taggen
