@@ -6,7 +6,6 @@ import Laenderregeln from './components/Laenderregeln/Laenderregeln';
 import Contact from './components/Contact/Contact';
 import Def from './components/Def/Def';
 import Map from './components/Map/Map';
-import Impressum from './components/Impressum/Impressum';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 // import React from "react";
