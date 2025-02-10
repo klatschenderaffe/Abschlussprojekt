@@ -17,10 +17,14 @@
        include: ['**/*.test.{js,jsx}'], // Sucht in allen überordner
        setupFiles: './setupTests.js', // Pfad zur Setup-Datei
     },
+    plugins: [react()],
      // Home Pfade des Projektes
      base: '/',
    },
  });
 
 
+
+
+   
 
