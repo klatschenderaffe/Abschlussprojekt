@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Navbar.css';
 import logo from '../../assets/Logo1.png';
-import { Link } from 'react-scroll';
+import { Link } from 'react-router';
 import Menue from '../../assets/menue.png';
 
 const Navbar = () => {
@@ -24,26 +24,20 @@ const Navbar = () => {
   return (
     // if sticky is set show the class 'dark-nav'
     <nav className={`container ${sticky ? 'dark-nav' : ''}`}>
-      <img src={logo} alt="" className="logo" />
+      <img src={logo} alt='' className='logo' />
       {/* If MobileMenu is true nothing change, otherwise hide-mobile-menu */}
       <ul className={mobileMenu ? '' : 'hide-mobile-menu'}>
         <li>
-          <Link to="hero" smooth={true} offset={0} duration={500}>
-            Home
-          </Link>
+          <Link to='/#home'>Home</Link>
         </li>
         <li>
-          <Link to="map" smooth={true} offset={-280} duration={500}>
-            Stellplatzsuche
-          </Link>
+          <Link to='/#map'>Stellplatzsuche</Link>
         </li>
         <li>
-          <Link to="definitionen" smooth={true} offset={-320} duration={500}>
-            Länderregeln
-          </Link>
+          <Link to='/#definitionen'>Länderregeln</Link>
         </li>
       </ul>
-      <img src={Menue} alt="" className="menue-icon" onClick={toggleMenu} />
+      <img src={Menue} alt='' className='menue-icon' onClick={toggleMenu} />
     </nav>
   );
 };

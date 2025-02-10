@@ -1,13 +1,14 @@
-import React from 'react';
+// import React from 'react';
 import './Fussleiste.css';
+import { Link } from 'react-router';
 
 // Simple Footer
 
 const Fussleiste = () => {
   return (
-    <footer className="fussleiste">
+    <footer className='fussleiste'>
       <ul>
-        <li>Impressum</li>
+        <Link to='/impressumpage'>Impressum</Link>
       </ul>
     </footer>
   );
