@@ -9,8 +9,6 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Navbar from './src/components/Navbar/Navbar';
 import { MemoryRouter } from 'react-router-dom';
-import '@testing-library/jest-dom';
-import { waitFor } from '@testing-library/react';
 
 describe('Navbar', () => {
   test('renders the Navbar correctly', () => {
@@ -20,10 +18,8 @@ describe('Navbar', () => {
       </MemoryRouter>
     );
 
-    // Logo finden (Falls der alt-Text leer ist, nutzen wir die Klasse)
-    const logo = screen
-      .getAllByAltText('')
-      .find((img) => img.className === 'logo');
+    // Überprüfen, ob das Logo vorhanden ist
+    const logo = screen.getByAltText(''); // Alt-Text des Logos (leer im Code)
     expect(logo).toBeInTheDocument();
 
     // Überprüfen, ob die Links korrekt gerendert werden
@@ -39,19 +35,13 @@ describe('Navbar', () => {
       </MemoryRouter>
     );
 
-    // Menü-Icon mit einer sichereren Methode finden
-    const menuIcon = screen
-      .getAllByAltText('')
-      .find((img) => img.className === 'menue-icon');
+    // Menü-Icon finden
+    const menuIcon = screen.getByAltText('Menue Icon');
     expect(menuIcon).toBeInTheDocument();
 
-    // Menü-Element finden
-    const menuLists = screen.getAllByRole('list');
-    expect(menuLists.length).toBeGreaterThan(0);
-    const menuList = menuLists[0];
-
-    // Menü sollte zuerst verborgen sein
-    expect(menuList).toHaveClass('hide-mobile-menu');
+    // Überprüfen, ob das mobile Menü initial versteckt ist
+    const menuList = screen.getByRole('list');
+    expect(menuList.className).toContain('hide-mobile-menu');
 
     // Menü öffnen
     await userEvent.click(menuIcon);
@@ -67,9 +57,13 @@ describe('Navbar', () => {
       </MemoryRouter>
     );
 
-    // Richtige Navigation finden
-    const navbars = screen.getAllByRole('navigation');
-    expect(navbars.length).toBeGreaterThan(0);
-    const navbar = navbars[0];
+    const navbar = screen.getByRole('navigation');
+
+    // Simulieren des Scrollens
+    window.scrollY = 100;
+    window.dispatchEvent(new Event('scroll'));
+
+    // Überprüfen, ob die Klasse 'dark-nav' hinzugefügt wurde
+    expect(navbar.className).toContain('dark-nav');
   });
 });
