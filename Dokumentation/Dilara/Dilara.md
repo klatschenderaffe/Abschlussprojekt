@@ -18,3 +18,8 @@
  -  mit der Dockerfile beschäftigt das sie sich verbindet
   # Tag  5
   - vitetests geschrieben
+
+  # Tag 6 
+  - weiter an den vietests geschrieben
+  - Tagesordnung besprochen
+  - Vitest erfolgreich geschrieben
