@@ -12,6 +12,8 @@
   - Wenn die Container über die Userdata laufen, dann wir immer nur beim erstellen der EC2 Container das passende Image überspielt. Das heißt man müsste mit jeder Änderung dafür sorgen, das ein Terraform destroy und anschließend wieder ein Apply ausgeführt wird. - Ich bin noch dabei eine andere Lösung zu finden.
 - Provisorische LogIn Seite erstellt
   ![Screenshot Login Form](./Bilder/login.png)
+- Angefangen die Seite nach dem Login zu schreiben.
+  ![Screenshot Welcome Page](./Bilder/welcomepage.png)
 
 ### Alle zusammen:
 
