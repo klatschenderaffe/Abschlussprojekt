@@ -32,6 +32,13 @@ nav ul li {
   display: none;
 }
 
+.login-btn {
+  border-radius: 1.5rem;
+  background-color: #3a92a4;
+  color: #000;
+  padding: 1rem;
+}
+
 /* --------Media Querys----------- */
 
 @media (max-width: 1000px) {

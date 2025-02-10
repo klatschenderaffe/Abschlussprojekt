@@ -37,7 +37,9 @@ const Navbar = () => {
           <Link to='/#definitionen'>Länderregeln</Link>
         </li>
         <li>
-          <Link to='/#login'>LogIn</Link>
+          <Link className='login-btn' to='/loginpage'>
+            LogIn
+          </Link>
         </li>
       </ul>
       <img src={Menue} alt='' className='menue-icon' onClick={toggleMenu} />
