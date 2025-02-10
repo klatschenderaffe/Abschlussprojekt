@@ -17,7 +17,6 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-map-gl": "^7.1.7",
-    "react-router-dom": "^6.26.1",
     "react-scroll": "^1.9.0"
   },
   "devDependencies": {
@@ -35,6 +34,7 @@
     "globals": "^15.9.0",
     "jsdom": "^26.0.0",
     "live-server": "^1.2.2",
+    "react-router-dom": "^7.1.5",
     "vite": "^5.4.1",
     "vitest": "^3.0.5"
   }
