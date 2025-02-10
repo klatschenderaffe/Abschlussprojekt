@@ -10,8 +10,12 @@
 - Eigene Impressum Seite verlinkt.
 - Problem bei der CI/CD Pipeline entdeckt.
   - Wenn die Container über die Userdata laufen, dann wir immer nur beim erstellen der EC2 Container das passende Image überspielt. Das heißt man müsste mit jeder Änderung dafür sorgen, das ein Terraform destroy und anschließend wieder ein Apply ausgeführt wird. - Ich bin noch dabei eine andere Lösung zu finden.
+- Provisorische LogIn Seite erstellt
+  ![Screenshot Login Form](./Bilder/login.png)
 
 ### Alle zusammen:
+
+- Fehlersuche
 
 ---
 
