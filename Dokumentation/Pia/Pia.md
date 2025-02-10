@@ -1,3 +1,20 @@
+> 10.02.2025
+
+# Tag 6:
+
+### Alleine:
+
+- Weitere ToDos für das Projekt in Notion gesammelt
+- Mit der Implementierung von Cognito vertraut gemacht
+- React Router DOM Implementiert und React Scroll durch React Router DOM ersetzt.
+- Eigene Impressum Seite verlinkt.
+- Problem bei der CI/CD Pipeline entdeckt.
+  - Wenn die Container über die Userdata laufen, dann wir immer nur beim erstellen der EC2 Container das passende Image überspielt. Das heißt man müsste mit jeder Änderung dafür sorgen, das ein Terraform destroy und anschließend wieder ein Apply ausgeführt wird. - Ich bin noch dabei eine andere Lösung zu finden.
+
+### Alle zusammen:
+
+---
+
 > 07.02.2025
 
 # Tag 5:

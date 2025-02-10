@@ -36,6 +36,9 @@ const Navbar = () => {
         <li>
           <Link to='/#definitionen'>Länderregeln</Link>
         </li>
+        <li>
+          <Link to='/#login'>LogIn</Link>
+        </li>
       </ul>
       <img src={Menue} alt='' className='menue-icon' onClick={toggleMenu} />
     </nav>
