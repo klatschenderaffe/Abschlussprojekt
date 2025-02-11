@@ -1,5 +1,5 @@
 - name: Deployen von VanVentura mit Docker
-  hosts: defaults
+  hosts: all
   become: true
   collections:
     - community.docker
