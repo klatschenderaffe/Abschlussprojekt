@@ -44,6 +44,10 @@ jobs:
       - name: Terraform Init
         working-directory: ./Terraform
         run: terraform init
+        # Terraform Infrastruktur löschen, das über die UserData das neue Image mitgegeben werden kann
+      - name: Terraform destroy
+        working-directory: ./Terraform
+        run: terraform destroy -auto-approve
         # Terraform Apply - die Infrastruktur wird erschaffen.
       - name: Terraform Apply
         working-directory: ./Terraform
