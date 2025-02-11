@@ -62,7 +62,7 @@ jobs:
         working-directory: ./Ansible
         run: |
           chmod +x ./aws_inventory.py
-          ansible-playbook -i ./aws_inventory.py ./playbook.yml --ssh-common-args='-o StrictHostKeyChecking=no' -v
+          ansible-playbook -i ./aws_ec2.yml ./playbook.yml --ssh-common-args='-o StrictHostKeyChecking=no' -v
 
   terraform_destroy:
     name: Terraform Destroy
