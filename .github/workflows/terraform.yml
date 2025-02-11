@@ -26,6 +26,11 @@ jobs:
       # Repository auschecken
       - name: Checkout repository
         uses: actions/checkout@v3
+
+      - name: Installieren Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
       # AWS-Anmeldedaten konfigurieren
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v3
@@ -44,19 +49,19 @@ jobs:
       - name: Terraform Init
         working-directory: ./Terraform
         run: terraform init
-        # Terraform Infrastruktur löschen, das über die UserData das neue Image mitgegeben werden kann
-      - name: Terraform destroy
-        working-directory: ./Terraform
-        run: terraform destroy -auto-approve
         # Terraform Apply - die Infrastruktur wird erschaffen.
       - name: Terraform Apply
         working-directory: ./Terraform
         run: terraform apply -auto-approve
         # Ansible installieren
-      # - name: Install Ansible
-      #   run: |
-      #     sudo apt update
-      #     sudo apt install -y ansible
+      - name: Install Ansible
+        run: |
+          sudo apt update
+          sudo apt install -y ansible
+      - name: Install boto3
+        run: |
+          pip install boto3 botocore
+
       #   # Die öffentliche IP-Adresse der EC2 Instanz wird in der inventory.ini file hinzugefügt
       # - name: Generiere Ansible Inventory
       #   working-directory: ./Terraform
@@ -69,24 +74,20 @@ jobs:
       #     else
       #       echo "Terraform outputs are empty or invalid."
       #     fi
-      ############# INFO #############
-      # Warum funktioniert das so?
-      # Auto Scaling Group: Die EC2-Instanzen in einer Auto Scaling Group sind dynamisch und können sich ändern (z. B. bei Skalierung oder Ersatz von Instanzen). Es ist daher schwierig, ihre IP-Adressen direkt zu erfassen.
-      # Load Balancer: Der Load Balancer bleibt konstant und leitet den gesamten Traffic an die EC2-Instanzen weiter. Daher ist es sinnvoller, den DNS-Namen des Load Balancers zu verwenden.
-      # Die SSH Verbindung zur EC2 Instanz wird hergestellt.
-      # - name: Set up SSH
-      #   run: |
-      #     mkdir -p ~/.ssh
-      #     echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/private_key.pem
-      #     chmod 600 ~/.ssh/private_key.pem
-      #   # Ansible Playbook ausführen
-      # - name: Run Ansible Playbook
-      #   env:
-      #     ANSIBLE_USER: ubuntu
-      #     ANSIBLE_HOST_KEY_CHECKING: False
-      #   working-directory: ./Ansible
-      #   run: |
-      #     ansible-playbook -i ./inventory.ini ./playbook.yml --ssh-common-args='-o StrictHostKeyChecking=no' -v
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/private_key.pem
+          chmod 600 ~/.ssh/private_key.pem
+      # Ansible Playbook ausführen
+      - name: Run Ansible Playbook
+        env:
+          ANSIBLE_USER: ubuntu
+          ANSIBLE_HOST_KEY_CHECKING: False
+        working-directory: ./Ansible
+        run: |
+          chmod+x ./aws_inventory.py
+          ansible-playbook -i ./aws_inventory.py ./playbook.yml --ssh-common-args='-o StrictHostKeyChecking=no' -v
 
   # Dieser Job löscht die gesamte Infrastruktur
   terraform_destroy:

@@ -4,6 +4,12 @@
 
 ### Alleine:
 
+- mit Sophie überlegt, wie ich die Integration mit Cognito am besten umsetzten kann, dann auf weitere Probleme gestoßen
+  - Cognito braucht eine URL an die es nach dem LogIn verweißt, diese ändert sich momentan aber dauerhaft, da wir momentan noch mit Userdata arbeiten und um ein neues Image auf die Instanzen laden zu können, müssen diese gelöscht und neu hergestellt werden
+    - LÖSUNG: Python Script um die IP-Adressen dynamisch abfragen zu können.
+  - Um die Routen nicht öffentlich zugänglich zu machen, sollten diese als Private Routen in React-Router-DOM eingefüt werden.
+- Zu beiden Problemen habe ich Links bekommen und arbeite mich durch.
+
 ### Alle zusammen:
 
 ---
