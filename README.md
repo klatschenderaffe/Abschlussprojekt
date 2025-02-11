@@ -53,5 +53,3 @@ ansprechende Erfahrung gewährleistet.
 ✅ Installationsanleitung – Schritt-für-Schritt erklärt.  
 ✅ API-Dokumentation – Falls du später mehr Endpunkte hast.  
 ✅ Screenshots & TODOs – Zeigt den Status des Projekts.
-
-p
