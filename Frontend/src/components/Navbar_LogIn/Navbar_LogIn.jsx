@@ -28,17 +28,12 @@ const Navbar_LogIn = () => {
       {/* If MobileMenu is true nothing change, otherwise hide-mobile-menu */}
       <ul className={mobileMenu ? '' : 'hide-mobile-menu'}>
         <li>
-          <Link to='/#home'>Home</Link>
+          <Link to='/welcomepage'>Kategorien</Link>
         </li>
+
         <li>
-          <Link to='/'>Rostversiegelungen</Link>
-        </li>
-        <li>
-          <Link to='/'>Dämmung</Link>
-        </li>
-        <li>
-          <Link className='login-btn' to='/loginpage'>
-            LogIn
+          <Link className='login-btn' to='/'>
+            Log Out
           </Link>
         </li>
       </ul>

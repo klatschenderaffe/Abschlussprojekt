@@ -5,6 +5,7 @@ import App from './App';
 import ImpressumPage from './pages/ImpressumPage/ImpressumPage';
 import LogInPage from './pages/LogInPage/LogInPage';
 import WelcomePage from './pages/WelcomePage/WelcomePage';
+import BlogVehiclePage from './pages/BlogVehiclePage/BlogVehiclePage';
 
 const root = document.getElementById('root');
 
@@ -15,6 +16,7 @@ ReactDOM.createRoot(root).render(
       <Route path='/impressumpage' element={<ImpressumPage />} />
       <Route path='/loginpage' element={<LogInPage />} />
       <Route path='/welcomepage' element={<WelcomePage />} />
+      <Route path='/vehiclepage' element={<BlogVehiclePage />} />
     </Routes>
   </BrowserRouter>
 );
