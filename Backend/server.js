@@ -3,19 +3,21 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require("cors");  // CORS importieren 
 const dotenv = require('dotenv');
+const { MongoClient } = require("mongodb");
+// require("dotenv").config();
 
 // Lade Umgebungsvariablen
 dotenv.config();
 
 // Erstelle eine Express-App
 const app = express();
-app.use(cors()); // damit das frondend auf die api zugreifen kann 
+app.use(cors({ origin: 'http://localhost:3001' }));// damit das frondend auf die api zugreifen kann 
 app.use(express.json());
 
 // massage das es geht "bin da" 
-app.get("/", (req, res) => {
-    res.json({ massage: "Bin da"})
-});
+// app.get("/", (req, res) => {
+//     res.json({ massage: "Bin da"})
+// });
 
 // Verbinde mit MongoDB
 mongoose.connect(process.env.MONGO_URI, {
@@ -25,27 +27,36 @@ mongoose.connect(process.env.MONGO_URI, {
   .catch(err => console.error('MongoDB Verbindung fehlgeschlagen', err));
 
 // Beispiel-Schema und Model
-const ItemSchema = new mongoose.Schema({
-    name: String,
-    description: String
+const SleepspotSchema = new mongoose.Schema({
+    id: Number,
+    title: String,
+    coordinats: String,
+    infos: String
 });
-const Item = mongoose.model('Item', ItemSchema);
+const Sleepspot = mongoose.model('Sleepspot', SleepspotSchema);
 
-// CRUD-Routen
-app.get('/items', async (req, res) => {
-    const items = await Item.find();
-    res.json(items);
+// const router = express.Router();
+const uri = process.env.MONGO_URI;
+const client = new MongoClient(uri);
+
+app.get("/", async (req, res) => {
+    try {
+       await client.connect();
+        const db = client.db("sleepportsDB");
+        const sleepspots = await db.collection("sleepspots").find().toArray();
+        res.json(sleepspots);
+    } catch (err) {
+        console.error("Fehler beim Abrufen:", err);
+        res.status(500).send("Fehler beim Abrufen der Sleepports");
+    } finally {
+        await client.close();
+    }
 });
 
-//napp.post('/items', async (req, res) => {
-   // const newItem = new Item(req.body);
-  //  await newItem.save();
-   // res.json(newItem);
-//});
 
 // API-Route einbinden
-const sleepspotsRoutes = require("./routes/sleepspots");
-app.use("/api/sleepspots", sleepspotsRoutes);
+// const sleepspotsRoutes = require("./routes/sleepspots");
+// app.use("/api/sleepspots", sleepspotsRoutes);
 
 // Starte den Server
 const PORT = process.env.PORT || 5000;
