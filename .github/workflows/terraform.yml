@@ -43,6 +43,7 @@ jobs:
         run: terraform apply -auto-approve
 
       - name: Install Ansible and boto3
+        working-directory: ./Ansible
         run: |
           sudo apt update
           sudo apt install -y ansible
