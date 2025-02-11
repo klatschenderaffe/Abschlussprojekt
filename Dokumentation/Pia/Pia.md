@@ -9,6 +9,10 @@
     - LÖSUNG: Python Script um die IP-Adressen dynamisch abfragen zu können.
   - Um die Routen nicht öffentlich zugänglich zu machen, sollten diese als Private Routen in React-Router-DOM eingefüt werden.
 - Zu beiden Problemen habe ich Links bekommen und arbeite mich durch.
+  - Ansible Scripts geschrieben und ausprobiert
+    - mittlerweile bin ich soweit, das er lokal die IP-Adressen erkennt nur im Workflow noch nicht.
+    - Playbook ist auch soweit geschrieben
+    - Workflow ist abgeändert
 
 ### Alle zusammen:
 
