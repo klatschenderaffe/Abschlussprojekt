@@ -23,3 +23,7 @@
   - weiter an den vietests geschrieben
   - Tagesordnung besprochen
   - Vitest erfolgreich geschrieben
+
+  # Tag 7
+   - Mapverknüpfung mit Frondend
+   - tolls dazu angeschaut
