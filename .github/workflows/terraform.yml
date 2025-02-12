@@ -62,6 +62,7 @@ jobs:
           python ./aws_inventory.py
 
       - name: Ansible Dynamic Inventory
+        working-directory: ./Ansible
         run: ansible-inventory -i aws_ec2.yaml --list
 
       - name: Run Ansible Playbook
