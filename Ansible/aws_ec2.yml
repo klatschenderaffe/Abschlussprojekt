@@ -1,5 +1,0 @@
-plugin: amazon.aws.aws_ec2
-regions:
-  - eu-central-1
-filters:
-  tag:name: 'nginx-asg-instance'

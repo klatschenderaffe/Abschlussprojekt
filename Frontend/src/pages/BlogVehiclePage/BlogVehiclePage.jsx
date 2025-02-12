@@ -1,6 +1,8 @@
+import './BlogVehiclePage.css';
 import Title from '../../components/Title/Title';
 import Navbar_LogIn from '../../components/Navbar_LogIn/Navbar_LogIn';
-import BlogOverview from '../../components/BlogOverview/BlogOverview';
+import BlogList from '../../components/BlogList/BlogList';
+import BlogDetails from '../../components/BlogDetails/BlogDetails';
 
 const BlogVehiclePage = () => {
   return (
@@ -14,7 +16,10 @@ const BlogVehiclePage = () => {
         title='Die verschiedenen Grundfahrzeuge'
       />
 
-      <BlogOverview />
+      <div className='blog'>
+        <BlogList />
+        <BlogDetails />
+      </div>
     </div>
   );
 };
