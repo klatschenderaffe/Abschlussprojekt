@@ -10,6 +10,7 @@
     docker_image_name: 'klatschenderaffe/vanventura'
 
   tasks:
+    # In den Userdata
     # - name: System aktualisieren
     #   package:
     #     name: '*'
@@ -45,3 +46,4 @@
         restart_policy: always
         published_ports:
           - '80:80' # Ändern Sie den Host-Port von 80 auf einen freien Port wie 8080
+
