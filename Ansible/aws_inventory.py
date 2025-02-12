@@ -38,6 +38,11 @@ def get_ec2_inventory(tag_name_value):
 if __name__ == "__main__":
     # Geben Sie hier den gewünschten Tag-Wert ein (z. B. "web-server")
     tag_name_value = "nginx-asg-instance"
+    inventory, public_ips = get_ec2_inventory(tag_name_value)
 
     # JSON-Ausgabe des Inventars mit Einrückung für bessere Lesbarkeit
     print(json.dumps(get_ec2_inventory(tag_name_value), indent=4))
+    with open("../ansible/ec2Maschinen.ini", "w") as file:
+        file.write("[webserver]\n")
+        for ip in public_ips:
+            file.write(f"{ip}\n")
