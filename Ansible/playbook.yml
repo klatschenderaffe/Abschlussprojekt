@@ -10,18 +10,18 @@
     docker_image_name: 'klatschenderaffe/vanventura'
 
   tasks:
-    - name: System aktualisieren
-      package:
-        name: '*'
-        state: latest
-      become: true
-    # 2. Docker installieren
-    - name: Docker aus Standard-Repositories installieren
-      apt:
-        name: docker.io
-        state: present
-        update_cache: true
-      become: true
+    # - name: System aktualisieren
+    #   package:
+    #     name: '*'
+    #     state: latest
+    #   become: true
+    # # 2. Docker installieren
+    # - name: Docker aus Standard-Repositories installieren
+    #   apt:
+    #     name: docker.io
+    #     state: present
+    #     update_cache: true
+    #   become: true
     # 3. Docker starten und aktivieren
     - name: Docker starten und aktivieren
       systemd:
