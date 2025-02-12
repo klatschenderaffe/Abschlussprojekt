@@ -6,6 +6,10 @@
 
 - Frontend aufbau der Blogs erstmal provisorisch fertig gestellt.
 - Fehlersuche ansible script.
+- Ansible Funktionsfähig eingebunden
+- Cognito Plan über den Haufen geworfen - wird die nächsten Tage händisch geschrieben.
+  - will zwingend SSL Zertifikat
+- Private Routen in React gesetzt.
 
 ### Alle zusammen:
 
