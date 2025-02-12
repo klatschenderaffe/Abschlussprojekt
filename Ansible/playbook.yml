@@ -10,7 +10,7 @@
     docker_image_name: 'klatschenderaffe/vanventura'
 
   tasks:
-    # In den Userdata
+    # IN DEN USERDATA
     # - name: System aktualisieren
     #   package:
     #     name: '*'
