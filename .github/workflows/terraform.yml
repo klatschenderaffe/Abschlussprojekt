@@ -61,6 +61,9 @@ jobs:
           chmod +x ./aws_inventory.py
           python ./aws_inventory.py
 
+      - name: Ansible Dynamic Inventory
+        run: ansible-inventory -i aws_ec2.yaml --list
+
       - name: Run Ansible Playbook
         env:
           ANSIBLE_USER: ubuntu
