@@ -20,10 +20,10 @@ apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docke
 # Docker-Dienst starten und aktivieren
 # systemctl start docker
 # systemctl enable docker
-systemctl start docker-ce
-systemctl enable docker-ce
+# systemctl start docker-ce
+# systemctl enable docker-ce
 
-# Docker-Image pullen und starten
-docker pull klatschenderaffe/vanventura:latest
-docker run -d --name vanventura -p 80:80 klatschenderaffe/vanventura:latest
+# # Docker-Image pullen und starten
+# docker pull klatschenderaffe/vanventura:latest
+# docker run -d --name vanventura -p 80:80 klatschenderaffe/vanventura:latest
 
