@@ -1,3 +1,16 @@
+> 12.02.2025
+
+# Tag 8:
+
+### Alleine:
+
+- Frontend aufbau der Blogs erstmal provisorisch fertig gestellt.
+- Fehlersuche ansible script.
+
+### Alle zusammen:
+
+---
+
 > 11.02.2025
 
 # Tag 7:
