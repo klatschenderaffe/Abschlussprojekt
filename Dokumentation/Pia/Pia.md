@@ -5,6 +5,9 @@
 ### Alleine:
 
 - Appbrewery Course für Authentication gestartet
+- Mit Dimitar durch die Fehlermeldungen bei Cognito durch gegangen.
+- Domain gekauft.
+-
 
 ### Alle zusammen:
 
