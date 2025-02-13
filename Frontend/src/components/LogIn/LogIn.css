@@ -6,10 +6,13 @@ h1 {
   text-align: center;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
   padding: 5rem;
-  margin: 5rem;
+  margin: 1rem 5rem 0;
 
+  .form {
+  }
   input,
   button {
     /* background-color: #3a92a4; */

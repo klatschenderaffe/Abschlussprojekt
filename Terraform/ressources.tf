@@ -21,7 +21,7 @@
 
 # Application Load Balancer (ALB)
 resource "aws_lb" "frontend_alb" {
-  name               = "vanventura-frontend-alb"
+  name               = "vanventura-alb"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.alb_sg.id]
@@ -144,3 +144,4 @@ tag {
 #     Name = "nginx-asg-instance" # Tag der Instanzen
 #   }
 # }
+

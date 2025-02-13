@@ -1,3 +1,15 @@
+> 13.02.2025
+
+# Tag 9:
+
+### Alleine:
+
+- Appbrewery Course für Authentication gestartet
+
+### Alle zusammen:
+
+---
+
 > 12.02.2025
 
 # Tag 8:
