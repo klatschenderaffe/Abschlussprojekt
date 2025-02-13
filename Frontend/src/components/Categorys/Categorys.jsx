@@ -11,7 +11,7 @@ const Categorys = () => {
   return (
     <div className='category-container'>
       <div className='category-item'>
-        <Link className='link' to='/vehiclepage'>
+        <Link className='link' to='/blogpage'>
           <img src={FahrzeugAuswahl} alt='' />
           <h3>Fahrzeug Auswahl</h3>
         </Link>
