@@ -1,5 +1,3 @@
-import './RegisterForm.css';
-
 const RegisterForm = () => {
   return (
     <div className='login-container'>
