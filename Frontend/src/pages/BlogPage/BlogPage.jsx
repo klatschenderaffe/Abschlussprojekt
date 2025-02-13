@@ -4,7 +4,7 @@ import Navbar_LogIn from '../../components/Navbar_LogIn/Navbar_LogIn';
 import BlogList from '../../components/BlogList/BlogList';
 import BlogDetails from '../../components/BlogDetails/BlogDetails';
 
-const BlogVehiclePage = () => {
+const BlogPage = () => {
   return (
     <div>
       <div className='nav-page'>
@@ -24,4 +24,4 @@ const BlogVehiclePage = () => {
   );
 };
 
-export default BlogVehiclePage;
+export default BlogPage;

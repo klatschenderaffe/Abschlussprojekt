@@ -12,6 +12,8 @@
     ![Screenshot Certificate Manager](./Bilder/validate_SSL.png)
 - Register Form geschrieben
 - Recherche Domain mit ELB verbinden
+- Domain mit Elastic Load Balancer über den Datensatz verbunden.
+-
 
 ### Alle zusammen:
 

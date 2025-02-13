@@ -5,7 +5,7 @@ import App from './App';
 import ImpressumPage from './pages/ImpressumPage/ImpressumPage';
 import LogInPage from './pages/LogInPage/LogInPage';
 import WelcomePage from './pages/WelcomePage/WelcomePage';
-import BlogVehiclePage from './pages/BlogVehiclePage/BlogVehiclePage';
+import BlogPage from './pages/BlogPage/BlogPage';
 import ProtectedRoute from './ProtectedRoute';
 import RegisterPage from './pages/RegisterPage/RegisterPage';
 
@@ -22,7 +22,7 @@ ReactDOM.createRoot(root).render(
       {/* 'Protected Route' */}
       <Route element={<ProtectedRoute />}>
         <Route path='/welcomepage' element={<WelcomePage />} />
-        <Route path='/vehiclepage' element={<BlogVehiclePage />} />
+        <Route path='/blogpage' element={<BlogPage />} />
       </Route>
     </Routes>
   </BrowserRouter>
