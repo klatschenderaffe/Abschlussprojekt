@@ -6,8 +6,12 @@
 
 - Frontend aufbau der Blogs erstmal provisorisch fertig gestellt.
 - Fehlersuche ansible script.
-
-### Alle zusammen:
+- Ansible Funktionsfähig eingebunden
+- Cognito Plan über den Haufen geworfen - wird die nächsten Tage händisch geschrieben.
+  - will zwingend SSL Zertifikat
+- Private Routen in React gesetzt.
+- Videos zur Authentication geschaut um mir einen Überblick zu geben.
+- Aufgaben für meine Teammitglieder gesucht.
 
 ---
 
@@ -26,8 +30,6 @@
     - mittlerweile bin ich soweit, das er lokal die IP-Adressen erkennt nur im Workflow noch nicht.
     - Playbook ist auch soweit geschrieben
     - Workflow ist abgeändert
-
-### Alle zusammen:
 
 ---
 
