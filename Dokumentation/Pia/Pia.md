@@ -7,7 +7,11 @@
 - Appbrewery Course für Authentication gestartet
 - Mit Dimitar durch die Fehlermeldungen bei Cognito durch gegangen.
 - Domain gekauft.
--
+- SSL Zertifikat für die Domain van-ventura.eu über den Certificate Manager in Auftrag gegeben.
+  - Warte noch auf Validierung
+    ![Screenshot Certificate Manager](./Bilder/validate_SSL.png)
+- Register Form geschrieben
+- Recherche Domain mit ELB verbinden
 
 ### Alle zusammen:
 
