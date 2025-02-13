@@ -1,4 +1,4 @@
-import './BlogVehiclePage.css';
+import './BlogPage.css';
 import Title from '../../components/Title/Title';
 import Navbar_LogIn from '../../components/Navbar_LogIn/Navbar_LogIn';
 import BlogList from '../../components/BlogList/BlogList';
