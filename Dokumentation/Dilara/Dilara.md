@@ -27,3 +27,13 @@
   # Tag 7
    - Mapverknüpfung mit Frondend
    - tolls dazu angeschaut
+
+   # Tag 8
+    entschuldigt (Logo Mit der kleinen)
+
+   # Tag 9
+
+   - Mapbox verknüpfung
+
+   # Tag 10
+   - 
