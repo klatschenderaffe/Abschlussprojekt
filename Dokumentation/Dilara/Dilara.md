@@ -36,4 +36,5 @@
    - Mapbox verknüpfung
 
    # Tag 10
-   - 
+   - Mapbox wird angezeigt
+   - daran weiter arbeiten
