@@ -10,9 +10,7 @@
 - Terraform angepasst.
   - WICHTIG: Nach einem neuen Apply muss in Route53 ein Datensatz zu dem neu erstellten Load Balancer hinzugefügt werden.
 - Recherche wie Blog umsetzen.
-- Videos angeschaut um AWS Cognito zu verstehen.
-
-### Alle zusammen:
+- Videos angeschaut um AWS Cognito zu verstehen. [Cognito Infos](https://www.youtube.com/watch?v=peiv4qbV0Y8), [Cognito und Node.js](https://www.youtube.com/watch?v=Mvcv-AM23R4)
 
 ---
 
