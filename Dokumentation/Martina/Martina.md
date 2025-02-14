@@ -52,3 +52,9 @@ https://github.com/klatschenderaffe/VAN_VENTURA  Dokumentation weiter führen
  
  https://www.youtube.com/watch?v=ITylO9fpDmY
 
+# Tag 7
+
+- Readme angefangen zu überarbeiten
+- Inhaltsverzeichnis dazu geschrieben
+- in draw.io Infrastruktur neu erstellt für die Readme (erstmal)
+
