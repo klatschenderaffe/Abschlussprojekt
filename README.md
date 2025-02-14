@@ -2,6 +2,14 @@
 
 ![Screenshot der Website](./img/Screenshot.png)
 
+### Inhaltsverzeichnis
+
+1. [Projektbeschreibung](#projektbeschreibung)
+2. [Technologien](#technologien)
+3. [Installation](#installation)
+4. [Projektstruktur](#projektstruktur)
+5. [Testen](#testen)
+
 ### Projektbeschreibung
 
 Van Ventura ist ein innovatives Projekt, das sich an leidenschaftliche Camper und solche
@@ -10,13 +18,14 @@ Campingregeln verschiedener Länder (die Flaggen mit Hover Effekt) und integrier
 ist sowohl verspielt als auch minimalistisch gehalten, was eine benutzerfreundliche und
 ansprechende Erfahrung gewährleistet.
 
-## 🚀 **Technologien**
+## Technologien
 
 - Frontend: React, Vite, AWS Cognito
 - Backend: Node.js + Express
 - Datenbank: MongoDB Atlas
 - Infrastruktur: Terraform, Ansible + Ci/CD durch github Aktion
 - Testing: Vitest
+- Infrastruktur mit draw.io dokumentiert
 
 ## Installation
 
@@ -46,10 +55,3 @@ ansprechende Erfahrung gewährleistet.
 ### Testen
 
 - auf vitest ändern
-
-### 🎯 **Warum ist diese README gut?**
-
-✅ Kurz & klar – Sie erklärt das Projekt einfach.  
-✅ Installationsanleitung – Schritt-für-Schritt erklärt.  
-✅ API-Dokumentation – Falls du später mehr Endpunkte hast.  
-✅ Screenshots & TODOs – Zeigt den Status des Projekts.
