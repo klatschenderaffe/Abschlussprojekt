@@ -1,5 +1,5 @@
 - name: Deployen von VanVentura mit Docker
-  hosts: webserver
+  hosts: all
   become: true
   collections:
     - community.docker
@@ -10,18 +10,19 @@
     docker_image_name: 'klatschenderaffe/vanventura'
 
   tasks:
-    - name: System aktualisieren
-      package:
-        name: '*'
-        state: latest
-      become: true
-    # 2. Docker installieren
-    - name: Docker aus Standard-Repositories installieren
-      apt:
-        name: docker.io
-        state: present
-        update_cache: true
-      become: true
+    # IN DEN USERDATA
+    # - name: System aktualisieren
+    #   package:
+    #     name: '*'
+    #     state: latest
+    #   become: true
+    # # 2. Docker installieren
+    # - name: Docker aus Standard-Repositories installieren
+    #   apt:
+    #     name: docker.io
+    #     state: present
+    #     update_cache: true
+    #   become: true
     # 3. Docker starten und aktivieren
     - name: Docker starten und aktivieren
       systemd:
@@ -45,3 +46,4 @@
         restart_policy: always
         published_ports:
           - '80:80' # Ändern Sie den Host-Port von 80 auf einen freien Port wie 8080
+

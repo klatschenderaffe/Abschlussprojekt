@@ -6,9 +6,10 @@ h1 {
   text-align: center;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
-  padding: 5rem;
-  margin: 5rem;
+  padding: 2rem;
+  margin: 1rem 3rem 0;
 
   input,
   button {

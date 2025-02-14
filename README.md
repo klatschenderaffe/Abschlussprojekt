@@ -55,5 +55,3 @@ ansprechende Erfahrung gewährleistet.
 ### Testen
 
 - auf vitest ändern
-
-
