@@ -1,3 +1,13 @@
+> 14.02.2025
+
+# Tag 10:
+
+### Alleine:
+
+### Alle zusammen:
+
+---
+
 > 13.02.2025
 
 # Tag 9:
@@ -13,9 +23,6 @@
 - Register Form geschrieben
 - Recherche Domain mit ELB verbinden
 - Domain mit Elastic Load Balancer über den Datensatz verbunden.
--
-
-### Alle zusammen:
 
 ---
 
