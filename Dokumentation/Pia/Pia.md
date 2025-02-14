@@ -1,3 +1,13 @@
+> 14.02.2025
+
+# Tag 10:
+
+### Alleine:
+
+### Alle zusammen:
+
+---
+
 > 13.02.2025
 
 # Tag 9:
@@ -5,8 +15,14 @@
 ### Alleine:
 
 - Appbrewery Course für Authentication gestartet
-
-### Alle zusammen:
+- Mit Dimitar durch die Fehlermeldungen bei Cognito durch gegangen.
+- Domain gekauft.
+- SSL Zertifikat für die Domain van-ventura.eu über den Certificate Manager in Auftrag gegeben.
+  - Warte noch auf Validierung
+    ![Screenshot Certificate Manager](./Bilder/validate_SSL.png)
+- Register Form geschrieben
+- Recherche Domain mit ELB verbinden
+- Domain mit Elastic Load Balancer über den Datensatz verbunden.
 
 ---
 
