@@ -1,0 +1,16 @@
+.blog {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Linke Spalte (BlogList) kleiner als rechte (BlogDetails) */
+  gap: 20px; /* Abstand zwischen den Spalten */
+  background-color: blueviolet;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 30px;
+}
+
+@media (max-width: 768px) {
+  /* Für kleinere Bildschirme */
+  .blog {
+    grid-template-columns: 1fr; /* Beide Elemente untereinander */
+  }
+}

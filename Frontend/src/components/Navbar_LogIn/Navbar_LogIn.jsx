@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import './Navbar.css';
+import '../Navbar/Navbar.css';
 import logo from '../../assets/Logo1.png';
 import { Link } from 'react-router';
 import Menue from '../../assets/menue.png';
 
-const Navbar = () => {
+const Navbar_LogIn = () => {
   //The navbar should only become dark when we start scrolling
   const [sticky, setSticky] = useState(false);
   //If we scroll --> eventlistener on --> start function
@@ -28,17 +28,12 @@ const Navbar = () => {
       {/* If MobileMenu is true nothing change, otherwise hide-mobile-menu */}
       <ul className={mobileMenu ? '' : 'hide-mobile-menu'}>
         <li>
-          <Link to='/#home'>Home</Link>
+          <Link to='/welcomepage'>Kategorien</Link>
         </li>
+
         <li>
-          <Link to='/#map'>Stellplatzsuche</Link>
-        </li>
-        <li>
-          <Link to='/#definitionen'>Länderregeln</Link>
-        </li>
-        <li>
-          <Link className='login-btn' to='/loginpage'>
-            Log In
+          <Link className='login-btn' to='/'>
+            Log Out
           </Link>
         </li>
       </ul>
@@ -47,4 +42,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar_LogIn;
