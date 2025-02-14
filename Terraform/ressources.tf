@@ -52,8 +52,9 @@ resource "aws_lb_target_group" "frontend_tg" {
 # Listener für ALB
 resource "aws_lb_listener" "frontend_listener" {
   load_balancer_arn = aws_lb.frontend_alb.arn
-  port              = 80
-  protocol          = "HTTP"
+  port              = 443
+  protocol          = "HTTPS"
+  certificate_arn   = "arn:aws:acm:eu-central-1:043309333998:certificate/3a8f7758-c61d-4872-9165-e79c6f34374d"
   # depends_on = [ aws_lb_target_group.frontend_tg,
   # aws_lb.frontend_alb ]
 
