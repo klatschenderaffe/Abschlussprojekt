@@ -66,6 +66,7 @@ resource "aws_lb_listener" "https_listener" {
 
 resource "aws_lb_listener" "http_listener" {
   load_balancer_arn = aws_lb.frontend_alb.arn
+  # für die target group
   port              = 80
   protocol          = "HTTP"
   # depends_on = [ aws_lb_target_group.frontend_tg,
