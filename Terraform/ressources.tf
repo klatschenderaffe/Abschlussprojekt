@@ -34,8 +34,8 @@ resource "aws_lb" "frontend_alb" {
 # Target Group für ALB
 resource "aws_lb_target_group" "frontend_tg" {
   name     = "frontend-tg"
-  port     = 443 
-  protocol = "HTTPS"
+  port     = 80
+  protocol = "HTTP"
   vpc_id   = aws_vpc.main.id
   # depends_on = [ aws_vpc.main ]
 
@@ -64,18 +64,18 @@ resource "aws_lb_listener" "https_listener" {
   }
 }
 
-# resource "aws_lb_listener" "http_listener" {
-#   load_balancer_arn = aws_lb.frontend_alb.arn
-#   port              = 80
-#   protocol          = "HTTP"
-#   # depends_on = [ aws_lb_target_group.frontend_tg,
-#   # aws_lb.frontend_alb ]
+resource "aws_lb_listener" "http_listener" {
+  load_balancer_arn = aws_lb.frontend_alb.arn
+  port              = 80
+  protocol          = "HTTP"
+  # depends_on = [ aws_lb_target_group.frontend_tg,
+  # aws_lb.frontend_alb ]
 
-#   default_action {
-#     type             = "forward"
-#     target_group_arn = aws_lb_target_group.frontend_tg.arn
-#   }
-# }
+  default_action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.frontend_tg.arn
+  }
+}
 
 # Launch Template für EC2-Instanzen
 resource "aws_launch_template" "frontend_lt" {

@@ -8,6 +8,7 @@
 - Listener auf HTTPS umgestellt.
 - In Route53 einen neuen CNAME Datensatz hinzugefügt.
 - Terraform angepasst.
+- Recherche wie Blog umsetzen
 
 ### Alle zusammen:
 
