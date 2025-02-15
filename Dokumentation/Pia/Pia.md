@@ -1,3 +1,14 @@
+> 15.02.2025
+
+# Tag 11:
+
+### Alleine:
+
+- Video Cognito Implementierung in React geschaut.
+- Gute Video Reihe gefunden. [Cognito implementierung einfach erklärt](https://www.youtube.com/watch?v=8WZmIdXZe3Q&t=45s)
+
+---
+
 > 14.02.2025
 
 # Tag 10:
