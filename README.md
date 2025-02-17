@@ -20,12 +20,13 @@ ansprechende Erfahrung gewährleistet.
 
 ## Technologien
 
-- Frontend: React, Vite, AWS Cognito
+- Frontend: React, Vite, Mapbox,
+- AWS Dienste: Cognito, Route53, AWS Certificate Manager, Auto Scalling Group, Load-Balancer, 
 - Backend: Node.js + Express
 - Datenbank: MongoDB Atlas
-- Infrastruktur: Terraform, Ansible + Ci/CD durch github Aktion
+- Infrastruktur: Terraform, Ansible + CI/CD durch github Action
 - Testing: Vitest
-- Infrastruktur mit draw.io dokumentiert
+- Dokumentation: Postman, draw.io
 
 ## Installation
 
