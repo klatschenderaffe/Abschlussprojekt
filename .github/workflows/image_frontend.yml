@@ -8,35 +8,35 @@ on:
       - main
 jobs:
   # Die Anwendung wird getestet.
-  # test:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     # Code auschecken
-  #     - name: Check out code
-  #       uses: actions/checkout@v4
-  #       # Node aktualisieren
-  #     - name: Node aktualisieren
-  #       uses: actions/setup-node@v4
-  #       with:
-  #         node-version: 22
-  #       # Zur Kontrolle
-  #     - name: Dateipfade anzeigen lassen
-  #       run: ls -la
-  #       # Alle Abhängigkeiten installieren
-  #     - name: Abhängigkeiten installieren
-  #       working-directory: ./Frontend
-  #       run: npm install
-  #       # React Tests ausführen
-  #     - name: React Test ausführung
-  #       working-directory: ./Frontend
-  #       run: npm run test
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      # Code auschecken
+      - name: Check out code
+        uses: actions/checkout@v4
+        # Node aktualisieren
+      - name: Node aktualisieren
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+        # Zur Kontrolle
+      - name: Dateipfade anzeigen lassen
+        run: ls -la
+        # Alle Abhängigkeiten installieren
+      - name: Abhängigkeiten installieren
+        working-directory: ./Frontend
+        run: npm install
+        # React Tests ausführen
+      - name: React Test ausführung
+        working-directory: ./Frontend
+        run: npm run test
 
   # Das Image wird auf Dockerhub gepushed
   image_push:
     runs-on: ubuntu-latest
     # Hat die Abhängigkeit von dem "test" Job,
     # erst wenn dieser erfolgreich durchlief darf dieser Workflow starten.
-    # needs: test
+    needs: test
     steps:
       # build job soll den build ordner als artefakt hochladen
       # schritt 1: code auschecken

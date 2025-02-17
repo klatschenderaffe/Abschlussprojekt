@@ -14,7 +14,12 @@
 - Neuen Workflow hinzugefügt.
   - Backend Image erstellen
   - MONGO_URI in den Secrets in Github gespeichert.
-  -
+- Dokumentations Stichworte aufgeschrieben, dass Martina morgen eine Aufgabe hat:
+  ![Screenshot aus unserem Dashboard](./Bilder/Stichpunkte.png)
+- Aufgabe im Dashboard durchgegangen und gegebenfalls Unteraufgaben ergänzt.
+- Job test wieder entkommentiert.
+- BlogPosts ins Repo eingefügt, das diese bei Bedarf in einem S3 Bucket gespeichert werden können.
+- Terraform destroy durchgeführt.
 
 ### Alle zusammen:
 
