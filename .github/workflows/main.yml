@@ -58,6 +58,10 @@ jobs:
         run: |
           echo "VITE_MAP_KEY=${{ secrets.VITE_MAP_KEY }}" > .env
           echo "VITE_API_KEY=${{ secrets.VITE_API_KEY }}" >> .env
+          echo "VITE_API_KEY=${{ secrets.VITE_AUTHORITY }}" >> .env
+          echo "VITE_API_KEY=${{ secrets.VITE_CLIENT_ID }}" >> .env
+          echo "VITE_API_KEY=${{ secrets.VITE_REDIRECT_URI }}" >> .env
+          echo "VITE_API_KEY=${{ secrets.VITE_USERPOOL_DOMAIN }}" >> .env
 
       # Schritt 3: Projekt-Build bauen und Image erstellen
       - name: Docker Image erstellen und taggen
