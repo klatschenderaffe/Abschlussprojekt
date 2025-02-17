@@ -8,7 +8,13 @@
 - Secrets aus Cognito in Workflow env hinzugefügt.
 - Secrets im Repo ergänzt.
 - Cognito Anmeldungseite angepasst.
-- Aufgaben in unserem Dashboard richtig eingepflegt
+- Aufgaben in unserem Dashboard richtig eingepflegt.
+- gitignore in Backend ergänzt.
+- Workflow Dateien umbenannt.
+- Neuen Workflow hinzugefügt.
+  - Backend Image erstellen
+  - MONGO_URI in den Secrets in Github gespeichert.
+  -
 
 ### Alle zusammen:
 
