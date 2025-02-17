@@ -68,5 +68,10 @@ krank
 
  - recherche zu Template erstellt
  - recherche zur Dokmentation / technische Dokumentation erstellt
+
+ # Tag 11
+  - README Überarbeitet
+  - Folien mit Pia überarbeitet
+  - Infos zur präsentation (technologien) gesammelt
  
 
