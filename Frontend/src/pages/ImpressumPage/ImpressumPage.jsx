@@ -9,6 +9,7 @@ const ImpressumPage = () => {
       <div className='nav-page'>
         <Navbar />
       </div>
+
       <Impressum />
     </div>
   );

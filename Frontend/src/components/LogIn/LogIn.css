@@ -1,0 +1,27 @@
+h1 {
+  color: white;
+}
+
+.login-container {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+  margin: 1rem 3rem 0;
+
+  input,
+  button {
+    /* background-color: #3a92a4; */
+    margin: 5px auto;
+    width: 50%;
+    height: 2rem;
+    border-radius: 12px;
+    text-align: center;
+  }
+  button {
+    background-color: #3a92a4;
+    border: #fff;
+  }
+}

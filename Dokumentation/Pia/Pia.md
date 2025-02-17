@@ -1,3 +1,95 @@
+> 14.02.2025
+
+# Tag 10:
+
+### Alleine:
+
+- SSL Zertifikat dem Load Balancer hinzugefügt.
+- Listener auf HTTPS umgestellt.
+- In Route53 einen neuen CNAME Datensatz hinzugefügt.
+- Terraform angepasst.
+- Recherche wie Blog umsetzen
+
+### Alle zusammen:
+
+---
+
+> 13.02.2025
+
+# Tag 9:
+
+### Alleine:
+
+- Appbrewery Course für Authentication gestartet
+- Mit Dimitar durch die Fehlermeldungen bei Cognito durch gegangen.
+- Domain gekauft.
+- SSL Zertifikat für die Domain van-ventura.eu über den Certificate Manager in Auftrag gegeben.
+  - Warte noch auf Validierung
+    ![Screenshot Certificate Manager](./Bilder/validate_SSL.png)
+- Register Form geschrieben
+- Recherche Domain mit ELB verbinden
+- Domain mit Elastic Load Balancer über den Datensatz verbunden.
+
+---
+
+> 12.02.2025
+
+# Tag 8:
+
+### Alleine:
+
+- Frontend aufbau der Blogs erstmal provisorisch fertig gestellt.
+- Fehlersuche ansible script.
+- Ansible Funktionsfähig eingebunden
+- Cognito Plan über den Haufen geworfen - wird die nächsten Tage händisch geschrieben.
+  - will zwingend SSL Zertifikat
+- Private Routen in React gesetzt.
+- Videos zur Authentication geschaut um mir einen Überblick zu geben.
+- Aufgaben für meine Teammitglieder gesucht.
+
+---
+
+> 11.02.2025
+
+# Tag 7:
+
+### Alleine:
+
+- mit Sophie überlegt, wie ich die Integration mit Cognito am besten umsetzten kann, dann auf weitere Probleme gestoßen
+  - Cognito braucht eine URL an die es nach dem LogIn verweißt, diese ändert sich momentan aber dauerhaft, da wir momentan noch mit Userdata arbeiten und um ein neues Image auf die Instanzen laden zu können, müssen diese gelöscht und neu hergestellt werden
+    - LÖSUNG: Python Script um die IP-Adressen dynamisch abfragen zu können.
+  - Um die Routen nicht öffentlich zugänglich zu machen, sollten diese als Private Routen in React-Router-DOM eingefüt werden.
+- Zu beiden Problemen habe ich Links bekommen und arbeite mich durch.
+  - Ansible Scripts geschrieben und ausprobiert
+    - mittlerweile bin ich soweit, das er lokal die IP-Adressen erkennt nur im Workflow noch nicht.
+    - Playbook ist auch soweit geschrieben
+    - Workflow ist abgeändert
+
+---
+
+> 10.02.2025
+
+# Tag 6:
+
+### Alleine:
+
+- Weitere ToDos für das Projekt in Notion gesammelt
+- Mit der Implementierung von Cognito vertraut gemacht
+- React Router DOM Implementiert und React Scroll durch React Router DOM ersetzt.
+- Eigene Impressum Seite verlinkt.
+- Problem bei der CI/CD Pipeline entdeckt.
+  - Wenn die Container über die Userdata laufen, dann wir immer nur beim erstellen der EC2 Container das passende Image überspielt. Das heißt man müsste mit jeder Änderung dafür sorgen, das ein Terraform destroy und anschließend wieder ein Apply ausgeführt wird. - Ich bin noch dabei eine andere Lösung zu finden.
+- Provisorische LogIn Seite erstellt
+  ![Screenshot Login Form](./Bilder/login.png)
+- Angefangen die Seite nach dem Login zu schreiben.
+  ![Screenshot Welcome Page](./Bilder/welcomepage.png)
+
+### Alle zusammen:
+
+- Fehlersuche
+
+---
+
 > 07.02.2025
 
 # Tag 5:

@@ -17,7 +17,7 @@ COPY . .
 ENV PORT=5000
 
 # Port freigeben
-EXPOSE 5000
+EXPOSE 5000 
 
 # Startbefehl für den Container
 CMD ["node", "server.js"]
