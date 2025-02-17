@@ -14,10 +14,6 @@ const app = express();
 app.use(cors({ origin: 'http://localhost:3001' }));// damit das frondend auf die api zugreifen kann 
 app.use(express.json());
 
-// massage das es geht "bin da" 
-// app.get("/", (req, res) => {
-//     res.json({ massage: "Bin da"})
-// });
 
 // Verbinde mit MongoDB
 mongoose.connect(process.env.MONGO_URI, {
@@ -55,8 +51,8 @@ app.get("/", async (req, res) => {
 
 
 // API-Route einbinden
-// const sleepspotsRoutes = require("./routes/sleepspots");
-// app.use("/api/sleepspots", sleepspotsRoutes);
+const sleepspotsRoutes = require("./routes/sleepspots");
+app.use("/api/sleepspots", sleepspotsRoutes);
 
 // Starte den Server
 const PORT = process.env.PORT || 5000;
