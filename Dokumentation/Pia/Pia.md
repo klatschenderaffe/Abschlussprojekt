@@ -13,7 +13,8 @@
 ### Alle zusammen:
 
 - Präsentation angefangen.
-- ***
+
+---
 
 > 15.02.2025
 
