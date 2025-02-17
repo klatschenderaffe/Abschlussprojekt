@@ -1,3 +1,27 @@
+> 17.02.2025
+
+# Tag 12:
+
+### Alleine:
+
+### Alle zusammen:
+
+- Präsentation angefangen.
+-
+
+---
+
+> 15.02.2025
+
+# Tag 11:
+
+### Alleine:
+
+- Video Cognito Implementierung in React geschaut.
+- Gute Video Reihe gefunden. [Cognito implementierung einfach erklärt](https://www.youtube.com/watch?v=8WZmIdXZe3Q&t=45s)
+
+---
+
 > 14.02.2025
 
 # Tag 10:
@@ -8,9 +32,9 @@
 - Listener auf HTTPS umgestellt.
 - In Route53 einen neuen CNAME Datensatz hinzugefügt.
 - Terraform angepasst.
-- Recherche wie Blog umsetzen
-
-### Alle zusammen:
+  - WICHTIG: Nach einem neuen Apply muss in Route53 ein Datensatz zu dem neu erstellten Load Balancer hinzugefügt werden.
+- Recherche wie Blog umsetzen.
+- Videos angeschaut um AWS Cognito zu verstehen. [Cognito Infos](https://www.youtube.com/watch?v=peiv4qbV0Y8), [Cognito und Node.js](https://www.youtube.com/watch?v=Mvcv-AM23R4)
 
 ---
 
