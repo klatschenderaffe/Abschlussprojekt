@@ -19,21 +19,6 @@ const Map = () => {
     zoom: 4,
   });
 
-  // Daten vom Backend holen
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('http://localhost:5000/api/sleepspots');
-        const data = await response.json();
-        setLocations(data);
-      } catch (error) {
-        console.error('Fehler beim Abrufen der Daten:', error);
-      }
-    };
-    fetchData();
-  }, []);
-
-
   // Karte initialisieren
   useEffect(() => {
     if (map.current) return; // Karte bereits initialisiert
@@ -46,6 +31,64 @@ const Map = () => {
       zoom: viewport.zoom,
     });
 
+    // new mapboxgl.Marker().setLngLat([5.3826, 53.1025]).addTo(map.current); 
+
+    // new mapboxgl.Marker().setLngLat([ 6.1295, 49.8022]).addTo(map.current); 
+
+     // Daten vom Backend holen
+    // Array durchgehen mit foreach
+    // für jedes Element die Koordinaten parsen
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://localhost:5000/api/sleepspots');
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        const data = JSON.parse(xhr.responseText);
+        console.log(data);
+        for (let i = 0; i < data.length; i++) {
+          const element = data[i];
+          let lat;
+          let lng;
+          if (Object.prototype.toString.call(element.coordinats) === '[object Array]') {
+            lat = element.coordinats[0];
+            lng = element.coordinats[1];
+          } else {
+            // element is string...
+            const coordString = element.coordinats.split(",");
+            lat = coordString[0].trim();
+            lng = coordString[1].trim();
+          }
+          var html = '<div class="marker-popup">' + element.title + '</div>';
+
+          var customPopUp = new mapboxgl.Popup(
+              {
+                anchor: 'bottom',   // To show popup on top
+                offset: { 'bottom': [0, -10] },  // To prevent popup from over shadowing the marker.
+                closeOnClick: true   // To prevent close on mapClick.
+              }
+          ).setHTML(html); // You can set any valid HTML.
+          
+          const marker = new mapboxgl.Marker().setLngLat([lng, lat]).setPopup(customPopUp).addTo(map.current); 
+        }
+      }
+    };
+    xhr.send();
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch('http://localhost:5000/api/sleepspots');
+  //       const data = await response.json();
+  //       data.array.forEach(element => {
+  //         const coords = element["coordinates"].split(",");
+          
+  //       });
+  //       //setLocations(data);
+  //     } catch (error) {
+  //       console.error('Fehler beim Abrufen der Daten:', error);
+  //     }
+  //   };
+  //   fetchData();
+  // }, []);
+
     // Kartenbewegung verfolgen
     map.current.on('move', () => {
       setViewport({
@@ -53,66 +96,6 @@ const Map = () => {
         latitude: map.current.getCenter().lat,
         zoom: map.current.getZoom(),
       });
-    });
-
-     // Datenquelle und Layer hinzufügen
-     map.current.on('load', () => {
-      if (locations.length > 0) {
-        // GeoJSON-Daten erstellen
-        const geoJsonData = {
-          type: 'FeatureCollection',
-          features: locations.map((location) => ({
-            type: 'Feature',
-            geometry: {
-              type: 'Point',
-              coordinates: location.coordinats.split(', ').map(Number),
-            },
-            properties: {
-              title: location.title,
-              infos: location.infos,
-              id: location._id, // Eindeutige ID für jedes Feature
-            },
-          })),
-        };
-
-        // Quelle hinzufügen
-        map.current.addSource('sleepspots', {
-          type: 'geojson',
-          data: geoJsonData,
-        });
-
-        // Layer hinzufügen
-        map.current.addLayer({
-          id: 'sleepspots-layer',
-          type: 'circle',
-          source: 'sleepspots',
-          paint: {
-            'circle-radius': 6,
-            'circle-color': '#FF0000',
-          },
-        });
-
-        // Popup bei Klick auf einen Marker
-        map.current.on('click', 'sleepspots-layer', (e) => {
-          const coordinates = e.features[0].geometry.coordinates.slice();
-          const { title, infos } = e.features[0].properties;
-
-          // Popup erstellen
-          new mapboxgl.Popup()
-            .setLngLat(coordinates)
-            .setHTML(`<h3>${title}</h3><p>${infos}</p>`)
-            .addTo(map.current);
-        });
-
-        // Mauszeiger ändern, wenn über einen Marker gefahren wird
-        map.current.on('mouseenter', 'sleepspots-layer', () => {
-          map.current.getCanvas().style.cursor = 'pointer';
-        });
-
-        map.current.on('mouseleave', 'sleepspots-layer', () => {
-          map.current.getCanvas().style.cursor = '';
-        });
-      }
     });
   }, [locations]); // Karte neu initialisieren, wenn Daten geladen sind
 
@@ -126,3 +109,8 @@ const Map = () => {
 };
 
 export default Map
+
+
+
+
+
