@@ -4,12 +4,16 @@
 
 ### Alleine:
 
+- Cognito dem Code hinzugefügt.
+- Secrets aus Cognito in Workflow env hinzugefügt.
+- Secrets im Repo ergänzt.
+- Cognito Anmeldungseite angepasst.
+-
+
 ### Alle zusammen:
 
 - Präsentation angefangen.
--
-
----
+- ***
 
 > 15.02.2025
 
