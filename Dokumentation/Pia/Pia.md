@@ -8,11 +8,12 @@
 - Secrets aus Cognito in Workflow env hinzugefügt.
 - Secrets im Repo ergänzt.
 - Cognito Anmeldungseite angepasst.
--
+- Aufgaben in unserem Dashboard richtig eingepflegt
 
 ### Alle zusammen:
 
 - Präsentation angefangen.
+- Gliederung besprochen.
 
 ---
 
