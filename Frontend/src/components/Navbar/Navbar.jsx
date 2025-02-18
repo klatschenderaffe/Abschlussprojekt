@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
+import { useAuth } from 'react-oidc-context';
 import './Navbar.css';
 import logo from '../../assets/Logo1.png';
 import { Link } from 'react-router';
 import Menue from '../../assets/menue.png';
 
 const Navbar = () => {
+  const auth = useAuth();
+
   //The navbar should only become dark when we start scrolling
   const [sticky, setSticky] = useState(false);
   //If we scroll --> eventlistener on --> start function
@@ -37,9 +40,11 @@ const Navbar = () => {
           <Link to='/#definitionen'>Länderregeln</Link>
         </li>
         <li>
-          <Link className='login-btn' to='/loginpage'>
-            Log In
-          </Link>
+          {auth.isAuthenticated ? (
+            <button onClick={() => auth.removeUser()}>Sign out</button>
+          ) : (
+            <button onClick={() => auth.signinRedirect()}>Anmelden</button>
+          )}
         </li>
       </ul>
       <img src={Menue} alt='' className='menue-icon' onClick={toggleMenu} />
