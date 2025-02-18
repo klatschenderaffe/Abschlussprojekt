@@ -46,3 +46,7 @@
     
     - Standorte auf mapbx intigriert
     - Links zu Templates angeschaut
+
+    # Tag 12
+    - Informationen über Blog Beiträge gesammelt
+    
