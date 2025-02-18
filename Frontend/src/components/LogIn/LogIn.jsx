@@ -20,26 +20,26 @@ const LogIn = () => {
   // };
 
   console.log('lala');
-  // if (auth.isLoading) {
-  //   return <div>Loading...</div>;
-  // }
+  if (auth.isLoading) {
+    return <div>Loading...</div>;
+  }
 
-  // if (auth.error) {
-  //   return <div>Encountering error... {auth.error.message}</div>;
-  // }
+  if (auth.error) {
+    return <div>Encountering error... {auth.error.message}</div>;
+  }
 
-  // if (auth.isAuthenticated) {
-  //   return (
-  //     <div>
-  //       <h1> Hello: {auth.user?.profile.preferred_username} </h1>
-  //       {/* <pre> ID Token: {auth.user?.id_token} </pre>
-  //       <pre> Access Token: {auth.user?.access_token} </pre>
-  //       <pre> Refresh Token: {auth.user?.refresh_token} </pre> */}
+  if (auth.isAuthenticated) {
+    return (
+      <div>
+        <h1> Hello: {auth.user?.profile.preferred_username} </h1>
+        {/* <pre> ID Token: {auth.user?.id_token} </pre>
+        <pre> Access Token: {auth.user?.access_token} </pre>
+        <pre> Refresh Token: {auth.user?.refresh_token} </pre> */}
 
-  //       <button onClick={() => auth.removeUser()}>Sign out</button>
-  //     </div>
-  //   );
-  // }
+        <button onClick={() => auth.removeUser()}>Sign out</button>
+      </div>
+    );
+  }
 
   return (
     <div className='login-container'>
@@ -49,6 +49,7 @@ const LogIn = () => {
         </h1>
         <button onClick={() => auth.signinRedirect()}>Anmelden</button>
       </div>
+      <button onClick={() => auth.removeUser()}>Sign out</button>
       {/* <button onClick={() => signOutRedirect()}>LogOut</button> */}
     </div>
   );
