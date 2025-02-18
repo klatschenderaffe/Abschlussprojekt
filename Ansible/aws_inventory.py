@@ -2,6 +2,7 @@
 import boto3
 import json
 
+# Für die Frontend Instanzen
 def get_ec2_inventory(tag_name_value):
     # Initialisiere die EC2-Ressource
     ec2 = boto3.resource('ec2')

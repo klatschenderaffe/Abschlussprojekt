@@ -11,7 +11,6 @@ h1 {
   padding: 2rem;
   margin: 1rem 3rem 0;
 
-  input,
   button {
     /* background-color: #3a92a4; */
     margin: 5px auto;
@@ -23,5 +22,10 @@ h1 {
   button {
     background-color: #3a92a4;
     border: #fff;
+    cursor: pointer;
   }
+}
+
+.acc-btn {
+  margin-top: 6rem;
 }

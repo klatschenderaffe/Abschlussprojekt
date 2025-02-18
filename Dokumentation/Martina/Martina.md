@@ -58,3 +58,25 @@ https://github.com/klatschenderaffe/VAN_VENTURA  Dokumentation weiter führen
 - Inhaltsverzeichnis dazu geschrieben
 - in draw.io Infrastruktur neu erstellt für die Readme (erstmal)
 
+# Tag 8
+entschuldigt
+
+# Tag 9
+krank
+
+# Tag 10
+
+ - recherche zu Template erstellt
+ - recherche zur Dokmentation / technische Dokumentation erstellt
+
+ # Tag 11
+  - README Überarbeitet
+  - Folien mit Pia überarbeitet
+  - Infos zur präsentation (technologien) gesammelt
+
+ # Tag 12
+
+ - In Blog Posts alle Dateien formatiert
+ - Installations.md überarbeitet
+ 
+
