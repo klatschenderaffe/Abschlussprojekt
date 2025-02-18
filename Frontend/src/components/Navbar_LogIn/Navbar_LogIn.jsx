@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+
 import '../Navbar/Navbar.css';
 import logo from '../../assets/Logo1.png';
 import { Link } from 'react-router';
@@ -7,16 +8,14 @@ import Menue from '../../assets/menue.png';
 const Navbar_LogIn = () => {
   const signOutRedirect = () => {
     const clientId = import.meta.env.VITE_CLIENT_ID;
-    const logoutUri = 'https://van-ventura.eu/';
+    const logoutUri = 'https://van-ventura.eu';
     const cognitoDomain = import.meta.env.VITE_USERPOOL_DOMAIN;
     console.log(
       `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(
         logoutUri
       )}`
     );
-    window.location.href = `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(
-      logoutUri
-    )}`;
+    window.location.href = `${cognitoDomain}/logout?client_id=${clientId}`;
   };
   //The navbar should only become dark when we start scrolling
   const [sticky, setSticky] = useState(false);
