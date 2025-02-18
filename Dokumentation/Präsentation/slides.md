@@ -2,4 +2,4 @@
 
 ## Link zum Ansehen der Präsentation auf Canva:
 
-[Canva](https://www.canva.com/design/DAGcQYA97h4/IvwI-CEJandQNv5mgR_D7A/edit?utm_content=DAGcQYA97h4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+[Canva](https://www.canva.com/design/DAGfWFjkE1o/a4GB4FzFcawcl6yLOhgocg/edit?utm_content=DAGfWFjkE1o&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
