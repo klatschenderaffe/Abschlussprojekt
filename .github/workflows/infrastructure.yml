@@ -3,7 +3,6 @@ on:
   workflow_run:
     workflows:
       - Frontend Image erstellen und pushen
-      - Backend Image erstellen und pushen
     types:
       - completed
   workflow_dispatch:
