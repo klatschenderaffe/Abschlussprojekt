@@ -5,6 +5,19 @@ import { Link } from 'react-router';
 import Menue from '../../assets/menue.png';
 
 const Navbar_LogIn = () => {
+  const signOutRedirect = () => {
+    const clientId = import.meta.env.VITE_CLIENT_ID;
+    const logoutUri = 'https://van-ventura.eu/';
+    const cognitoDomain = import.meta.env.VITE_USERPOOL_DOMAIN;
+    console.log(
+      `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(
+        logoutUri
+      )}`
+    );
+    window.location.href = `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(
+      logoutUri
+    )}`;
+  };
   //The navbar should only become dark when we start scrolling
   const [sticky, setSticky] = useState(false);
   //If we scroll --> eventlistener on --> start function
@@ -30,11 +43,8 @@ const Navbar_LogIn = () => {
         <li>
           <Link to='/welcomepage'>Kategorien</Link>
         </li>
-
         <li>
-          <Link className='login-btn' to='/'>
-            Log Out
-          </Link>
+          <button onClick={() => signOutRedirect()}>LogOut</button>
         </li>
       </ul>
       <img src={Menue} alt='' className='menue-icon' onClick={toggleMenu} />
