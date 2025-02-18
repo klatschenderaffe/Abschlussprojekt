@@ -44,7 +44,7 @@ const Navbar = () => {
             <button
               onClick={() => {
                 auth.removeUser();
-                window.href = 'https://van-ventura.eu';
+                window.location.href = 'https://van-ventura.eu';
               }}
             >
               Sign out
