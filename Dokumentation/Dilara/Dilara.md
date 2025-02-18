@@ -38,3 +38,8 @@
    # Tag 10
    - Mapbox wird angezeigt
    - daran weiter arbeiten
+
+   # Tag 11
+    
+    - Standorte auf mapbx intigriert
+    - Links zu Templates angeschaut
