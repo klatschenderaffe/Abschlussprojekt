@@ -8,17 +8,17 @@ import Menue from '../../assets/menue.png';
 const Navbar_LogIn = () => {
   const auth = useAuth();
 
-  const signOutRedirect = () => {
-    const clientId = import.meta.env.VITE_CLIENT_ID;
-    const logoutUri = 'https://van-ventura.eu';
-    const cognitoDomain = import.meta.env.VITE_USERPOOL_DOMAIN;
-    console.log(
-      `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(
-        logoutUri
-      )}`
-    );
-    window.location.href = `${cognitoDomain}/logout?client_id=${clientId}`;
-  };
+  // const signOutRedirect = () => {
+  //   const clientId = import.meta.env.VITE_CLIENT_ID;
+  //   const logoutUri = 'https://van-ventura.eu';
+  //   const cognitoDomain = import.meta.env.VITE_USERPOOL_DOMAIN;
+  //   console.log(
+  //     `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(
+  //       logoutUri
+  //     )}`
+  //   );
+  //   window.location.href = `${cognitoDomain}/logout?client_id=${clientId}`;
+  // };
 
   console.log('lala');
 
@@ -47,12 +47,16 @@ const Navbar_LogIn = () => {
         <li>
           <Link to='/welcomepage'>Kategorien</Link>
         </li>
-        <li>
+        {/* <li>
           <button onClick={() => signOutRedirect()}>LogOut</button>
-        </li>
+        </li> */}
         {/* TUT NICHTS, LÄSST SICH NICHT KLICKEN! */}
         <li>
-          <button onClick={() => auth.removeUser()}>Sign out</button>
+          {auth.isAuthenticated ? (
+            <button onClick={() => auth.removeUser()}>Sign out</button>
+          ) : (
+            <span></span>
+          )}
         </li>
       </ul>
       <img src={Menue} alt='' className='menue-icon' onClick={toggleMenu} />
