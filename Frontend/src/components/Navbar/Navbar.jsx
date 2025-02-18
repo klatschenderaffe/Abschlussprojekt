@@ -41,7 +41,14 @@ const Navbar = () => {
         </li>
         <li>
           {auth.isAuthenticated ? (
-            <button onClick={() => auth.removeUser()}>Sign out</button>
+            <button
+              onClick={() => {
+                auth.removeUser();
+                window.href = 'https://van-ventura.eu';
+              }}
+            >
+              Sign out
+            </button>
           ) : (
             <button onClick={() => auth.signinRedirect()}>Anmelden</button>
           )}
