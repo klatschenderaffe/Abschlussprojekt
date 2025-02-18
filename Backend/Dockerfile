@@ -1,5 +1,5 @@
 # Basis-Image verwenden (Node.js LTS)
-FROM node:22
+FROM  node:20-alpine3.20
 
 # Arbeitsverzeichnis im Container setzen
 WORKDIR /app
@@ -14,10 +14,10 @@ RUN npm install
 COPY . .
 
 # Umgebungsvariablen setzen (Alternativ .env verwenden)
-ENV PORT=5000
+# ENV PORT=5000
 
 # Port freigeben
-EXPOSE 5000 
+EXPOSE 5000
 
 # Startbefehl für den Container
 CMD ["node", "server.js"]
