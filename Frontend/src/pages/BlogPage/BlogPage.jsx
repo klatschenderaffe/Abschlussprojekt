@@ -1,6 +1,6 @@
 import './BlogPage.css';
 import Title from '../../components/Title/Title';
-import Navbar_LogIn from '../../components/Navbar_LogIn/Navbar_LogIn';
+import Navbar from '../../components/Navbar/Navbar';
 import BlogList from '../../components/BlogList/BlogList';
 import BlogDetails from '../../components/BlogDetails/BlogDetails';
 
@@ -8,7 +8,7 @@ const BlogPage = () => {
   return (
     <div>
       <div className='nav-page'>
-        <Navbar_LogIn />
+        <Navbar />
       </div>
 
       <Title

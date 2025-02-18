@@ -1,3 +1,16 @@
+> 18.02.2025
+
+# Tag 13:
+
+### Alleine:
+
+- Mit Dimitar auf Fehlersuche warum LogOut unter AWS nicht funktioniert.
+-
+
+### Alle zusammen:
+
+---
+
 > 17.02.2025
 
 # Tag 12:
