@@ -1,23 +1,38 @@
 import { useEffect, useState } from 'react';
+import { useAuth } from 'react-oidc-context';
 import '../Navbar/Navbar.css';
 import logo from '../../assets/Logo1.png';
 import { Link } from 'react-router';
 import Menue from '../../assets/menue.png';
 
 const Navbar_LogIn = () => {
-  const signOutRedirect = () => {
-    const clientId = import.meta.env.VITE_CLIENT_ID;
-    const logoutUri = 'https://van-ventura.eu/';
-    const cognitoDomain = import.meta.env.VITE_USERPOOL_DOMAIN;
-    console.log(
-      `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(
-        logoutUri
-      )}`
-    );
-    window.location.href = `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(
-      logoutUri
-    )}`;
-  };
+  const auth = useAuth();
+
+  // const signOutRedirect = () => {
+  //   const clientId = import.meta.env.VITE_CLIENT_ID;
+  //   const logoutUri = 'https://van-ventura.eu';
+  //   const cognitoDomain = import.meta.env.VITE_USERPOOL_DOMAIN;
+  //   console.log(
+  //     `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(
+  //       logoutUri
+  //     )}`
+  //   );
+  //   window.location.href = `${cognitoDomain}/logout?client_id=${clientId}`;
+  // };
+
+  console.log('lala');
+  // if (auth.isLoading) {
+  //   return <div>Loading...</div>;
+  // }
+
+  // if (auth.error) {
+  //   return <div>Encountering error... {auth.error.message}</div>;
+  // }
+
+  // if (auth.isAuthenticated) {
+  //   return;
+  // }
+
   //The navbar should only become dark when we start scrolling
   const [sticky, setSticky] = useState(false);
   //If we scroll --> eventlistener on --> start function
@@ -43,8 +58,11 @@ const Navbar_LogIn = () => {
         <li>
           <Link to='/welcomepage'>Kategorien</Link>
         </li>
-        <li>
+        {/* <li>
           <button onClick={() => signOutRedirect()}>LogOut</button>
+        </li> */}
+        <li>
+          <button onClick={() => auth.removeUser()}>Sign out</button>
         </li>
       </ul>
       <img src={Menue} alt='' className='menue-icon' onClick={toggleMenu} />
