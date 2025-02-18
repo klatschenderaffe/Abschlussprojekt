@@ -67,6 +67,7 @@ Deine App wird unter `http://localhost:5173` verfügbar sein.
 Nach der Erstellung des Projekts sieht die Verzeichnisstruktur wie folgt aus:
 
 my-app/
+
 ├── node_modules/ # Abhängigkeiten des Projekts
 ├── public/ # Statische Dateien wie index.html
 ├── src/ # Quellcode der Anwendung
