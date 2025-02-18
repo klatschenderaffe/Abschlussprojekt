@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-// import { useAuth } from 'react-oidc-context';
+import { useAuth } from 'react-oidc-context';
 import '../Navbar/Navbar.css';
 import logo from '../../assets/Logo1.png';
 import { Link } from 'react-router';
 import Menue from '../../assets/menue.png';
 
 const Navbar_LogIn = () => {
-  // const auth = useAuth();
+  const auth = useAuth();
 
   const signOutRedirect = () => {
     const clientId = import.meta.env.VITE_CLIENT_ID;
@@ -50,9 +50,10 @@ const Navbar_LogIn = () => {
         <li>
           <button onClick={() => signOutRedirect()}>LogOut</button>
         </li>
-        {/* <li>
+        {/* TUT NICHTS, LÄSST SICH NICHT KLICKEN! */}
+        <li>
           <button onClick={() => auth.removeUser()}>Sign out</button>
-        </li> */}
+        </li>
       </ul>
       <img src={Menue} alt='' className='menue-icon' onClick={toggleMenu} />
     </nav>
