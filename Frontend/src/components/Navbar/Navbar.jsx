@@ -47,12 +47,13 @@ const Navbar = () => {
           </li>
           <li>
             <button
+              className='login-btn'
               onClick={() => {
                 auth.removeUser();
                 window.location.href = 'https://van-ventura.eu/';
               }}
             >
-              Sign out
+              Ausloggen
             </button>
           </li>
         </ul>
