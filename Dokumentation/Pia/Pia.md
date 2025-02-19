@@ -4,6 +4,8 @@
 
 ### Alleine:
 
+- Navbar in vor und nach login aufgeteilt.
+
 ### Alle zusammen:
 
 ---

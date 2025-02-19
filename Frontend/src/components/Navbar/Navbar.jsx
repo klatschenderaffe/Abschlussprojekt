@@ -29,7 +29,7 @@ const Navbar = () => {
     <nav className={`container ${sticky ? 'dark-nav' : ''}`}>
       <img src={logo} alt='' className='logo' />
       {/* If MobileMenu is true nothing change, otherwise hide-mobile-menu */}
-      <ul className={mobileMenu ? '' : 'hide-mobile-menu'}>
+      {/* <ul className={mobileMenu ? '' : 'hide-mobile-menu'}>
         <li>
           <Link to='/#home'>Home</Link>
         </li>
@@ -38,9 +38,14 @@ const Navbar = () => {
         </li>
         <li>
           <Link to='/#definitionen'>Länderregeln</Link>
-        </li>
-        <li>
-          {auth.isAuthenticated ? (
+        </li> */}
+      {/* <li> */}
+      {auth.isAuthenticated ? (
+        <ul className={mobileMenu ? '' : 'hide-mobile-menu'}>
+          <li>
+            <Link to='/welcomepage'>Kategorien</Link>
+          </li>
+          <li>
             <button
               onClick={() => {
                 auth.removeUser();
@@ -49,11 +54,26 @@ const Navbar = () => {
             >
               Sign out
             </button>
-          ) : (
+          </li>
+        </ul>
+      ) : (
+        <ul className={mobileMenu ? '' : 'hide-mobile-menu'}>
+          <li>
+            <Link to='/#home'>Home</Link>
+          </li>
+          <li>
+            <Link to='/#map'>Stellplatzsuche</Link>
+          </li>
+          <li>
+            <Link to='/#definitionen'>Länderregeln</Link>
+          </li>
+          <li>
             <button onClick={() => auth.signinRedirect()}>Anmelden</button>
-          )}
-        </li>
-      </ul>
+          </li>
+        </ul>
+      )}
+      {/* </li> */}
+      {/* </ul> */}
       <img src={Menue} alt='' className='menue-icon' onClick={toggleMenu} />
     </nav>
   );
