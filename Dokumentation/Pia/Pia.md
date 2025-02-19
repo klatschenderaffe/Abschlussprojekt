@@ -1,3 +1,14 @@
+> 19.02.2025
+
+# Tag 14:
+
+### Alleine:
+- Navbar in vor und nach Login aufgeteilt.
+
+### Alle zusammen:
+- Präsentation eingeteilt
+---
+
 > 18.02.2025
 
 # Tag 13:
