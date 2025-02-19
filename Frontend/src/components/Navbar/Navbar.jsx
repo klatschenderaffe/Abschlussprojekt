@@ -53,7 +53,7 @@ const Navbar = () => {
                 window.location.href = 'https://van-ventura.eu/';
               }}
             >
-              Ausloggen
+              <h3>Ausloggen</h3>
             </button>
           </li>
         </ul>
