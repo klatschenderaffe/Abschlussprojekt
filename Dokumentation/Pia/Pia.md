@@ -4,9 +4,12 @@
 
 ### Alleine:
 
-- Navbar in vor und nach login aufgeteilt.
+- Navbar in vor und nach Login aufgeteilt.
+- Notizen zu meinen Folien innerhalb der Präsentation geschrieben.
 
 ### Alle zusammen:
+
+- Präsentation eingeteilt
 
 ---
 
