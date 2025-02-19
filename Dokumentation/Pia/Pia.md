@@ -10,6 +10,7 @@
 - Private Routen erstellt.
 - Private Routen wieder auskommentiert.
 - Recherche wie Private Routen und Cognito zusammen funktionieren.
+- Neuen Userpool erstellt, um Dopplungen in der Registrierungsmaske zu entfernen.
 
 ### Alle zusammen:
 
