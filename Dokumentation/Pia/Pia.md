@@ -14,7 +14,9 @@
 
 ### Alle zusammen:
 
-- Präsentation eingeteilt
+- Präsentation eingeteilt.
+- Präsentation Probedurchlauf.
+- Recherche Blog Logik.
 
 ---
 
