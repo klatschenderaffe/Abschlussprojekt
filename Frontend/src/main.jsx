@@ -9,7 +9,7 @@ import ImpressumPage from './pages/ImpressumPage/ImpressumPage';
 import LogInPage from './pages/LogInPage/LogInPage';
 import WelcomePage from './pages/WelcomePage/WelcomePage';
 import BlogPage from './pages/BlogPage/BlogPage';
-// import ProtectedRoute from './ProtectedRoute';
+import ProtectedRoute from './ProtectedRoute';
 
 const cognitoAuthConfig = {
   authority: import.meta.env.VITE_AUTHORITY,
@@ -26,15 +26,15 @@ ReactDOM.createRoot(root).render(
   <BrowserRouter>
     <AuthProvider {...cognitoAuthConfig}>
       <Routes>
-        # Home Route
+        {/* Home Route */}
         <Route path='/' element={<App />} />
         <Route path='/impressumpage' element={<ImpressumPage />} />
         <Route path='/loginpage' element={<LogInPage />} />
         {/* 'Protected Route' */}
-        {/* <Route element={<ProtectedRoute />}> */}
-        <Route path='/welcomepage' element={<WelcomePage />} />
-        <Route path='/blogpage' element={<BlogPage />} />
-        {/* </Route> */}
+        <Route element={<ProtectedRoute />}>
+          <Route path='/welcomepage' element={<WelcomePage />} />
+          <Route path='/blogpage' element={<BlogPage />} />
+        </Route>
       </Routes>
     </AuthProvider>
   </BrowserRouter>
