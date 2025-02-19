@@ -11,6 +11,9 @@
  
  # Tag 3
 
+
+ 
+
  - weiter am Backend gearbeitet
  - tools dazu angeschaut
 
@@ -38,3 +41,12 @@
    # Tag 10
    - Mapbox wird angezeigt
    - daran weiter arbeiten
+
+   # Tag 11
+    
+    - Standorte auf mapbx intigriert
+    - Links zu Templates angeschaut
+
+    # Tag 12
+    - Informationen über Blog Beiträge gesammelt
+    

@@ -73,5 +73,10 @@ krank
   - README Überarbeitet
   - Folien mit Pia überarbeitet
   - Infos zur präsentation (technologien) gesammelt
+
+ # Tag 12
+
+ - In Blog Posts alle Dateien formatiert
+ - Installations.md überarbeitet
  
 
