@@ -24,8 +24,6 @@
 - Mit Dimitar auf Fehlersuche warum LogOut unter AWS nicht funktioniert.
 - Fehler weitestgehend behoben.
 
-### Alle zusammen:
-
 ---
 
 > 17.02.2025
