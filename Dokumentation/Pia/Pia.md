@@ -8,6 +8,8 @@
 - Notizen zu meinen Folien innerhalb der Präsentation geschrieben.
 - Anmelden Button getyled.
 - Private Routen erstellt.
+- Private Routen wieder auskommentiert.
+- Recherche wie Private Routen und Cognito zusammen funktionieren.
 
 ### Alle zusammen:
 
