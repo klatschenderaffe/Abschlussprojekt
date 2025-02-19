@@ -6,6 +6,8 @@
 
 - Navbar in vor und nach Login aufgeteilt.
 - Notizen zu meinen Folien innerhalb der Präsentation geschrieben.
+- Anmelden Button getyled.
+- Private Routen erstellt.
 
 ### Alle zusammen:
 
