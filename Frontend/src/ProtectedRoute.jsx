@@ -1,9 +1,12 @@
-// import { Navigate, Outlet } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
+import { useAuth } from 'react-oidc-context';
 
-// const ProtectedRoute = () => {
-//   const isLoggedIn = window.localStorage.getItem('loggedIn');
+const ProtectedRoute = () => {
+  const auth = useAuth();
 
-//   return isLoggedIn === 'true' ? <Outlet /> : <Navigate to='/' />;
-// };
+  const isLoggedIn = auth.isAuthenticated;
 
-// export default ProtectedRoute;
+  return isLoggedIn === 'true' ? <Outlet /> : <Navigate to='/' />;
+};
+
+export default ProtectedRoute;

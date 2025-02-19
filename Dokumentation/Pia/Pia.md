@@ -1,3 +1,20 @@
+> 19.02.2025
+
+# Tag 14:
+
+### Alleine:
+
+- Navbar in vor und nach Login aufgeteilt.
+- Notizen zu meinen Folien innerhalb der Präsentation geschrieben.
+- Anmelden Button getyled.
+- Private Routen erstellt.
+
+### Alle zusammen:
+
+- Präsentation eingeteilt
+
+---
+
 > 18.02.2025
 
 # Tag 13:
