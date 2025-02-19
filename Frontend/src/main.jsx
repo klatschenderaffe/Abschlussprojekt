@@ -6,7 +6,7 @@ import { AuthProvider } from 'react-oidc-context';
 
 // Import der Pages
 import ImpressumPage from './pages/ImpressumPage/ImpressumPage';
-import LogInPage from './pages/LogInPage/LogInPage';
+
 import WelcomePage from './pages/WelcomePage/WelcomePage';
 import BlogPage from './pages/BlogPage/BlogPage';
 import ProtectedRoute from './ProtectedRoute';
@@ -29,7 +29,7 @@ ReactDOM.createRoot(root).render(
         {/* Home Route */}
         <Route path='/' element={<App />} />
         <Route path='/impressumpage' element={<ImpressumPage />} />
-        <Route path='/loginpage' element={<LogInPage />} />
+
         {/* 'Protected Route' */}
         <Route element={<ProtectedRoute />}>
           <Route path='/welcomepage' element={<WelcomePage />} />

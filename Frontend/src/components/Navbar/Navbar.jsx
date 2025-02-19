@@ -68,7 +68,9 @@ const Navbar = () => {
             <Link to='/#definitionen'>Länderregeln</Link>
           </li>
           <li>
-            <button onClick={() => auth.signinRedirect()}>Anmelden</button>
+            <button className='login-btn' onClick={() => auth.signinRedirect()}>
+              <h3> Anmelden </h3>
+            </button>
           </li>
         </ul>
       )}
