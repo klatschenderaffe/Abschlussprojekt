@@ -49,4 +49,6 @@
 
     # Tag 12
     - Informationen über Blog Beiträge gesammelt
-    
+
+     # Tag 13
+    - Logo mit kind    

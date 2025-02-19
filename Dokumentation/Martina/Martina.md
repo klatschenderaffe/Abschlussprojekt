@@ -79,4 +79,6 @@ krank
  - In Blog Posts alle Dateien formatiert
  - Installations.md überarbeitet
  
-
+# Tag 13
+- installations .md formatiert
+- Dokumentation dazu notizen gemacht 
