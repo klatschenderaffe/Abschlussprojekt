@@ -1,3 +1,19 @@
+> 20.02.2025
+
+# Tag 15:
+
+### Alleine:
+
+- Neue Notizen zu meinen neuen Folien gemacht.
+
+### Alle zusammen:
+
+- Präsentation gehalten
+- Feedback durchgelesen
+- Präsentation geändert.
+
+---
+
 > 19.02.2025
 
 # Tag 14:
