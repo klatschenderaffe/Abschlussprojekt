@@ -82,3 +82,9 @@ krank
 # Tag 13
 - installations .md formatiert
 - Dokumentation dazu notizen gemacht 
+
+# Tag 14
+
+- 1. generalprobe gehabt
+- weiteres vorgehen besprochen
+- feedback mit einbauen
