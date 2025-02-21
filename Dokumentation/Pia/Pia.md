@@ -1,3 +1,13 @@
+> 21.02.2025
+
+# Tag 16:
+
+### Alleine:
+
+### Alle zusammen:
+
+---
+
 > 20.02.2025
 
 # Tag 15:
@@ -5,6 +15,7 @@
 ### Alleine:
 
 - Neue Notizen zu meinen neuen Folien gemacht.
+- Recherche MongoDB Container
 
 ### Alle zusammen:
 
