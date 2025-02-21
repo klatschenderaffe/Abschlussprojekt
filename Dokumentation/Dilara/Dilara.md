@@ -11,9 +11,6 @@
  
  # Tag 3
 
-
- 
-
  - weiter am Backend gearbeitet
  - tools dazu angeschaut
 
@@ -46,3 +43,14 @@
     
     - Standorte auf mapbx intigriert
     - Links zu Templates angeschaut
+
+    # Tag 12 
+    - entschuldigt 
+
+    # tag 13 
+    - präsi gehalten
+    - dach in der gruppe noch feedbeeck ausgetauscht und sich darüber unterhaltem 
+
+    # Tag 14
+    - .md datei in json umgewandeln - infos gesammelt 
+    - backend contarisiert 
