@@ -88,3 +88,8 @@ krank
 - 1. generalprobe gehabt
 - weiteres vorgehen besprochen
 - feedback mit einbauen
+
+# Tag 15
+
+- Tagesplan besprochen
+- feedback mit eingebaut in die Folien
