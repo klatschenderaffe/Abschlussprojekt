@@ -13,31 +13,31 @@ const Categorys = () => {
       <div className='category-item'>
         <Link className='link' to='/blogpage'>
           <img src={FahrzeugAuswahl} alt='' />
-          <h3>Fahrzeug Auswahl</h3>
+          <h3 id='title'>Fahrzeug Auswahl</h3>
         </Link>
       </div>
       <div className='category-item'>
         <Link className='link' to='/'>
           <img src={Rostversiegelung} alt='' />
-          <h3>Rostversiegelung</h3>
+          <h3 id='title'>Rostversiegelung</h3>
         </Link>
       </div>
       <div className='category-item'>
         <Link className='link' to='/'>
           <img src={Dämmung} alt='' />
-          <h3>Dämmung</h3>
+          <h3 id='title'>Dämmung</h3>
         </Link>
       </div>
       <div className='category-item'>
         <Link className='link' to='/'>
           <img src={BodenVerlegen} alt='' />
-          <h3>Boden verlegen</h3>
+          <h3 id='title'>Boden verlegen</h3>
         </Link>
       </div>
       <div className='category-item'>
         <Link className='link' to='/'>
           <img src={WaendeVerkleiden} alt='' />
-          <h3>
+          <h3 id='title'>
             Wände und Decken <br /> verkleiden
           </h3>
         </Link>
@@ -45,7 +45,7 @@ const Categorys = () => {
       <div className='category-item'>
         <Link className='link' to='/'>
           <img src={MöbelBauen} alt='' />
-          <h3>Möbel bauen</h3>
+          <h3 id='title'>Möbel bauen</h3>
         </Link>
       </div>
     </div>

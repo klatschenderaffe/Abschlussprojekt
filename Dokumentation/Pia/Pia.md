@@ -4,7 +4,8 @@
 
 ### Alleine:
 
-- Angefangen JavaScript für BlogPosts geschrieben.
+- Angefangen Logik für JS Logik zu erdenken.
+  ![Logik aufzeichnung](./Bilder/logik-js.png)
 
 ### Alle zusammen:
 
