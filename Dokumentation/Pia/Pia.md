@@ -1,3 +1,35 @@
+> 21.02.2025
+
+# Tag 16:
+
+### Alleine:
+
+- Angefangen JavaScript für BlogPosts geschrieben.
+
+### Alle zusammen:
+
+- Präsentation abgewandelt.
+- Präsentation durchgesprochen vor Sophie.
+
+---
+
+> 20.02.2025
+
+# Tag 15:
+
+### Alleine:
+
+- Neue Notizen zu meinen neuen Folien gemacht.
+- Recherche MongoDB Container
+
+### Alle zusammen:
+
+- Präsentation gehalten
+- Feedback durchgelesen
+- Präsentation geändert.
+
+---
+
 > 19.02.2025
 
 # Tag 14:
@@ -14,7 +46,9 @@
 
 ### Alle zusammen:
 
-- Präsentation eingeteilt
+- Präsentation eingeteilt.
+- Präsentation Probedurchlauf.
+- Recherche Blog Logik.
 
 ---
 
