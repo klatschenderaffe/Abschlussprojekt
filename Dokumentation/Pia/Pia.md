@@ -4,7 +4,12 @@
 
 ### Alleine:
 
+- Angefangen JavaScript für BlogPosts geschrieben.
+
 ### Alle zusammen:
+
+- Präsentation abgewandelt.
+- Präsentation durchgesprochen vor Sophie.
 
 ---
 
