@@ -8,6 +8,11 @@
   border-radius: 30px;
 }
 
+.blog-category {
+  color: white;
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   /* Für kleinere Bildschirme */
   .blog {
