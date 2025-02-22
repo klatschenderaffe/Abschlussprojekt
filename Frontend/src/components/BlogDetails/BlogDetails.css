@@ -1,7 +1,8 @@
 .details-container {
-  background-color: bisque;
+  background-color: #10353a;
   padding: 2rem;
   margin: 1rem;
+  border: 2px solid #f99a2e;
   border-radius: 15px;
   color: white;
 }

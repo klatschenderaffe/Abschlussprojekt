@@ -5,6 +5,8 @@
 ### Alleine:
 
 - Title der Blogseite wird Dynamisch angepasst.
+- BlogPosts sortiert.
+- 2 weitere Kategorien hinzugefügt.
 
 ### Alle zusammen:
 

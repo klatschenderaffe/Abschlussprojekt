@@ -1,14 +1,15 @@
 .list-container {
-  border: 1px;
+  border: 1rem;
   color: white;
-  background-color: blue;
+  background-color: #10353a;
   padding: 1rem;
   margin: 0.25rem;
   border-radius: 15px;
 
   .list-item {
     margin: 1rem;
-    background-color: yellowgreen;
+    background-color: rgb(58, 146, 164, 0.5);
+    border: 2px solid #f99a2e;
     padding: 0.75rem;
     border-radius: 10px;
   }
