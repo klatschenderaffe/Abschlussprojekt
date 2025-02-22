@@ -7,6 +7,8 @@
 - Title der Blogseite wird Dynamisch angepasst.
 - BlogPosts sortiert.
 - 2 weitere Kategorien hinzugefügt.
+- Meine Präsentationsseiten nochmals überarbeitet.
+- Präsentations Notizen überarbeitet.
 
 ### Alle zusammen:
 
