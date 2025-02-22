@@ -9,6 +9,8 @@
 - 2 weitere Kategorien hinzugefügt.
 - Meine Präsentationsseiten nochmals überarbeitet.
 - Präsentations Notizen überarbeitet.
+- Playbook fürs Backend vorbereitet.
+- Infrastructure.yml Workflow für Backend vorbereitet.
 
 ### Alle zusammen:
 
