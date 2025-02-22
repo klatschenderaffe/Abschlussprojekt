@@ -6,11 +6,9 @@ const BlogList = () => {
       <div className='list-container'>
         <div className='list-item'>
           <h3>Artikel Titel</h3>
-          <p>Teaser</p>
         </div>
         <div className='list-item'>
           <h3>Artikel Titel</h3>
-          <p>Teaser</p>
         </div>
       </div>
     </div>

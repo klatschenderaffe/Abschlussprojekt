@@ -16,10 +16,10 @@ const Categorys = () => {
         <Link
           className='link'
           to='/blogpage'
-          state={{ title: 'Fahrzeug Auswahl' }} // Titel übergeben
+          state={{ title: 'Fahrzeug' }} // Titel übergeben
         >
           <img src={FahrzeugAuswahl} alt='' />
-          <h3>Fahrzeug Auswahl</h3>
+          <h3>Fahrzeug</h3>
         </Link>
       </div>
       <div className='category-item'>
