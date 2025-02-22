@@ -4,6 +4,8 @@
 
 ### Alleine:
 
+- Title der Blogseite wird Dynamisch angepasst.
+
 ### Alle zusammen:
 
 ---
