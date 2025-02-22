@@ -11,6 +11,7 @@
 - Präsentations Notizen überarbeitet.
 - Playbook fürs Backend vorbereitet.
 - Infrastructure.yml Workflow für Backend vorbereitet.
+- Inventory File in eine zweite Gruppe unterteilen lassen.
 
 ### Alle zusammen:
 
