@@ -1,14 +1,15 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { directoryPlugin } from 'vite-plugin-list-directory-contents';
+// import { directoryPlugin } from 'vite-plugin-list-directory-contents';
 
 // // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
-    directoryPlugin({
-      baseDir: './public/assets/BlogPosts', // Pfad zum Ordner mit den Dateien
-    }),
+    // ################# Wenn nicht auskommentiert, sucht er mit jeder anderen URL nach einem BlogPost ########################################
+    // directoryPlugin({
+    //   baseDir: './public/BlogPosts', // Pfad zum Ordner mit den Dateien
+    // }),
   ],
   //   // Port des Entwicklungsservers
   server: {
