@@ -9,8 +9,7 @@
 - json File mit den Titeln der Jeweiligen Kategorie der BlogPosts Ordner im public Ordner hinzugefügt.
 - BlogDetails geändert
 - BlogList -> für jeden Eintrag im jeweiligen Ordner eine li Komponente erstellen lassen.
-
-### Alle zusammen:
+- ToDo Liste geschrieben: ![Logik BlogPosts](./Bilder/BlogPost-Ablauf.jpeg)
 
 ---
 
