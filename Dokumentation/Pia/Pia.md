@@ -1,3 +1,15 @@
+> 23.02.2025
+
+# Tag 18:
+
+### Alleine:
+
+- Link um die BlogPosts einzubinden gefunden: [Markdown aus einem Ordner Rendern](https://medium.com/@dimterion/react-markdown-examples-372fa1b21c0c).
+
+### Alle zusammen:
+
+---
+
 > 22.02.2025
 
 # Tag 17:
@@ -12,8 +24,6 @@
 - Playbook fürs Backend vorbereitet.
 - Infrastructure.yml Workflow für Backend vorbereitet.
 - Inventory File in eine zweite Gruppe unterteilen lassen.
-
-### Alle zusammen:
 
 ---
 
