@@ -5,6 +5,10 @@
 ### Alleine:
 
 - Link um die BlogPosts einzubinden gefunden: [Markdown aus einem Ordner Rendern](https://medium.com/@dimterion/react-markdown-examples-372fa1b21c0c).
+- React Markdown eingebunden.
+- json File mit den Titeln der Jeweiligen Kategorie der BlogPosts Ordner im public Ordner hinzugefügt.
+- BlogDetails geändert
+- BlogList -> für jeden Eintrag im jeweiligen Ordner eine li Komponente erstellen lassen.
 
 ### Alle zusammen:
 
