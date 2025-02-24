@@ -9,6 +9,7 @@ import ImpressumPage from './pages/ImpressumPage/ImpressumPage';
 
 import WelcomePage from './pages/WelcomePage/WelcomePage';
 import BlogPage from './pages/BlogPage/BlogPage';
+// import BlogDetails from './components/BlogDetails/BlogDetails';
 // import ProtectedRoute from './ProtectedRoute';
 
 const cognitoAuthConfig = {
@@ -33,7 +34,9 @@ ReactDOM.createRoot(root).render(
         {/* 'Protected Route' */}
         {/* <Route element={<ProtectedRoute />}> */}
         <Route path='/welcomepage' element={<WelcomePage />} />
-        <Route path='/:filename' element={<BlogPage />} />
+        <Route path='/blog/:category' element={<BlogPage />} />
+        <Route path='/blog/:category/:article' element={<BlogPage />} />
+
         {/* </Route> */}
       </Routes>
     </AuthProvider>
