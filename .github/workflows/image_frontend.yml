@@ -57,7 +57,7 @@ jobs:
         working-directory: ./Frontend/public
         run: |
           chmod +x ./directory_script.py
-          python ./directory_script.py
+          python directory_script.py
 
       # schritt 3: Abhängigkeiten installieren
       - name: Abhängigkeiten installieren
