@@ -1,0 +1,42 @@
+[
+    {
+        "name": "BodenVerlegen",
+        "title": "BodenVerlegen",
+        "image": "BodenVerlegen.png"
+    },
+    {
+        "name": "Dämmung",
+        "title": "Dämmung",
+        "image": "Dämmung.png"
+    },
+    {
+        "name": "Elektrik",
+        "title": "Elektrik",
+        "image": "Elektrik.png"
+    },
+    {
+        "name": "Fahrzeug",
+        "title": "Fahrzeug",
+        "image": "Fahrzeug.png"
+    },
+    {
+        "name": "Gasinstallation",
+        "title": "Gasinstallation",
+        "image": "Gasinstallation.png"
+    },
+    {
+        "name": "MoebelBauen",
+        "title": "MoebelBauen",
+        "image": "MoebelBauen.png"
+    },
+    {
+        "name": "Rostversiegelung",
+        "title": "Rostversiegelung",
+        "image": "Rostversiegelung.png"
+    },
+    {
+        "name": "WaendeVerkleiden",
+        "title": "WaendeVerkleiden",
+        "image": "WaendeVerkleiden.png"
+    }
+]
