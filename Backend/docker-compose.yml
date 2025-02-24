@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  backend:
+    image: backend-image
+    container_name: backend-container
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/deine-datenbank
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+
+  # frontend:
+  #   image: frontend-image
+  #   container_name: frontend-container
+  #   ports:
+  #     - "80:80"
+  #   environment:
+  #     - API_URL=http://backend:5000
+
+  mongo:
+    image: mongo:6.0
+    container_name: mongo-container
+    volumes:
+      - mongo-data:/data/db  # Referenziere das Volume
+    ports:
+      - "27017:27017"
+
+volumes:
+  mongo-data:  # Definiere das Volume hier

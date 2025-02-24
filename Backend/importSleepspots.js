@@ -20,7 +20,7 @@ async function importSleepspots() {
         await collection.deleteMany({});
         await collection.insertMany(data);
 
-        console.log("✅ Sleepports erfolgreich in MongoDB gespeichert!");
+        console.log(" Sleepports erfolgreich in MongoDB gespeichert!");
     } catch (err) {
         console.error("Fehler beim Import:", err);
     } finally {
