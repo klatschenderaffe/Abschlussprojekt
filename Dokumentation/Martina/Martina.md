@@ -93,3 +93,7 @@ krank
 
 - Tagesplan besprochen
 - feedback mit eingebaut in die Folien
+
+# Tag 16
+
+- Präsentation fertig stellen
