@@ -1,10 +1,43 @@
+> 23.02.2025
+
+# Tag 18:
+
+### Alleine:
+
+- Link um die BlogPosts einzubinden gefunden: [Markdown aus einem Ordner Rendern](https://medium.com/@dimterion/react-markdown-examples-372fa1b21c0c).
+- React Markdown eingebunden.
+- json File mit den Titeln der Jeweiligen Kategorie der BlogPosts Ordner im public Ordner hinzugefügt.
+- BlogDetails geändert
+- BlogList -> für jeden Eintrag im jeweiligen Ordner eine li Komponente erstellen lassen.
+- ToDo Liste geschrieben: ![Logik BlogPosts](./Bilder/BlogPost-Ablauf.jpeg)
+
+---
+
+> 22.02.2025
+
+# Tag 17:
+
+### Alleine:
+
+- Title der Blogseite wird Dynamisch angepasst.
+- BlogPosts sortiert.
+- 2 weitere Kategorien hinzugefügt.
+- Meine Präsentationsseiten nochmals überarbeitet.
+- Präsentations Notizen überarbeitet.
+- Playbook fürs Backend vorbereitet.
+- Infrastructure.yml Workflow für Backend vorbereitet.
+- Inventory File in eine zweite Gruppe unterteilen lassen.
+
+---
+
 > 21.02.2025
 
 # Tag 16:
 
 ### Alleine:
 
-- Angefangen JavaScript für BlogPosts geschrieben.
+- Angefangen Logik für JS Logik zu erdenken.
+  ![Logik aufzeichnung](./Bilder/logik-js.png)
 
 ### Alle zusammen:
 

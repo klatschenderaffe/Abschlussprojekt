@@ -33,7 +33,7 @@ ReactDOM.createRoot(root).render(
         {/* 'Protected Route' */}
         {/* <Route element={<ProtectedRoute />}> */}
         <Route path='/welcomepage' element={<WelcomePage />} />
-        <Route path='/blogpage' element={<BlogPage />} />
+        <Route path='/:filename' element={<BlogPage />} />
         {/* </Route> */}
       </Routes>
     </AuthProvider>

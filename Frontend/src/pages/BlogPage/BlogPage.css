@@ -2,10 +2,15 @@
   display: grid;
   grid-template-columns: 1fr 2fr; /* Linke Spalte (BlogList) kleiner als rechte (BlogDetails) */
   gap: 20px; /* Abstand zwischen den Spalten */
-  background-color: blueviolet;
+  background-color: rgb(58, 146, 164, 0.2);
   padding: 1rem;
   margin: 1rem;
   border-radius: 30px;
+}
+
+.blog-category {
+  color: white;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
