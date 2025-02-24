@@ -44,13 +44,15 @@
     - Standorte auf mapbx intigriert
     - Links zu Templates angeschaut
 
-    # Tag 12 
-    - entschuldigt 
+   # Tag 12
+    - Informationen über Blog Beiträge gesammelt
 
-    # tag 13 
+   # tag 13 
     - präsi gehalten
     - dach in der gruppe noch feedbeeck ausgetauscht und sich darüber unterhaltem 
 
-    # Tag 14
+   # Tag 14
     - .md datei in json umgewandeln - infos gesammelt 
     - backend contarisiert 
+
+

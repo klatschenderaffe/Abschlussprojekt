@@ -1,3 +1,57 @@
+> 21.02.2025
+
+# Tag 16:
+
+### Alleine:
+
+- Angefangen JavaScript für BlogPosts geschrieben.
+
+### Alle zusammen:
+
+- Präsentation abgewandelt.
+- Präsentation durchgesprochen vor Sophie.
+
+---
+
+> 20.02.2025
+
+# Tag 15:
+
+### Alleine:
+
+- Neue Notizen zu meinen neuen Folien gemacht.
+- Recherche MongoDB Container
+
+### Alle zusammen:
+
+- Präsentation gehalten
+- Feedback durchgelesen
+- Präsentation geändert.
+
+---
+
+> 19.02.2025
+
+# Tag 14:
+
+### Alleine:
+
+- Navbar in vor und nach Login aufgeteilt.
+- Notizen zu meinen Folien innerhalb der Präsentation geschrieben.
+- Anmelden Button getyled.
+- Private Routen erstellt.
+- Private Routen wieder auskommentiert.
+- Recherche wie Private Routen und Cognito zusammen funktionieren.
+- Neuen Userpool erstellt, um Dopplungen in der Registrierungsmaske zu entfernen.
+
+### Alle zusammen:
+
+- Präsentation eingeteilt.
+- Präsentation Probedurchlauf.
+- Recherche Blog Logik.
+
+---
+
 > 18.02.2025
 
 # Tag 13:
@@ -5,9 +59,7 @@
 ### Alleine:
 
 - Mit Dimitar auf Fehlersuche warum LogOut unter AWS nicht funktioniert.
--
-
-### Alle zusammen:
+- Fehler weitestgehend behoben.
 
 ---
 
