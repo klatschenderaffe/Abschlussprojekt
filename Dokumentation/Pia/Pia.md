@@ -1,3 +1,16 @@
+> 24.02.2025
+
+# Tag 19:
+
+### Alleine:
+
+- BlogPost nach Kategorien sortiert.
+- Python Script geschrieben (mit Sophie) welches mir neue Ordner und die darin enthaltene JSON Datei dynamisch erzeugt.
+
+### Alle zusammen:
+
+---
+
 > 23.02.2025
 
 # Tag 18:
