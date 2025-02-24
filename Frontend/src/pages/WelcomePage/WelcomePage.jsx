@@ -8,10 +8,7 @@ const WelcomePage = () => {
       <div className='nav-page'>
         <Navbar />
       </div>
-      <Title
-        subtitle='Hier dreht sich alles um deinen neuen Lieblingsort'
-        title='Herzlich Willkommen'
-      />
+      <Title subtitle='Blog Kategorien' title='Herzlich Willkommen' />
       <Categorys />
     </div>
   );
