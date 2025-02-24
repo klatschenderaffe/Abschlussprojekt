@@ -71,7 +71,7 @@ for folder_name in os.listdir(blog_posts_dir):
         print(f"Markdown-Dateien in {folder_name} wurden in {markdown_titles_file} gespeichert.")
 
 # Die Kategorien-Daten als JSON-Datei speichern
-output_file = './Frontend/public/categories.json'
+output_file = './categories.json'
 with open(output_file, 'w', encoding='utf-8') as f:
     # ensure_ascii=False stellt sicher, dass Zeichen wie 'ä' nicht als Unicode-Escape-Sequenz gespeichert werden
     json.dump(categories, f, indent=4, ensure_ascii=False)
