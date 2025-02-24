@@ -1,0 +1,10 @@
+.welcome-text {
+  color: white;
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+  background-color: rgb(58, 146, 164, 0.2);
+  padding: 2rem;
+  border-radius: 30px;
+  border: 2px solid #f99a2e;
+}

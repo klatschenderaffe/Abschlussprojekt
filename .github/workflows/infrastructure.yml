@@ -69,14 +69,6 @@ jobs:
         run: |
           ansible-playbook -i ./aws_inventory.py ./playbook.yml --ssh-common-args='-o StrictHostKeyChecking=no' -v
 
-      # - name: Run Ansible Playbook Backend
-      #   env:
-      #     ANSIBLE_USER: ubuntu
-      #     ANSIBLE_HOST_KEY_CHECKING: False
-      #   working-directory: ./Ansible
-      #   run: |
-      #     ansible-playbook -i ./aws_inventory.py ./playbook_backend.yml --ssh-common-args='-o StrictHostKeyChecking=no' -v
-
   terraform_destroy:
     name: Terraform Destroy
     runs-on: ubuntu-latest

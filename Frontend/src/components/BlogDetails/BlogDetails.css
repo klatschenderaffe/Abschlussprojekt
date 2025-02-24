@@ -6,3 +6,8 @@
   border-radius: 15px;
   color: white;
 }
+
+.content {
+  padding: 1rem;
+  margin: 1rem;
+}

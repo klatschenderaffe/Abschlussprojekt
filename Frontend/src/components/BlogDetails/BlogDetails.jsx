@@ -32,7 +32,9 @@ const BlogDetails = ({ article }) => {
       {error && <p className='error'>{error}</p>}
       {!error && article && (
         <div className='details-container'>
-          <ReactMarkdown>{content}</ReactMarkdown> {/* Render Markdown */}
+          <div className='content'>
+            <ReactMarkdown>{content}</ReactMarkdown> {/* Render Markdown */}
+          </div>
         </div>
       )}
     </div>

@@ -35,7 +35,7 @@ const BlogPage = () => {
             <BlogDetails article={selectedArticle} />
           ) : (
             <div className='details-container'>
-              <p>Bitte wählen Sie einen Artikel aus der Liste aus.</p>
+              <p>Bitte wähle einen Artikel aus der Liste aus.</p>
             </div>
           )}
         </div>
