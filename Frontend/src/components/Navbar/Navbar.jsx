@@ -29,7 +29,7 @@ const Navbar = () => {
     <nav className={`container ${sticky ? 'dark-nav' : ''}`}>
       <img src={logo} alt='' className='logo' />
       {/* If MobileMenu is true nothing change, otherwise hide-mobile-menu */}
-      <ul className={mobileMenu ? '' : 'hide-mobile-menu'}>
+      {/* <ul className={mobileMenu ? '' : 'hide-mobile-menu'}>
         <li>
           <Link to='/#home'>Home</Link>
         </li>
@@ -38,22 +38,45 @@ const Navbar = () => {
         </li>
         <li>
           <Link to='/#definitionen'>Länderregeln</Link>
-        </li>
-        <li>
-          {auth.isAuthenticated ? (
+        </li> */}
+      {/* <li> */}
+      {auth.isAuthenticated ? (
+        <ul className={mobileMenu ? '' : 'hide-mobile-menu'}>
+          <li>
+            <Link to='/welcomepage'>Kategorien</Link>
+          </li>
+          <li>
             <button
+              className='login-btn'
               onClick={() => {
                 auth.removeUser();
-                window.location.href = 'https://van-ventura.eu';
+                window.location.href = 'https://van-ventura.eu/';
               }}
             >
-              Sign out
+              <h3>Ausloggen</h3>
             </button>
-          ) : (
-            <button onClick={() => auth.signinRedirect()}>Anmelden</button>
-          )}
-        </li>
-      </ul>
+          </li>
+        </ul>
+      ) : (
+        <ul className={mobileMenu ? '' : 'hide-mobile-menu'}>
+          <li>
+            <Link to='/#home'>Home</Link>
+          </li>
+          <li>
+            <Link to='/#map'>Stellplatzsuche</Link>
+          </li>
+          <li>
+            <Link to='/#definitionen'>Länderregeln</Link>
+          </li>
+          <li>
+            <button className='login-btn' onClick={() => auth.signinRedirect()}>
+              <h3> Anmelden </h3>
+            </button>
+          </li>
+        </ul>
+      )}
+      {/* </li> */}
+      {/* </ul> */}
       <img src={Menue} alt='' className='menue-icon' onClick={toggleMenu} />
     </nav>
   );

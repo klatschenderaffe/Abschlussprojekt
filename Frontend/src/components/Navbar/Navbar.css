@@ -33,10 +33,12 @@ nav ul li {
 }
 
 .login-btn {
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   background-color: #3a92a4;
-  color: #000;
+  color: #fff;
   padding: 1rem;
+  cursor: pointer;
+  border: 0;
 }
 
 /* --------Media Querys----------- */
