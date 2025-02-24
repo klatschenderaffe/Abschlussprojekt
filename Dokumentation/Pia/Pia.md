@@ -6,6 +6,9 @@
 
 - BlogPost nach Kategorien sortiert.
 - Python Script geschrieben (mit Sophie) welches mir neue Ordner und die darin enthaltene JSON Datei dynamisch erzeugt.
+- Viele kleine Fehler ausgebügelt.
+- BlogPosts überarbeitet.
+- Kleinigkeiten an der Präsentation bearbeitet.
 
 ### Alle zusammen:
 
