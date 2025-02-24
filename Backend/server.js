@@ -29,6 +29,7 @@ const SleepspotSchema = new mongoose.Schema({
     coordinats: String,
     infos: String
 });
+
 const Sleepspot = mongoose.model('Sleepspot', SleepspotSchema);
 
 // const router = express.Router();
