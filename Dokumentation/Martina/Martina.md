@@ -79,4 +79,17 @@ krank
  - In Blog Posts alle Dateien formatiert
  - Installations.md überarbeitet
  
+# Tag 13
+- installations .md formatiert
+- Dokumentation dazu notizen gemacht 
 
+# Tag 14
+
+- 1. generalprobe gehabt
+- weiteres vorgehen besprochen
+- feedback mit einbauen
+
+# Tag 15
+
+- Tagesplan besprochen
+- feedback mit eingebaut in die Folien
