@@ -30,7 +30,7 @@ const BlogList = ({ onSelectArticle }) => {
       <ul className='list-container'>
         {files.map((filename, index) => {
           // Entferne die .md-Endung aus dem Dateinamen .replace('_', ' ') -> nimmt er nicht!
-          const cleanFilename = filename.replace('.md', '');
+          const cleanFilename = filename.replace('.md', '').replace(/_/g, ' ');
 
           return (
             <li key={index}>

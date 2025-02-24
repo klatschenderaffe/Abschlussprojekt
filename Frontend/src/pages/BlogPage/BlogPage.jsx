@@ -9,13 +9,18 @@ import Title from '../../components/Title/Title';
 const BlogPage = () => {
   const [selectedArticle, setSelectedArticle] = useState(null); // Track selected article
   const { category } = useParams();
+  const formatTitle = (title) => {
+    return title.replace(/_/g, ' '); // Ersetzt alle Unterstriche durch Leerzeichen
+  };
+
+  const formattedCategory = formatTitle(category);
 
   return (
     <div>
       <div className='nav-page'>
         <Navbar />
       </div>
-      <Title subtitle='Kategorie' title={category} />
+      <Title subtitle='Kategorie' title={formattedCategory} />
       <div className='blog'>
         {/* Left: Blog List */}
         <div className='blog-category'>

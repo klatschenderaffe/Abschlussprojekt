@@ -1,42 +1,42 @@
 [
     {
-        "name": "BodenVerlegen",
-        "title": "BodenVerlegen",
-        "image": "BodenVerlegen.png"
+        "name": "Boden_verlegen",
+        "title": "Boden verlegen",
+        "image": "../../assets/Boden_verlegen.png"
     },
     {
         "name": "Dämmung",
         "title": "Dämmung",
-        "image": "Dämmung.png"
+        "image": "../../assets/Dämmung.png"
     },
     {
         "name": "Elektrik",
         "title": "Elektrik",
-        "image": "Elektrik.png"
+        "image": "../../assets/Elektrik.png"
     },
     {
         "name": "Fahrzeug",
         "title": "Fahrzeug",
-        "image": "Fahrzeug.png"
+        "image": "../../assets/Fahrzeug.png"
     },
     {
         "name": "Gasinstallation",
         "title": "Gasinstallation",
-        "image": "Gasinstallation.png"
+        "image": "../../assets/Gasinstallation.png"
     },
     {
-        "name": "MoebelBauen",
-        "title": "MoebelBauen",
-        "image": "MoebelBauen.png"
+        "name": "Moebel_bauen",
+        "title": "Moebel bauen",
+        "image": "../../assets/Moebel_bauen.png"
     },
     {
         "name": "Rostversiegelung",
         "title": "Rostversiegelung",
-        "image": "Rostversiegelung.png"
+        "image": "../../assets/Rostversiegelung.png"
     },
     {
-        "name": "WaendeVerkleiden",
-        "title": "WaendeVerkleiden",
-        "image": "WaendeVerkleiden.png"
+        "name": "Verkleidung",
+        "title": "Verkleidung",
+        "image": "../../assets/Verkleidung.png"
     }
 ]
