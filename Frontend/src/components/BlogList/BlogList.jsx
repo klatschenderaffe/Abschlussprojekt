@@ -30,7 +30,8 @@ const BlogList = ({ onSelectArticle }) => {
       <ul className='list-container'>
         {files.map((filename, index) => {
           // Entferne die .md-Endung aus dem Dateinamen .replace('_', ' ') -> nimmt er nicht!
-          const cleanFilename = filename.replace('.md', '').replace(/_/g, ' ');
+          const cleanFilename = filename.replace('.md', '');
+          const artikelTitle = cleanFilename.replace('_', ' ');
 
           return (
             <li key={index}>
@@ -39,7 +40,7 @@ const BlogList = ({ onSelectArticle }) => {
                 className='list-item'
                 onClick={() => onSelectArticle(cleanFilename)}
               >
-                <h3>{cleanFilename}</h3>
+                <h3>{artikelTitle}</h3>
               </button>
             </li>
           );
