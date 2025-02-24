@@ -1,8 +1,8 @@
-### Elektrik-Setup beim Umbau eines Transporters zum Wohnmobil: Ein Leitfaden
+# Elektrik-Setup beim Umbau eines Transporters zum Wohnmobil: Ein Leitfaden
 
 Der Traum vom eigenen Campervan wird für viele Menschen immer greifbarer – sei es für spontane Wochenendtrips oder längere Abenteuerreisen. Doch bevor die erste Reise beginnt, steht der Umbau des Transporters an. Ein essenzieller Bestandteil dabei ist das Elektrik-Setup, das nicht nur Komfort, sondern auch Sicherheit und Funktionalität garantiert. In diesem Blogbeitrag zeige ich dir, worauf du beim Elektrik-Ausbau achten solltest und wie du dein System sinnvoll planen kannst.
 
-### Warum ist ein gutes Elektrik-Setup so wichtig?
+## Warum ist ein gutes Elektrik-Setup so wichtig?
 Ein gut geplantes Elektrik-System sorgt dafür, dass du unterwegs unabhängig bist. Egal, ob du dein Smartphone laden, den Kühlschrank betreiben oder abends gemütlich Licht einschalten möchtest – die elektrische Versorgung ist das Herzstück deines Wohnmobils. Gleichzeitig ist es wichtig, dass die Anlage sicher und effizient funktioniert, um Pannen oder gar Brände zu vermeiden.
 
 ### Schritt 1: Planung des Strombedarfs
@@ -23,7 +23,7 @@ Plane ausreichend Kapazität ein, um mehrere Tage ohne externe Stromquelle auszu
 ### Beispiel:
 Ein LED-Licht mit 5 W, das 5 Stunden am Tag leuchtet, benötigt 25 Wh täglich. Ein kleiner Kompressorkühlschrank benötigt etwa 400–600 Wh pro Tag.
 
-###  Schritt 1: Die richtige Batterie wählen
+##  Schritt 1: Die richtige Batterie wählen
 Die Batterie ist das Herzstück deines Elektrik-Setups. Es gibt verschiedene Typen:
 - Blei-Säure-Batterien (AGM oder Gel):
 Günstiger in der Anschaffung

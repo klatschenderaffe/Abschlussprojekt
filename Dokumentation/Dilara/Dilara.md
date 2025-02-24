@@ -11,9 +11,6 @@
  
  # Tag 3
 
-
- 
-
  - weiter am Backend gearbeitet
  - tools dazu angeschaut
 
@@ -47,8 +44,15 @@
     - Standorte auf mapbx intigriert
     - Links zu Templates angeschaut
 
-    # Tag 12
+   # Tag 12
     - Informationen über Blog Beiträge gesammelt
 
-     # Tag 13
+
+   # Tag 13
     - Logo mit kind    
+    - präsi gehalten
+    - dach in der gruppe noch feedbeeck ausgetauscht und sich darüber unterhaltem 
+
+   # Tag 14
+    - .md datei in json umgewandeln - infos gesammelt 
+    - backend contarisiert 
