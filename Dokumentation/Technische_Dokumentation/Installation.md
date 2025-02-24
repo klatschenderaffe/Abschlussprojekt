@@ -1,134 +1,102 @@
-Hier findest Du alle Schritte für eine Installations.md-Datei für unser React-Projekt. 
+Diese Anleitung führt Sie durch den Prozess der Installation und Einrichtung unserer Software.
 
-# Installation
+### Systemanforderungen
+- Lokal
+- GitHub-Konto
 
-Diese Anleitung beschreibt, wie du ein React-Projekt einrichtest und startest.
+- Webbrowser
 
-## Voraussetzungen
+- Visual Studio Code
 
-Stelle sicher, dass die folgenden Programme auf deinem Computer installiert sind:
-- **Node.js** (empfohlen: neueste LTS-Version)
-- **npm** (wird mit Node.js geliefert)
+- MongoDB-Konto
 
-### Du kannst überprüfen, ob Node.js und npm installiert sind, indem du die folgenden Befehle in deinem Terminal ausführst:
-node -v
-npm -v
+- Mapbox-Konto
 
+- Docker Container
+- Docker
 
-Falls nicht installiert, lade Node.js von [https://nodejs.org](https://nodejs.org) herunter.
+### Über AWS
+- AWS-Konto
 
----
+### Schritt-für-Schritt-Installationsanleitung
+- Lokale Installation
+- Forken Sie das Repository.
 
-## Projekt erstellen
+- Öffnen Sie das Repository in Visual Studio Code.
 
-### Mit Create React App (empfohlen)
-1. Öffne dein Terminal.
-2. Führe den folgenden Befehl aus, um ein neues React-Projekt zu erstellen:
-npx create-react-app my-app
+**Installieren Sie die Frontend-Abhängigkeiten:**
 
+- bash
+- cd frontend
+- npm install
 
-Ersetze `my-app` durch den gewünschten Namen deines Projekts.
+**Installieren Sie die Backend-Abhängigkeiten:**
 
-3. Wechsel in das Projektverzeichnis:
-cd my-app
+- bash
+- cd ../backend
+- npm install
+- Erstellen Sie eine MongoDB-Datenbank und speichern Sie den URI-Link in einer .env-Datei im Backend-Verzeichnis.
 
-4. Starte den Entwicklungsserver:
-npm start
+**Starten Sie den Backend-Server:**
 
+- bash
+- node server.js
+- Wechseln Sie zurück zum Frontend-Verzeichnis:
 
-Dein Browser öffnet automatisch `http://localhost:3000`, wo deine React-App läuft.
+- bash
+- cd ../frontend
 
----
+### Besorgen Sie einen Mapbox-Schlüssel und speichern Sie diesen in einer .env-Datei im Frontend-Verzeichnis. 
 
-## Alternativ: Mit Vite (für schnellere Builds)
+*Achten Sie darauf, dass der Schlüssel mit VITE_ beginnt.*
 
-1. Installiere Vite mit folgendem Befehl:
-npm create vite@latest my-app -- --template react
+Erstellen Sie einen Web3Forms API-Token und speichern Sie diesen ebenfalls in der .env-Datei. 
 
+*Auch hier auf VITE_ achten.*
 
-2. Navigiere in das Projektverzeichnis:
-cd my-app
+### Starten Sie den Frontend-Server:
 
+- bash
+- npm run dev
+- Öffnen Sie http://localhost:3001 in Ihrem Browser.
 
-3. Installiere die Abhängigkeiten:
-npm install
+### Abhängigkeiten:
 
+Alle notwendigen Abhängigkeiten werden automatisch durch den npm install Befehl installiert.
 
-4. Starte den Entwicklungsserver:
-npm run dev
+**Installationsmethoden:**
 
+- Lokal auf dem Rechner (wie oben beschrieben)
 
-Deine App wird unter `http://localhost:5173` verfügbar sein.
+- Über Docker Container
 
----
+- Mit Terraform über EC2-Instanzen
 
-## Projektstruktur
+### Konfiguration:
+Nach der Installation müssen Sie sicherstellen, dass alle Umgebungsvariablen korrekt gesetzt sind. Überprüfen Sie die .env-Dateien im Frontend- und Backend-Verzeichnis.
 
-Nach der Erstellung des Projekts sieht die Verzeichnisstruktur wie folgt aus:
+### Fehlerbehebung:
 
-my-app/
+- Falls der Backend-Server nicht startet, überprüfen Sie die MongoDB-Verbindung und den URI in der .env-Datei.
 
-├── node_modules/ # Abhängigkeiten des Projekts
-├── public/ # Statische Dateien wie index.html
-├── src/ # Quellcode der Anwendung
-│ ├── App.js # Hauptkomponente der App
-│ ├── index.js # Einstiegspunkt der App
-│ └── ...
-├── .gitignore # Dateien, die von Git ignoriert werden sollen
-├── package.json # Projektkonfiguration und Abhängigkeiten
-└── README.md # Automatisch generierte README-Datei
+- Bei Problemen mit dem Frontend, stellen Sie sicher, dass der Mapbox-Schlüssel und der Web3Forms API-Token korrekt in der .env-Datei hinterlegt sind.
 
+### Verifikation:
 
+**Um zu überprüfen, ob die Installation erfolgreich war:**
 
----
+- Der Backend-Server sollte ohne Fehlermeldungen starten.
 
-## Zusätzliche Konfiguration
+- Die Frontend-Anwendung sollte unter http://localhost:3001 erreichbar sein und keine Konsolenfehler aufweisen.
 
-### Umgebungsvariablen hinzufügen
+### Deinstallation:
 
-Falls du Umgebungsvariablen benötigst, erstelle eine `.env`-Datei im Stammverzeichnis deines Projekts und füge Variablen wie folgt hinzu:
+**Um die Software zu deinstallieren:**
 
-REACT_APP_API_URL=https://api.example.com
+- Stoppen Sie alle laufenden Server-Prozesse.
 
+- Löschen Sie die Projektverzeichnisse.
 
+- Entfernen Sie die MongoDB-Datenbank, falls nicht mehr benötigt.
 
-**Hinweis:** Alle Umgebungsvariablen müssen mit `REACT_APP_` beginnen, damit sie in React verfügbar sind.
-
----
-
-## Nützliche Befehle
-
-- **Entwicklungsserver starten**:  
-npm start
-
-
-Öffnet die App unter `http://localhost:3000`.
-
-- **Tests ausführen**:  
-npm test
-
-
-
-- **Produktions-Build erstellen**:  
-npm run build
-
-t
-Erstellt optimierte Dateien im Ordner `build/`.
-
----
-
-## Fehlerbehebung
-
-Falls Probleme auftreten:
-1. Stelle sicher, dass Node.js und npm korrekt installiert sind.
-2. Lösche den Ordner `node_modules` und die Datei `package-lock.json`, und installiere die Abhängigkeiten erneut:
-rm -rf node_modules package-lock.json
-npm install
-
-
-
-3. Überprüfe die Logs im Terminal auf spezifische Fehlermeldungen.
-
----
-
-Viel Erfolg bei deinem Projekt!
+- Löschen Sie die Umgebungsvariablen und API-Schlüssel aus Ihren Konten.
