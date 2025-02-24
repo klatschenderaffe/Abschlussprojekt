@@ -9,8 +9,7 @@
 - Viele kleine Fehler ausgebügelt.
 - BlogPosts überarbeitet.
 - Kleinigkeiten an der Präsentation bearbeitet.
-
-### Alle zusammen:
+- Ansible Playbook für Backend Container vorbereitet.
 
 ---
 
