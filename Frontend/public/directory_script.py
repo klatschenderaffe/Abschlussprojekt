@@ -24,7 +24,7 @@ for folder_name in os.listdir(blog_posts_dir):
         categories.append(category)
 
 # Die Daten als JSON-Datei speichern
-output_file = './categories.json'
+output_file = './Frontend/public/categories.json'
 with open(output_file, 'w', encoding='utf-8') as f:
     # ensure_ascii=False stellt sicher, dass Zeichen wie 'ä' nicht als Unicode-Escape-Sequenz gespeichert werden
     json.dump(categories, f, indent=4, ensure_ascii=False)
