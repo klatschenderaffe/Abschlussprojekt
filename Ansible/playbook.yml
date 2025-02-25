@@ -112,11 +112,6 @@
       apt:
         name: python3-pip
 
-    
-
-    
-
-
     # # Docker-Compose installieren
     # - name: Docker-Compose installieren
     #   pip:
@@ -150,7 +145,7 @@
         tag: '{{ docker_image_tag }}'
         source: pull
 
-     - name: Docker Compose Stack bereitstellen
+    - name: Docker Compose Stack bereitstellen
       community.docker.docker_compose:
         project_src: ../ # Pfad zum Verzeichnis mit docker-compose.yml
         state: present # Services starten und erstellen
