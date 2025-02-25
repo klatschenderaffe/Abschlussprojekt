@@ -82,7 +82,7 @@ jobs:
         continue-on-error: false
 
       - name: Docker Compose ausfuehren
-        working-directory: ./
+        working-directory: ./Abschlussprojekt
         run: docker-compose up
 
   terraform_destroy:
