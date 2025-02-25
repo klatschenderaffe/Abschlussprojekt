@@ -146,6 +146,6 @@
         source: pull
 
     - name: Docker Compose Stack bereitstellen
-      community.docker.docker_compose:
+      community.docker.docker_compose_v2:
         project_src: ../ # Pfad zum Verzeichnis mit docker-compose.yml
         state: present # Services starten und erstellen
