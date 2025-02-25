@@ -87,7 +87,7 @@ jobs:
           ls -la
 
       - name: Docker Compose ausfuehren
-        working-directory: Abschlussprojekt
+        # working-directory: Abschlussprojekt
         run: docker-compose up
 
   terraform_destroy:
