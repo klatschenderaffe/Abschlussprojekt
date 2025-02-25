@@ -149,4 +149,4 @@
     - name: Docker-Compose ausführen
       shell: docker-compose -f ./docker-compose.yml up -d
       args:
-        chdir: /pfad/zum/docker-compose-verzeichnis # Arbeitsverzeichnis setzen
+        chdir: ./ # Arbeitsverzeichnis setzen
