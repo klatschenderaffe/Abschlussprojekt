@@ -103,7 +103,7 @@ jobs:
 
       - name: Docker Compose ausfuehren
         working-directory: /home/runner/work/Abschlussprojekt/Abschlussprojekt
-        run: docker-compose up
+        run: docker-compose up -d
 
   terraform_destroy:
     name: Terraform Destroy
