@@ -1,3 +1,5 @@
+// Der Backend Server an sich
+
 // Importiere notwendige Module
 const express = require('express');
 const mongoose = require('mongoose');
