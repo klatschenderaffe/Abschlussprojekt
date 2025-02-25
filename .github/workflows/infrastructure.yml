@@ -86,6 +86,21 @@ jobs:
           pwd
           ls -la
 
+      - name: Create .env
+        working-directory: ./Backend
+        run: |
+          echo "MONGO_URI=${{ secrets.MONGO_URI }}" > .env
+
+      - name: Create .env
+        working-directory: ./Frontend
+        run: |
+          echo "VITE_MAP_KEY=${{ secrets.VITE_MAP_KEY }}" > .env
+          echo "VITE_API_KEY=${{ secrets.VITE_API_KEY }}" >> .env
+          echo "VITE_AUTHORITY=${{ secrets.VITE_AUTHORITY }}" >> .env
+          echo "VITE_CLIENT_ID=${{ secrets.VITE_CLIENT_ID }}" >> .env
+          echo "VITE_REDIRECT_URI=${{ secrets.VITE_REDIRECT_URI }}" >> .env
+          echo "VITE_USERPOOL_DOMAIN=${{ secrets.VITE_USERPOOL_DOMAIN }}" >> .env
+
       - name: Docker Compose ausfuehren
         working-directory: /home/runner/work/Abschlussprojekt/Abschlussprojekt
         run: docker-compose up
