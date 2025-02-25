@@ -1,3 +1,6 @@
+//  Ist in die server.js gewandert und wird sobald die
+// Datenbank verbunden wurde abgefragt.
+
 require('dotenv').config();
 const { MongoClient } = require('mongodb');
 const fs = require('fs');
@@ -11,6 +14,10 @@ async function importSleepspots() {
     await client.connect();
     const db = client.db('sleepportsDB');
     const collection = db.collection('sleepspots');
+
+    // Test console.log
+    const docs = await collection.find().toArray();
+    console.log(docs);
 
     // JSON-Datei aus dem Frontend-Ordner laden
     const filePath = path.join(__dirname, './data/sleepspots.json');
