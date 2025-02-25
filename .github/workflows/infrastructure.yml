@@ -61,6 +61,11 @@ jobs:
           chmod +x ./aws_inventory.py
           python ./aws_inventory.py
 
+        # 3. Ansible Galaxy Rollen installieren
+      - name: Install Ansible Galaxy roles
+        working-directory: ./Ansible
+        run: ansible-galaxy install -r requirements.yml
+
       - name: Run Ansible Playbook Frontend
         env:
           ANSIBLE_USER: ubuntu
