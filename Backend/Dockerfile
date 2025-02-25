@@ -1,5 +1,5 @@
 # Basis-Image verwenden (Node.js LTS)
-FROM  node:20-alpine3.20
+FROM  node:18-alpine3
 
 # Arbeitsverzeichnis im Container setzen
 WORKDIR /app
