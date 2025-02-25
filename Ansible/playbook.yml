@@ -112,14 +112,9 @@
       apt:
         name: python3-pip
 
-    - name: Download Docker Compose binary
-          get_url:
-            url: "https://github.com/docker/compose/releases/download/v2.33.1/docker-compose-linux-x86_64"
-            dest: /usr/local/bin/docker-compose
-            mode: '0755'
+    
 
-    - name: Test Docker Compose installation
-      command: docker-compose --version
+    
 
 
     # # Docker-Compose installieren
@@ -155,8 +150,7 @@
         tag: '{{ docker_image_tag }}'
         source: pull
 
-    # Docker-Compose ausführen (optional)
-    - name: Docker-Compose ausführen
-      shell: docker-compose -f ./docker-compose.yml up -d
-      args:
-        chdir: /docker-compose.yml # Arbeitsverzeichnis setzen
+     - name: Docker Compose Stack bereitstellen
+      community.docker.docker_compose:
+        project_src: ../ # Pfad zum Verzeichnis mit docker-compose.yml
+        state: present # Services starten und erstellen
