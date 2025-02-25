@@ -1,3 +1,19 @@
+> 25.02.2025
+
+# Tag 20:
+
+### Alleine:
+
+- docker compose erstellt.
+- Frontend mit dem backend verbunden.
+- viel Fehlersuche
+
+### Alle zusammen:
+
+- Fehlersuche
+
+---
+
 > 24.02.2025
 
 # Tag 19:
