@@ -15,10 +15,9 @@ dotenv.config();
 const app = express();
 app.use(
   cors({
-    origin: 'https://van-ventura.eu', // Erlaube Anfragen von diesem Origin
-    //  vorher das  'http://localhost:80'
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Erlaube spezifische HTTP-Methoden
-    credentials: true, // Falls Cookies oder Authentifizierung verwendet werden
+    origin: ['https://van-ventura.eu', 'http://localhost'], // Erlaube beide Origins
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
   })
 );
 // app.use(cors({ origin: 'http://localhost:80' })); // damit das frondend auf die api zugreifen kann
