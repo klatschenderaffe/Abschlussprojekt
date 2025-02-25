@@ -1,3 +1,5 @@
+// API mit einer GET Route
+
 const express = require('express');
 const { MongoClient } = require('mongodb');
 require('dotenv').config();
