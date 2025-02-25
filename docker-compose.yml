@@ -32,7 +32,7 @@ services:
       - backend
       - db
     container_name: frontend
-    image: klatschenderaffe/vanventura:latest
+    image: klatschenderaffe/vanventura_frontend:latest
     ports:
       - '80:80'
     env_file:
