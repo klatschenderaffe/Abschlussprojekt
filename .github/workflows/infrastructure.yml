@@ -74,6 +74,9 @@ jobs:
         run: |
           ansible-playbook -i ./aws_inventory.py ./playbook.yml --ssh-common-args='-o StrictHostKeyChecking=no' -v
 
+      - name: Docker Compose ausfuehren
+        run: docker-compose ../docker-compose.yml up
+
   terraform_destroy:
     name: Terraform Destroy
     runs-on: ubuntu-latest
