@@ -7,6 +7,8 @@
 - docker compose erstellt.
 - Frontend mit dem backend verbunden.
 - viel Fehlersuche
+- localhost auf van-ventura geaendert.
+- nginx.conf angepasst.
 
 ### Alle zusammen:
 
