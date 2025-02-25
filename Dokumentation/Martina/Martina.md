@@ -97,3 +97,10 @@ krank
 # Tag 16
 
 - Präsentation fertig stellen
+- Notizen für die Präsentation gemacht (damit man nichts vergisst)
+
+# Tag 17
+
+- Präsentation besprichen mit unseren Notizen
+- Notizen durchgesprochen
+- Präsi mit Sophie durchgegangen
