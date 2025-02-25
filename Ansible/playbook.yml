@@ -7,7 +7,7 @@
   vars:
     # Definieren Sie den Hash (z. B. GitHub-SHA). Dies sollte dynamisch gesetzt werden.
     docker_image_tag: "{{ lookup('env', 'GITHUB_SHA') | default('latest') }}"
-    docker_image_name: 'klatschenderaffe/vanventura'
+    docker_image_name: 'klatschenderaffe/vanventura_frontend'
     docker_image_name_backend: 'klatschenderaffe/vanventura_backend'
 
   tasks:
@@ -25,43 +25,73 @@
     #     update_cache: true
     #   become: true
     # 3. Docker starten und aktivieren
-    - name: Docker starten und aktivieren
-      systemd:
+     - name: "Pip3 installieren"
+       apt:
+        name: "python3-pip"
+    
+     - name: "Docker-Compose installieren"
+       pip:
+        name: "docker-compose"
+
+     - name: Docker starten und aktivieren
+       systemd:
         name: docker
         state: started
         enabled: true
+  # ################ DB #############################################
+      - name: Docker Image pullen
+              community.docker.docker_image:
+                name: mongo
+                tag: latest
+                source: pull
 
+                
     # ################ BACKEND #############################################
-    - name: Docker Image pullen
-      community.docker.docker_image:
-        name: '{{ docker_image_name_backend }}'
-        tag: '{{ docker_image_tag }}'
-        source: pull
+      - name: Docker Image pullen
+        community.docker.docker_image:
+          name: '{{ docker_image_name_backend }}'
+          tag: '{{ docker_image_tag }}'
+          source: pull
 
-    # 5. Docker Container starten mit spezifischem Tag (Hash)
-    - name: Docker Container starten
-      community.docker.docker_container:
-        name: vanventura-backend-container
-        image: '{{ docker_image_name_backend }}:{{ docker_image_tag }}'
-        state: started
-        restart_policy: always
-        published_ports:
-          - '5000:5000' # Ändern Sie den Host-Port von 80 auf einen freien Port wie 8080
+    # # 5. Docker Container starten mit spezifischem Tag (Hash)
+    # - name: Docker Container starten
+    #   community.docker.docker_container:
+    #     name: vanventura-backend-container
+    #     image: '{{ docker_image_name_backend }}:{{ docker_image_tag }}'
+    #     state: started
+    #     restart_policy: always
+    #     published_ports:
+    #       - '5000:5000' # Ändern Sie den Host-Port von 80 auf einen freien Port wie 8080
 
     # ############### FRONTEND #################################
-    - name: Docker Image pullen
-      community.docker.docker_image:
-        name: '{{ docker_image_name }}'
-        tag: '{{ docker_image_tag }}'
-        source: pull
+      - name: Docker Image pullen
+        community.docker.docker_image:
+          name: '{{ docker_image_name }}'
+          tag: '{{ docker_image_tag }}'
+          source: pull
+#     # 5. Docker Container starten mit spezifischem Tag (Hash)
+#     - name: Docker Container starten
+#       community.docker.docker_container:
+#         name: vanventura-container
+#         image: '{{ docker_image_name }}:{{ docker_image_tag }}'
+#         state: started
+#         restart_policy: always
+#         published_ports:
+#           - '80:80' # Ändern Sie den Host-Port von 80 auf einen freien Port wie 8080
+# # '
 
-    # 5. Docker Container starten mit spezifischem Tag (Hash)
-    - name: Docker Container starten
-      community.docker.docker_container:
-        name: vanventura-container
-        image: '{{ docker_image_name }}:{{ docker_image_tag }}'
-        state: started
-        restart_policy: always
-        published_ports:
-          - '80:80' # Ändern Sie den Host-Port von 80 auf einen freien Port wie 8080
+      - name: Run docker-compose commands with shell module
+        hosts: localhost
+        tasks:
+          - name: Run docker-compose up command
+            shell: docker-compose -f ./docker-compose.yml up -d'
 
+      # - name: Start Docker Compose via shell
+      #   hosts: localhost
+      #   tasks:
+      #     - name: Run docker-compose up
+      #       ansible.builtin.shell: |
+      #         docker-compose -f /pfad/zum/docker-compose.yml up -d
+      #       args:
+      #         chdir: /pfad/zum/docker-compose-verzeichnis  # Arbeitsverzeichnis setzen
+      #       become: true  # Falls Root-Rechte benötigt werden

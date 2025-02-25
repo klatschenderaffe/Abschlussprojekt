@@ -7,7 +7,7 @@
 # Sie finden das entsprechende Image auf Docker Hub: https://hub.docker.com/_/node 
 # In diesem Beispiel verwenden wir node:20-alpine3.20 
 # Führen Sie in der Terminalbefehlzeile „node --version aus, um die Version Ihrer App abzurufen“ 
-FROM  node:20-alpine3.20  As  build 
+FROM  node:20-alpine3.20  AS  build 
 
 # Legen Sie das Arbeitsverzeichnis innerhalb des Containers fest 
 WORKDIR  /usr/src/app 
