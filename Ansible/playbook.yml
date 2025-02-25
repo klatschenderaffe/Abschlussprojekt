@@ -147,5 +147,5 @@
 
     - name: Docker Compose Stack bereitstellen
       community.docker.docker_compose_v2:
-        project_src: /home/runner/work/Abschlussprojekt/Abschlussprojekt # Pfad zum Verzeichnis mit docker-compose.yml
+        project_src: ../. # Pfad zum Verzeichnis mit docker-compose.yml
         state: present # Services starten und erstellen
