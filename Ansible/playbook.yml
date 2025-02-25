@@ -112,10 +112,10 @@
       apt:
         name: python3-pip
 
-    # Docker-Compose installieren
-    - name: Docker-Compose installieren
-      pip:
-        name: docker-compose
+    # # Docker-Compose installieren
+    # - name: Docker-Compose installieren
+    #   pip:
+    #     name: docker-compose
 
     # Docker starten und aktivieren
     - name: Docker starten und aktivieren
