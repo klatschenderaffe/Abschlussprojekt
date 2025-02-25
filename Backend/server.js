@@ -15,7 +15,7 @@ dotenv.config();
 const app = express();
 app.use(
   cors({
-    origin: 'http://localhost', // Erlaube Anfragen von diesem Origin
+    origin: 'http://localhost:80', // Erlaube Anfragen von diesem Origin
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Erlaube spezifische HTTP-Methoden
     credentials: true, // Falls Cookies oder Authentifizierung verwendet werden
   })
