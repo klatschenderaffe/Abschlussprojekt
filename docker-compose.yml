@@ -1,0 +1,46 @@
+services:
+  db:
+    image: mongo
+    container_name: db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=secret
+    ports:
+      - '27017:27017'
+    networks:
+      - vv
+
+  backend:
+    depends_on:
+      - db
+    container_name: backend
+    image: klatschenderaffe/vanventura_backend:latest
+    # environment:
+    #   - DB_USER=admin
+    #   - DB_PASSWORD=secret
+    #   - DB_CONTAINER_NAME=db
+    #   - DB_CONTAINER_PORT=27017
+    env_file:
+      - ./Backend/.env
+    ports:
+      - '5000:5000'
+    networks:
+      - vv
+
+  frontend:
+    depends_on:
+      - backend
+      - db
+    container_name: frontend
+    image: klatschenderaffe/vanventura:latest
+    ports:
+      - '80:80'
+    env_file:
+      - ./Frontend/.env
+    networks:
+      - vv
+
+networks:
+  vv:
+    name: vv
+    driver: bridge

@@ -79,7 +79,7 @@ jobs:
       - name: Docker Image erstellen und taggen
         working-directory: ./Frontend
         env:
-          IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/vanventura
+          IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/vanventura_frontend
           IMAGE_TAG: ${{ github.sha }}
         run: |
           docker buildx build \
@@ -96,7 +96,7 @@ jobs:
       - name: Docker Image pushen
         working-directory: ./Frontend
         env:
-          IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/vanventura
+          IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/vanventura_frontend
           IMAGE_TAG: ${{ github.sha }}
         run: |
           docker push $IMAGE_NAME:$IMAGE_TAG

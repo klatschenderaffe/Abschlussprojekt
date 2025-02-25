@@ -1,0 +1,158 @@
+[
+    {
+        "id": 1,
+        "title": "Schöner Platz am Wasser in den Niederlanden",
+        "coordinats": "53.1025, 5.3826",
+        "infos": "Viaduct 8751 Zurich, Netherlands ..."
+    },
+    {
+        "id": 2,
+        "title": "Cruchten Nommern",
+        "coordinats": "49.8022, 6.1295",
+        "infos": "7420 Cruchten Nommern, Luxembourg"
+    },
+    {
+        "id": 3,
+        "title": "Niechorze in Polen",
+        "coordinats": "54.0977, 15.0982",
+        "infos": "0 Graniczna, 72-350 Niechorze, Poland"
+    },
+    {
+        "id": 4,
+        "title": "Huy in Belgien",
+        "coordinats": "50.4938, 5.2726",
+        "infos": "Unnamed Road, 4500 Huy, Belgium"
+    },
+    {
+        "id": 5,
+        "title": "Waldbillig in Luxembourg",
+        "coordinats": "49.7914, 6.2768",
+        "infos": "7 Am Lahr, 7641 Waldbillig, Luxembourg"
+    },
+    {
+        "id": 6,
+        "title": "Colmar-Berg - 2 Rue de l'Alzette",
+        "coordinats": "49.8145, 6.0992",
+        "infos": "2 Rue de l'Alzette, 7711 Colmar-Berg, Luxembourg"
+    },
+    {
+        "id": 7,
+        "title": "Erzhalden in Österreich",
+        "coordinats": "47.7122, 14.8321",
+        "infos": "Hochschwab Str., 8923 Erzhalden, Austria"
+    },
+    {
+        "id": 8,
+        "title": "Plaňany in Tschechien",
+        "coordinats": "50.0490, 15.0339",
+        "infos": "Ein schöner Platz zum entspannen. Hier die Adresse: Na Hřišti, 281 04 Plaňany, Czechia"
+    },
+    {
+        "id": 9,
+        "title": "Eefde",
+        "coordinats": "52.1710, 6.2268",
+        "infos": "1 Schurinklaan, 7211 DD Eefde, Netherlands"
+    },
+    {
+        "id": 10,
+        "title": "Aiterhofen - 11 Mattinger Straße",
+        "coordinats": "48.8322, 12.6082",
+        "infos": "11 Mattinger Straße, 94330 Aiterhofen, Germany"
+    },
+    {
+        "id": 11,
+        "title": "Dinant - Rondchêne",
+        "coordinats": "50.2501, 4.9030",
+        "infos": "Rondchêne, 5500 Dinant, Belgium"
+    },
+    {
+        "id": 12,
+        "title": "Gidle - 17 Pławińska",
+        "coordinats": "50.9649, 19.4657",
+        "infos": "17 Pławińska, 97-540 Gidle, Poland"
+    },
+    {
+        "id": 13,
+        "title": "Beaumont - 2 Rue des Marbriers",
+        "coordinats": "50.2203, 4.2796",
+        "infos": "2 Rue des Marbriers, 6500 Beaumont, Belgium"
+    },
+    {
+        "id": 14,
+        "title": "Renswoude",
+        "coordinats": "52.0702, 5.5498",
+        "infos": "3927 Renswoude, Netherlands"
+    },
+    {
+        "id": 15,
+        "title": "Apeldoorn - 48 De Voorwaarts",
+        "coordinats": "52.2090, 5.9979",
+        "infos": "48 De Voorwaarts, 7321 MA Apeldoorn, Netherlands"
+    },
+    {
+        "id": 16,
+        "title": "Česká Kubice",
+        "coordinats": "49.3432, 12.8515",
+        "infos": "345 32 Česká Kubice, Czechia"
+    },
+    {
+        "id": 17,
+        "title": "Innertkirchen - 11",
+        "coordinats": "46.7210, 8.3183",
+        "infos": "3863 Innertkirchen, Switzerland"
+    },
+    {
+        "id": 18,
+        "title": "Giswil - 31 Panoramastrasse",
+        "coordinats": "46.8325, 8.1792",
+        "infos": "31 Panoramastrasse, 6074 Giswil, Switzerland"
+    },
+    {
+        "id": 19,
+        "title": "Vissenbjerg - 13 Lille Roldvej",
+        "coordinats": "55.4105, 10.0865",
+        "infos": "13 Lille Roldvej, 5492 Vissenbjerg, Denmark"
+    },
+    {
+        "id": 20,
+        "title": "Barrit - 45 Staksrodevej",
+        "coordinats": "55.6814, 9.8581",
+        "infos": "45 Staksrodevej, 7150 Barrit, Denmark"
+    },
+    {
+        "id": 21,
+        "title": "Stoetze",
+        "coordinats": "53.1099, 10.8356",
+        "infos": "29597 Stoetze, Germany"
+    },
+    {
+        "id": 22,
+        "title": "Colmar-Berg - 8 An der Sang",
+        "coordinats": "49.8096, 6.0885",
+        "infos": "8 An der Sang, 7739 Colmar-Berg, Luxembourg"
+    },
+    {
+        "id": 23,
+        "title": "Vellano - 7 Al Crèst",
+        "coordinats": "46.1684, 9.0565",
+        "infos": "7 Al Crèst, 6583 Vellano, Switzerland"
+    },
+    {
+        "id": 24,
+        "title": "Ibm - 52 Ibm",
+        "coordinats": "48.0538, 12.9544",
+        "infos": "52 Ibm, 5142 Ibm, Austria"
+    },
+    {
+        "id": 25,
+        "title": "Geisenhausen - 134 Vilsbiburger Straße",
+        "coordinats": "48.4722, 12.2726",
+        "infos": "134 Vilsbiburger Straße, 84144 Geisenhausen, Germany"
+    },
+    {
+        "id": 26,
+        "title": "Camping Gadmen",
+        "coordinats": "46.7382, 8.3616",
+        "infos": "Sustenstrasse 3863 Gadmen,Switzerland"
+    }
+]
