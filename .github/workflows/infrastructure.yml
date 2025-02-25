@@ -81,8 +81,13 @@ jobs:
           docker-compose --version
         continue-on-error: false
 
+      - name: Debug Arbeitsverzeichnis
+        run: |
+          pwd
+          ls -la
+
       - name: Docker Compose ausfuehren
-        working-directory: ./Abschlussprojekt
+        working-directory: Abschlussprojekt
         run: docker-compose up
 
   terraform_destroy:
