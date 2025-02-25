@@ -61,7 +61,7 @@ jobs:
           chmod +x ./aws_inventory.py
           python ./aws_inventory.py
 
-      - name: Run Ansible Playbook
+      - name: Run Ansible Playbook Frontend
         env:
           ANSIBLE_USER: ubuntu
           ANSIBLE_HOST_KEY_CHECKING: False

@@ -1,55 +1,30 @@
 import './Categorys.css';
-import { Link } from 'react-router';
-import Rostversiegelung from '../../assets/Rostversiegelung.png';
-import Dämmung from '../../assets/Dämmung.png';
-import MöbelBauen from '../../assets/MöbelBauen.png';
-import FahrzeugAuswahl from '../../assets/FahrzeugAuswahl.png';
-import BodenVerlegen from '../../assets/BodenVerlegen.png';
-import WaendeVerkleiden from '../../assets/WaendeVerkleiden.png';
+import { Link } from 'react-router-dom';
 
-const Categorys = () => {
+import Category_json from '../../../public/categories.json';
+
+const WelcomePage = () => {
+  // Kategorien mit zugehörigen Bildern definieren
+  const categories = Category_json;
+
   return (
-    <div className='category-container'>
-      <div className='category-item'>
-        <Link className='link' to='/blogpage'>
-          <img src={FahrzeugAuswahl} alt='' />
-          <h3>Fahrzeug Auswahl</h3>
-        </Link>
-      </div>
-      <div className='category-item'>
-        <Link className='link' to='/'>
-          <img src={Rostversiegelung} alt='' />
-          <h3>Rostversiegelung</h3>
-        </Link>
-      </div>
-      <div className='category-item'>
-        <Link className='link' to='/'>
-          <img src={Dämmung} alt='' />
-          <h3>Dämmung</h3>
-        </Link>
-      </div>
-      <div className='category-item'>
-        <Link className='link' to='/'>
-          <img src={BodenVerlegen} alt='' />
-          <h3>Boden verlegen</h3>
-        </Link>
-      </div>
-      <div className='category-item'>
-        <Link className='link' to='/'>
-          <img src={WaendeVerkleiden} alt='' />
-          <h3>
-            Wände und Decken <br /> verkleiden
-          </h3>
-        </Link>
-      </div>
-      <div className='category-item'>
-        <Link className='link' to='/'>
-          <img src={MöbelBauen} alt='' />
-          <h3>Möbel bauen</h3>
-        </Link>
+    <div>
+      <div className='category-container'>
+        {categories.map((category) => (
+          <div key={category.name} className='category-item'>
+            <Link className='link' to={`/blog/${category.name}`}>
+              {/* Dynamisches Bild basierend auf der Kategorie */}
+              <img
+                src={`../../assets/${category.image}`} // Sicherstellen, dass der Pfad korrekt ist
+                alt={`Bild für die Kategorie ${category.title}`}
+              />
+              <h3>{category.title}</h3>
+            </Link>
+          </div>
+        ))}
       </div>
     </div>
   );
 };
 
-export default Categorys;
+export default WelcomePage;

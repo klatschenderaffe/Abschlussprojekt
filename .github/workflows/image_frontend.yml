@@ -47,6 +47,18 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
+
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Python Script für Category
+        working-directory: ./Frontend/public
+        run: |
+          chmod +x ./directory_script.py
+          python directory_script.py
+
       # schritt 3: Abhängigkeiten installieren
       - name: Abhängigkeiten installieren
         working-directory: ./Frontend
