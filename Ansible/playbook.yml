@@ -73,11 +73,10 @@
 
     - name: Docker Container starten (Backend)
       community.docker.docker_container:
-        name: vanventura-backend-container
+        name: backend
         image: '{{ docker_image_name_backend }}:{{ docker_image_tag }}'
         state: started
         restart_policy: always
-
         networks:
           - name: vv
         published_ports:
@@ -92,13 +91,12 @@
 
     - name: Docker Container starten (Frontend)
       community.docker.docker_container:
-        name: vanventura-container
+        name: frontend
         image: '{{ docker_image_name }}:{{ docker_image_tag }}'
         state: started
         restart_policy: always
         networks:
           - name: vv
-
         published_ports:
           - '80:80'
 # ######################################### Version 2 ###############################################################

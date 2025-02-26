@@ -37,10 +37,9 @@ const Map = () => {
     // Daten vom Backend holen
     // Array durchgehen mit foreach
     // für jedes Element die Koordinaten parsen
-    const apiUrl = '/api/sleepspots';
 
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', `${apiUrl}`); //api/sleepspots RAUS GEKÜRZT 'http://localhost:5000/api/sleepspots'
+    xhr.open('GET', `/api/sleepspots`); //api/sleepspots RAUS GEKÜRZT 'http://localhost:5000/api/sleepspots'
     xhr.onload = function () {
       if (xhr.status === 200) {
         const data = JSON.parse(xhr.responseText);
