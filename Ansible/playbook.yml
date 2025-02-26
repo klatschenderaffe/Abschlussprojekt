@@ -1,3 +1,4 @@
+---
 - name: Deployen von VanVentura mit Docker
   hosts: all
   become: true
@@ -17,96 +18,87 @@
     #     name: '*'
     #     state: latest
     #   become: true
-    # # 2. Docker installieren
+
     # - name: Docker aus Standard-Repositories installieren
     #   apt:
     #     name: docker.io
     #     state: present
     #     update_cache: true
     #   become: true
-    # 3. Docker starten und aktivieren
-     - name: "Pip3 installieren"
-       apt:
-        name: "python3-pip"
 
-     - name: "Docker-Compose installieren"
-       pip:
-        name: "docker-compose"
+    # - name: Docker starten und aktivieren
+    - name: 'Pip3 installieren'
+      apt:
+        name: 'python3-pip'
 
-     - name: Docker starten und aktivieren
-       systemd:
+    - name: 'Docker-Compose installieren'
+      pip:
+        name: 'docker-compose'
+
+    - name: Docker starten und aktivieren
+      systemd:
         name: docker
         state: started
         enabled: true
 
-     - name: Docker-Netzwerk erstellen
-       community.docker.docker_network:
-         name: vv
-         driver: bridge
+    - name: Docker-Netzwerk erstellen
+      community.docker.docker_network:
+        name: vv
+        driver: bridge
 
-  # ################ DB #############################################
-      - name: Docker Image pullen
-        community.docker.docker_image:
-          name: mongo
-          tag: latest
-          source: pull
+    ################ DB #############################################
+    - name: Docker Image pullen (MongoDB)
+      community.docker.docker_image:
+        name: mongo
+        tag: latest
+        source: pull
 
-
-# 5. Docker Container starten mit spezifischem Tag (Hash)
-      - name: Docker Container starten
-        community.docker.docker_container:
-          name: db
-          image: mongo:latest
-          state: started
-          restart_policy: always
-          networks:
+    - name: Docker Container starten (MongoDB)
+      community.docker.docker_container:
+        name: db
+        image: mongo:latest
+        state: started
+        restart_policy: always
+        networks:
           - name: vv
-          published_ports:
-            - '27017:27017' # Ändern Sie den Host-Port von 80 auf einen freien Port wie 8080
+        published_ports:
+          - '27017:27017'
 
-    # ################ BACKEND #############################################
-      - name: Docker Image pullen
-        community.docker.docker_image:
-          name: '{{ docker_image_name_backend }}'
-          tag: '{{ docker_image_tag }}'
-          source: pull
+    ################ BACKEND ###########################################
+    - name: Docker Image pullen (Backend)
+      community.docker.docker_image:
+        name: '{{ docker_image_name_backend }}'
+        tag: '{{ docker_image_tag }}'
+        source: pull
 
-    # 5. Docker Container starten mit spezifischem Tag (Hash)
-      - name: Docker Container starten
-        community.docker.docker_container:
-          name: vanventura-backend-container
-          image: '{{ docker_image_name_backend }}:{{ docker_image_tag }}'
-          state: started
-          restart_policy: always
-          networks:
+    - name: Docker Container starten (Backend)
+      community.docker.docker_container:
+        name: vanventura-backend-container
+        image: '{{ docker_image_name_backend }}:{{ docker_image_tag }}'
+        state: started
+        restart_policy: always
+        networks:
           - name: vv
-          published_ports:
-            - '5000:5000' # Ändern Sie den Host-Port von 80 auf einen freien Port wie 8080
+        published_ports:
+          - '5000:5000'
 
-    # ############### FRONTEND #################################
-      - name: Docker Image pullen
-        community.docker.docker_image:
-          name: '{{ docker_image_name }}'
-          tag: '{{ docker_image_tag }}'
-          source: pull
+    ################ FRONTEND ##########################################
+    - name: Docker Image pullen (Frontend)
+      community.docker.docker_image:
+        name: '{{ docker_image_name }}'
+        tag: '{{ docker_image_tag }}'
+        source: pull
 
-
-    # 5. Docker Container starten mit spezifischem Tag (Hash)
-      - name: Docker Container starten
-        community.docker.docker_container:
-          name: vanventura-container
-          image: '{{ docker_image_name }}:{{ docker_image_tag }}'
-          state: started
-          restart_policy: always
-          networks:
+    - name: Docker Container starten (Frontend)
+      community.docker.docker_container:
+        name: vanventura-container
+        image: '{{ docker_image_name }}:{{ docker_image_tag }}'
+        state: started
+        restart_policy: always
+        networks:
           - name: vv
-          published_ports:
-            - '80:80' # Ändern Sie den Host-Port von 80 auf einen freien Port wie 8080
-# '
-
-
-
-
+        published_ports:
+          - '80:80'
 # ######################################### Version 2 ###############################################################
 # - name: Deployen von VanVentura mit Docker
 #   hosts: all
