@@ -77,8 +77,7 @@
         image: '{{ docker_image_name_backend }}:{{ docker_image_tag }}'
         state: started
         restart_policy: always
-        depends_on:
-          - db
+
         networks:
           - name: vv
         published_ports:
@@ -99,9 +98,7 @@
         restart_policy: always
         networks:
           - name: vv
-        depends_on:
-          - vanventura-backend-container
-          - db
+
         published_ports:
           - '80:80'
 # ######################################### Version 2 ###############################################################
