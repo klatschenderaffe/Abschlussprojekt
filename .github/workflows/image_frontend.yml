@@ -75,7 +75,7 @@ jobs:
           echo "VITE_REDIRECT_URI=${{ secrets.VITE_REDIRECT_URI }}" >> .env
           echo "VITE_USERPOOL_DOMAIN=${{ secrets.VITE_USERPOOL_DOMAIN }}" >> .env
 
-      # Schritt 3: Projekt-Build bauen und Image erstellen
+      # Schritt 3: Projekt-Build bauen und Image erstellen --tag $IMAGE_NAME:$IMAGE_TAG \
       - name: Docker Image erstellen und taggen
         working-directory: ./Frontend
         env:
@@ -83,7 +83,7 @@ jobs:
           IMAGE_TAG: ${{ github.sha }}
         run: |
           docker buildx build \
-            --tag $IMAGE_NAME:$IMAGE_TAG \
+            
             --tag $IMAGE_NAME:latest \
             .
       # Step 2: Einloggen in Dockerhub
@@ -92,12 +92,12 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-        # Schritt 5: Docker Image pushen
+        # Schritt 5: Docker Image pushen docker push $IMAGE_NAME:$IMAGE_TAG
       - name: Docker Image pushen
         working-directory: ./Frontend
         env:
           IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/vanventura_frontend
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker push $IMAGE_NAME:$IMAGE_TAG
+
           docker push $IMAGE_NAME:latest
