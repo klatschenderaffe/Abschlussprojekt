@@ -152,6 +152,13 @@
         name: mongo
         tag: latest
         source: pull
+    # ################ NGINX #############################################
+
+    - name: Docker Image für NGINX pullen
+      community.docker.docker_image:
+        name: nginx
+        tag: latest
+        source: pull
 
     # ################ BACKEND #############################################
     - name: Docker Image für Backend pullen
