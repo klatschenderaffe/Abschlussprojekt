@@ -195,6 +195,11 @@
 
     - name: Kopiere die Docker Compose-Datei auf den Zielserver
       copy:
+        src: ../Frontend/nginx/default.conf
+        dest: /home/{{ ansible_user }}/default.conf
+
+    - name: Kopiere die Docker Compose-Datei auf den Zielserver
+      copy:
         src: ../docker-compose.yml
         dest: /home/{{ ansible_user }}/docker-compose.yml
 
