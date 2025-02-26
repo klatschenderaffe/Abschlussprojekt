@@ -40,6 +40,17 @@ services:
     networks:
       - vv
 
+    nginx:
+      image: nginx:latest
+      container_name: nginx
+      ports:
+        - '80:80' # Exponiere Port 80 für externe Anfragen
+      depends_on:
+        - frontend
+        - backend
+      networks:
+        - vv
+
 networks:
   vv:
     name: vv
