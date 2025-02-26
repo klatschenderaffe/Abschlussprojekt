@@ -113,11 +113,11 @@
         name: python3-pip
 
     - name: Installiere Abhängigkeiten
-          apt:
-            name:
-              - curl
-              - jq
-            state: present
+      apt:
+        name:
+          - curl
+          - jq
+        state: present
 
     - name: Lade die neueste Version von Docker Compose herunter
       shell: |
