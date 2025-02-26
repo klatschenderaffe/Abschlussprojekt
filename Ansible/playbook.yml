@@ -77,6 +77,7 @@
         image: '{{ docker_image_name_backend }}:{{ docker_image_tag }}'
         state: started
         restart_policy: always
+        become: true
         networks:
           - name: vv
         published_ports:
