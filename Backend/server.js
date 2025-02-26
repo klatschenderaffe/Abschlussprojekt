@@ -17,7 +17,7 @@ dotenv.config();
 const app = express();
 app.use(
   cors({
-    origin: ['https://van-ventura.eu', 'http://localhost'], // Erlaube beide Origins
+    origin: ['https://van-ventura.eu', 'http://localhost', 'http://frontend'], // Erlaube beide Origins
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
   })
