@@ -33,8 +33,8 @@ services:
       - db
     container_name: frontend
     image: klatschenderaffe/vanventura_frontend:latest
-    ports:
-      - '80:80'
+    # ports:
+    #   - '80:80'
     # env_file:
     #   - ./Frontend/.env
     networks:
@@ -44,7 +44,7 @@ services:
     image: nginx:latest
     container_name: nginx
     ports:
-      - '8080:80' # Exponiere Port 80 für externe Anfragen
+      - '80:80' # Exponiere Port 80 für externe Anfragen
     depends_on:
       - frontend
       - backend
