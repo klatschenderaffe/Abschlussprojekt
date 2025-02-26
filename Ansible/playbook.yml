@@ -151,8 +151,8 @@
     #     state: present # Services starten und erstellen
 
     - name: Display current working directory (pwd)
-          command: pwd
-          register: current_dir
+      command: pwd
+      register: current_dir
 
     - name: Kopiere die Docker Compose-Datei auf den Zielserver
       copy:
