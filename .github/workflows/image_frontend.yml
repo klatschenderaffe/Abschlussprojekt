@@ -83,7 +83,7 @@ jobs:
           IMAGE_TAG: ${{ github.sha }}
         run: |
           docker buildx build \
-            
+            --tag $IMAGE_NAME:$IMAGE_TAG \
             --tag $IMAGE_NAME:latest \
             .
       # Step 2: Einloggen in Dockerhub
@@ -99,5 +99,5 @@ jobs:
           IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/vanventura_frontend
           IMAGE_TAG: ${{ github.sha }}
         run: |
-
+          docker push $IMAGE_NAME:$IMAGE_TAG
           docker push $IMAGE_NAME:latest
