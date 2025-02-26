@@ -176,6 +176,16 @@
       command: pwd
       register: current_dir
 
+    - name: Kopiere Backend .env-Datei auf den Zielserver
+      copy:
+        src: ./Backend/.env
+        dest: /home/ubuntu/Backend/.env
+
+    - name: Kopiere Frontend .env-Datei auf den Zielserver
+      copy:
+        src: ./Frontend/.env
+        dest: /home/ubuntu/Frontend/.env
+
     - name: Kopiere die Docker Compose-Datei auf den Zielserver
       copy:
         src: ../docker-compose.yml
