@@ -1,100 +1,3 @@
-# - name: Deployen von VanVentura mit Docker
-#   hosts: all
-#   become: true
-#   collections:
-#     - community.docker
-
-#   vars:
-#     # Definieren Sie den Hash (z. B. GitHub-SHA). Dies sollte dynamisch gesetzt werden.
-#     docker_image_tag: "{{ lookup('env', 'GITHUB_SHA') | default('latest') }}"
-#     docker_image_name: 'klatschenderaffe/vanventura_frontend'
-#     docker_image_name_backend: 'klatschenderaffe/vanventura_backend'
-
-#   tasks:
-#     # IN DEN USERDATA
-#     # - name: System aktualisieren
-#     #   package:
-#     #     name: '*'
-#     #     state: latest
-#     #   become: true
-#     # # 2. Docker installieren
-#     # - name: Docker aus Standard-Repositories installieren
-#     #   apt:
-#     #     name: docker.io
-#     #     state: present
-#     #     update_cache: true
-#     #   become: true
-#     # 3. Docker starten und aktivieren
-#      - name: "Pip3 installieren"
-#        apt:
-#         name: "python3-pip"
-
-#      - name: "Docker-Compose installieren"
-#        pip:
-#         name: "docker-compose"
-
-#      - name: Docker starten und aktivieren
-#        systemd:
-#         name: docker
-#         state: started
-#         enabled: true
-#   # ################ DB #############################################
-#       - name: Docker Image pullen
-#               community.docker.docker_image:
-#                 name: mongo
-#                 tag: latest
-#                 source: pull
-
-#     # ################ BACKEND #############################################
-#       - name: Docker Image pullen
-#         community.docker.docker_image:
-#           name: '{{ docker_image_name_backend }}'
-#           tag: '{{ docker_image_tag }}'
-#           source: pull
-
-#     # # 5. Docker Container starten mit spezifischem Tag (Hash)
-#     # - name: Docker Container starten
-#     #   community.docker.docker_container:
-#     #     name: vanventura-backend-container
-#     #     image: '{{ docker_image_name_backend }}:{{ docker_image_tag }}'
-#     #     state: started
-#     #     restart_policy: always
-#     #     published_ports:
-#     #       - '5000:5000' # Ändern Sie den Host-Port von 80 auf einen freien Port wie 8080
-
-#     # ############### FRONTEND #################################
-#       - name: Docker Image pullen
-#         community.docker.docker_image:
-#           name: '{{ docker_image_name }}'
-#           tag: '{{ docker_image_tag }}'
-#           source: pull
-# #     # 5. Docker Container starten mit spezifischem Tag (Hash)
-# #     - name: Docker Container starten
-# #       community.docker.docker_container:
-# #         name: vanventura-container
-# #         image: '{{ docker_image_name }}:{{ docker_image_tag }}'
-# #         state: started
-# #         restart_policy: always
-# #         published_ports:
-# #           - '80:80' # Ändern Sie den Host-Port von 80 auf einen freien Port wie 8080
-# # # '
-
-#       - name: Run docker-compose commands with shell module
-#         hosts: localhost
-#         tasks:
-#           - name: Run docker-compose up command
-#             shell: docker-compose -f ./docker-compose.yml up -d'
-
-#       # - name: Start Docker Compose via shell
-#       #   hosts: localhost
-#       #   tasks:
-#       #     - name: Run docker-compose up
-#       #       ansible.builtin.shell: |
-#       #         docker-compose -f /pfad/zum/docker-compose.yml up -d
-#       #       args:
-#       #         chdir: /pfad/zum/docker-compose-verzeichnis  # Arbeitsverzeichnis setzen
-#       #       become: true  # Falls Root-Rechte benötigt werden
-
 - name: Deployen von VanVentura mit Docker
   hosts: all
   become: true
@@ -102,111 +5,221 @@
     - community.docker
 
   vars:
+    # Definieren Sie den Hash (z. B. GitHub-SHA). Dies sollte dynamisch gesetzt werden.
     docker_image_tag: "{{ lookup('env', 'GITHUB_SHA') | default('latest') }}"
     docker_image_name: 'klatschenderaffe/vanventura_frontend'
     docker_image_name_backend: 'klatschenderaffe/vanventura_backend'
 
   tasks:
-    # Pip3 installieren
-    - name: Pip3 installieren
-      apt:
-        name: python3-pip
+    # IN DEN USERDATA
+    # - name: System aktualisieren
+    #   package:
+    #     name: '*'
+    #     state: latest
+    #   become: true
+    # # 2. Docker installieren
+    # - name: Docker aus Standard-Repositories installieren
+    #   apt:
+    #     name: docker.io
+    #     state: present
+    #     update_cache: true
+    #   become: true
+    # 3. Docker starten und aktivieren
+     - name: "Pip3 installieren"
+       apt:
+        name: "python3-pip"
 
-    - name: Installiere Abhängigkeiten
-      apt:
-        name:
-          - curl
-          - jq
-        state: present
+     - name: "Docker-Compose installieren"
+       pip:
+        name: "docker-compose"
 
-    - name: Lade die neueste Version von Docker Compose herunter
-      shell: |
-        LATEST_VERSION=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | jq -r '.tag_name')
-        curl -L "https://github.com/docker/compose/releases/download/${LATEST_VERSION}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-      args:
-        creates: /usr/local/bin/docker-compose
-
-    - name: Setze Ausführungsrechte für Docker Compose
-      file:
-        path: /usr/local/bin/docker-compose
-        mode: '0755'
-        state: file
-
-    - name: Überprüfe die Installation von Docker Compose
-      command: docker-compose --version
-    # # Docker-Compose installieren
-    # - name: Docker-Compose installieren
-    #   pip:
-    #     name: docker-compose
-
-    # Docker starten und aktivieren
-    - name: Docker starten und aktivieren
-      systemd:
+     - name: Docker starten und aktivieren
+       systemd:
         name: docker
         state: started
         enabled: true
 
-    # ################ DB #############################################
-    - name: Docker Image für MongoDB pullen
-      community.docker.docker_image:
-        name: mongo
-        tag: latest
-        source: pull
-    # ################ NGINX #############################################
+     - name: Docker-Netzwerk erstellen
+       community.docker.docker_network:
+         name: vv
+         driver: bridge
 
-    - name: Docker Image für NGINX pullen
-      community.docker.docker_image:
-        name: nginx
-        tag: latest
-        source: pull
+  # ################ DB #############################################
+      - name: Docker Image pullen
+        community.docker.docker_image:
+          name: mongo
+          tag: latest
+          source: pull
+
+
+# 5. Docker Container starten mit spezifischem Tag (Hash)
+      - name: Docker Container starten
+        community.docker.docker_container:
+          name: db
+          image: mongo:latest
+          state: started
+          restart_policy: always
+          networks:
+          - name: vv
+          published_ports:
+            - '27017:27017' # Ändern Sie den Host-Port von 80 auf einen freien Port wie 8080
 
     # ################ BACKEND #############################################
-    - name: Docker Image für Backend pullen
-      community.docker.docker_image:
-        name: '{{ docker_image_name_backend }}'
-        tag: latest
-        source: pull
+      - name: Docker Image pullen
+        community.docker.docker_image:
+          name: '{{ docker_image_name_backend }}'
+          tag: '{{ docker_image_tag }}'
+          source: pull
 
-    # ################ FRONTEND #############################################
-    - name: Docker Image für Frontend pullen
-      community.docker.docker_image:
-        name: '{{ docker_image_name }}'
-        tag: latest
-        source: pull
+    # 5. Docker Container starten mit spezifischem Tag (Hash)
+      - name: Docker Container starten
+        community.docker.docker_container:
+          name: vanventura-backend-container
+          image: '{{ docker_image_name_backend }}:{{ docker_image_tag }}'
+          state: started
+          restart_policy: always
+          networks:
+          - name: vv
+          published_ports:
+            - '5000:5000' # Ändern Sie den Host-Port von 80 auf einen freien Port wie 8080
 
-    # - name: Docker Compose Stack bereitstellen
-    #   community.docker.docker_compose_v2:
-    #     project_src: home/runner/work/Abschlussprojekt/Abschlussprojekt # Pfad zum Verzeichnis mit docker-compose.yml
-    #     state: present # Services starten und erstellen
+    # ############### FRONTEND #################################
+      - name: Docker Image pullen
+        community.docker.docker_image:
+          name: '{{ docker_image_name }}'
+          tag: '{{ docker_image_tag }}'
+          source: pull
 
-    - name: Display current working directory (pwd)
-      command: pwd
-      register: current_dir
 
-    # - name: Kopiere Backend .env-Datei auf den Zielserver
-    #   copy:
-    #     src: ./Backend/.env
-    #     dest: /home/ubuntu/Backend/.env
+    # 5. Docker Container starten mit spezifischem Tag (Hash)
+      - name: Docker Container starten
+        community.docker.docker_container:
+          name: vanventura-container
+          image: '{{ docker_image_name }}:{{ docker_image_tag }}'
+          state: started
+          restart_policy: always
+          networks:
+          - name: vv
+          published_ports:
+            - '80:80' # Ändern Sie den Host-Port von 80 auf einen freien Port wie 8080
+# '
 
-    # - name: Kopiere Frontend .env-Datei auf den Zielserver
-    #   copy:
-    #     src: ./Frontend/.env
-    #     dest: /home/ubuntu/Frontend/.env
 
-    - name: Kopiere die Docker Compose-Datei auf den Zielserver
-      copy:
-        src: ../Frontend/nginx/default.conf
-        dest: /home/{{ ansible_user }}/default.conf
 
-    - name: Kopiere die Docker Compose-Datei auf den Zielserver
-      copy:
-        src: ../docker-compose.yml
-        dest: /home/{{ ansible_user }}/docker-compose.yml
 
-    - name: Starte Docker Compose (up)
-      command: docker-compose up -d
-      args:
-        chdir: /home/{{ ansible_user }}
+# ######################################### Version 2 ###############################################################
+# - name: Deployen von VanVentura mit Docker
+#   hosts: all
+#   become: true
+#   collections:
+#     - community.docker
 
-    - name: Prüfe den Status der Container
-      command: docker ps
+#   vars:
+#     docker_image_tag: "{{ lookup('env', 'GITHUB_SHA') | default('latest') }}"
+#     docker_image_name: 'klatschenderaffe/vanventura_frontend'
+#     docker_image_name_backend: 'klatschenderaffe/vanventura_backend'
+
+#   tasks:
+#     # Pip3 installieren
+#     - name: Pip3 installieren
+#       apt:
+#         name: python3-pip
+
+#     - name: Installiere Abhängigkeiten
+#       apt:
+#         name:
+#           - curl
+#           - jq
+#         state: present
+
+#     - name: Lade die neueste Version von Docker Compose herunter
+#       shell: |
+#         LATEST_VERSION=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | jq -r '.tag_name')
+#         curl -L "https://github.com/docker/compose/releases/download/${LATEST_VERSION}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+#       args:
+#         creates: /usr/local/bin/docker-compose
+
+#     - name: Setze Ausführungsrechte für Docker Compose
+#       file:
+#         path: /usr/local/bin/docker-compose
+#         mode: '0755'
+#         state: file
+
+#     - name: Überprüfe die Installation von Docker Compose
+#       command: docker-compose --version
+#     # # Docker-Compose installieren
+#     # - name: Docker-Compose installieren
+#     #   pip:
+#     #     name: docker-compose
+
+#     # Docker starten und aktivieren
+#     - name: Docker starten und aktivieren
+#       systemd:
+#         name: docker
+#         state: started
+#         enabled: true
+
+#     # ################ DB #############################################
+#     - name: Docker Image für MongoDB pullen
+#       community.docker.docker_image:
+#         name: mongo
+#         tag: latest
+#         source: pull
+#     # ################ NGINX #############################################
+
+#     - name: Docker Image für NGINX pullen
+#       community.docker.docker_image:
+#         name: nginx
+#         tag: latest
+#         source: pull
+
+#     # ################ BACKEND #############################################
+#     - name: Docker Image für Backend pullen
+#       community.docker.docker_image:
+#         name: '{{ docker_image_name_backend }}'
+#         tag: latest
+#         source: pull
+
+#     # ################ FRONTEND #############################################
+#     - name: Docker Image für Frontend pullen
+#       community.docker.docker_image:
+#         name: '{{ docker_image_name }}'
+#         tag: latest
+#         source: pull
+
+#     # - name: Docker Compose Stack bereitstellen
+#     #   community.docker.docker_compose_v2:
+#     #     project_src: home/runner/work/Abschlussprojekt/Abschlussprojekt # Pfad zum Verzeichnis mit docker-compose.yml
+#     #     state: present # Services starten und erstellen
+
+#     - name: Display current working directory (pwd)
+#       command: pwd
+#       register: current_dir
+
+#     # - name: Kopiere Backend .env-Datei auf den Zielserver
+#     #   copy:
+#     #     src: ./Backend/.env
+#     #     dest: /home/ubuntu/Backend/.env
+
+#     # - name: Kopiere Frontend .env-Datei auf den Zielserver
+#     #   copy:
+#     #     src: ./Frontend/.env
+#     #     dest: /home/ubuntu/Frontend/.env
+
+#     - name: Kopiere die Docker Compose-Datei auf den Zielserver
+#       copy:
+#         src: ../Frontend/nginx/default.conf
+#         dest: /home/{{ ansible_user }}/default.conf
+
+#     - name: Kopiere die Docker Compose-Datei auf den Zielserver
+#       copy:
+#         src: ../docker-compose.yml
+#         dest: /home/{{ ansible_user }}/docker-compose.yml
+
+#     - name: Starte Docker Compose (up)
+#       command: docker-compose up -d
+#       args:
+#         chdir: /home/{{ ansible_user }}
+
+#     - name: Prüfe den Status der Container
+#       command: docker ps
