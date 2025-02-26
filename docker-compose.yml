@@ -20,8 +20,8 @@ services:
     #   - DB_PASSWORD=secret
     #   - DB_CONTAINER_NAME=db
     #   - DB_CONTAINER_PORT=27017
-    env_file:
-      - ./Backend/.env
+    # env_file:
+    #   - ./Backend/.env
     ports:
       - '5000:5000'
     networks:
@@ -35,8 +35,8 @@ services:
     image: klatschenderaffe/vanventura_frontend:latest
     ports:
       - '80:80'
-    env_file:
-      - ./Frontend/.env
+    # env_file:
+    #   - ./Frontend/.env
     networks:
       - vv
 
