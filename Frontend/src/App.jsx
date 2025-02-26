@@ -40,7 +40,7 @@ const App = () => {
         <div className='container'>
           <Title
             subtitle='Suche deinen nächsten Stellplatz'
-            title='Stellplatz 1Sucher'
+            title='Stellplatz Sucher'
           />
           <Map />
         </div>
