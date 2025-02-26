@@ -149,3 +149,20 @@
     #   community.docker.docker_compose_v2:
     #     project_src: home/runner/work/Abschlussprojekt/Abschlussprojekt # Pfad zum Verzeichnis mit docker-compose.yml
     #     state: present # Services starten und erstellen
+
+    - name: Display current working directory (pwd)
+          command: pwd
+          register: current_dir
+
+    - name: Kopiere die Docker Compose-Datei auf den Zielserver
+      copy:
+        src: ../docker-compose.yml
+        dest: /home/{{ ansible_user }}/docker-compose.yml
+
+    - name: Starte Docker Compose (up)
+      command: docker-compose up -d
+      args:
+        chdir: /home/{{ ansible_user }}
+
+    - name: Prüfe den Status der Container
+      command: docker ps
