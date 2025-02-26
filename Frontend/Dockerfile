@@ -31,11 +31,26 @@ RUN  npm  run  build
 # Verwenden Sie das offizielle NGINX-Image für die Produktion. 
 FROM  nginx:stable-alpine  AS  production 
 
-# Kopieren Sie die Nginx-Konfiguration in den Nebenordner conf.d. 
-COPY  --from=build  /usr/src/app/nginx  /etc/nginx/conf.d 
 
-# Kopieren Sie die Build-Ausgabe aus dem Ordner „dist“ in das Nginx-HTML-Verzeichnis. 
-COPY  --from=build  /usr/src/app/dist  /usr/share/nginx/html 
+
+
+COPY --from=react_build /usr/src/app/dist /usr/share/nginx/html
+RUN rm /etc/nginx/conf.d/default.conf
+COPY nginx/default.conf /etc/nginx/conf.d
+
+
+
+
+
+
+
+
+
+# # Kopieren Sie die Nginx-Konfiguration in den Nebenordner conf.d. 
+# COPY  --from=build  /usr/src/app/nginx  /etc/nginx/conf.d 
+
+# # Kopieren Sie die Build-Ausgabe aus dem Ordner „dist“ in das Nginx-HTML-Verzeichnis. 
+# COPY  --from=build  /usr/src/app/dist  /usr/share/nginx/html 
 
 # Legen Sie den Port frei. 80 um Zugriff auf die App zu ermöglichen 
 EXPOSE  80 
