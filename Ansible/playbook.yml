@@ -59,6 +59,9 @@
         image: mongo:latest
         state: started
         restart_policy: always
+        env:
+          MONGO_INITDB_ROOT_USERNAME: 'admin'
+          MONGO_INITDB_ROOT_PASSWORD: 'secret'
         networks:
           - name: vv
         published_ports:
