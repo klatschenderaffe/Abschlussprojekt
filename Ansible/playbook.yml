@@ -164,14 +164,14 @@
     - name: Docker Image für Backend pullen
       community.docker.docker_image:
         name: '{{ docker_image_name_backend }}'
-        tag: '{{ docker_image_tag }}'
+        tag: latest
         source: pull
 
     # ################ FRONTEND #############################################
     - name: Docker Image für Frontend pullen
       community.docker.docker_image:
         name: '{{ docker_image_name }}'
-        tag: '{{ docker_image_tag }}'
+        tag: latest
         source: pull
 
     # - name: Docker Compose Stack bereitstellen
