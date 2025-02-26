@@ -39,7 +39,7 @@ const Map = () => {
     // für jedes Element die Koordinaten parsen
 
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'http://backend:5000/api/sleepspots'); //api/sleepspots RAUS GEKÜRZT 'http://localhost:5000/api/sleepspots'
+    xhr.open('GET', 'http://172.18.0.3:5000/api/sleepspots'); //api/sleepspots RAUS GEKÜRZT 'http://localhost:5000/api/sleepspots'
     xhr.onload = function () {
       if (xhr.status === 200) {
         const data = JSON.parse(xhr.responseText);
