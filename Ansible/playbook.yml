@@ -112,6 +112,28 @@
       apt:
         name: python3-pip
 
+    - name: Installiere Abhängigkeiten
+          apt:
+            name:
+              - curl
+              - jq
+            state: present
+
+    - name: Lade die neueste Version von Docker Compose herunter
+      shell: |
+        LATEST_VERSION=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | jq -r '.tag_name')
+        curl -L "https://github.com/docker/compose/releases/download/${LATEST_VERSION}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+      args:
+        creates: /usr/local/bin/docker-compose
+
+    - name: Setze Ausführungsrechte für Docker Compose
+      file:
+        path: /usr/local/bin/docker-compose
+        mode: '0755'
+        state: file
+
+    - name: Überprüfe die Installation von Docker Compose
+      command: docker-compose --version
     # # Docker-Compose installieren
     # - name: Docker-Compose installieren
     #   pip:
@@ -160,9 +182,8 @@
         dest: /home/{{ ansible_user }}/docker-compose.yml
 
     - name: Starte Docker Compose (up)
-      command: docker-compose up -d
-      args:
-        chdir: /home/{{ ansible_user }}
+      command: /usr/local/bin/docker-compose up -d
+      chdir: /home/{{ ansible_user }}
 
     - name: Prüfe den Status der Container
       command: docker ps
