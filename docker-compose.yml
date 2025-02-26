@@ -24,6 +24,7 @@ services:
     #   - ./Backend/.env
     ports:
       - '5000:5000'
+    restart: always
     networks:
       - vv
 
@@ -37,6 +38,7 @@ services:
       - '80:80'
     # env_file:
     #   - ./Frontend/.env
+    restart: always
     networks:
       - vv
 
