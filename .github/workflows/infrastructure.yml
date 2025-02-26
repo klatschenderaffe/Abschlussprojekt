@@ -101,9 +101,9 @@ jobs:
           echo "VITE_REDIRECT_URI=${{ secrets.VITE_REDIRECT_URI }}" >> .env
           echo "VITE_USERPOOL_DOMAIN=${{ secrets.VITE_USERPOOL_DOMAIN }}" >> .env
 
-      - name: Docker Compose ausfuehren
-        working-directory: /home/runner/work/Abschlussprojekt/Abschlussprojekt
-        run: docker-compose up -d
+      # - name: Docker Compose ausfuehren
+      #   working-directory: /home/runner/work/Abschlussprojekt/Abschlussprojekt
+      #   run: docker-compose up -d
 
   terraform_destroy:
     name: Terraform Destroy
