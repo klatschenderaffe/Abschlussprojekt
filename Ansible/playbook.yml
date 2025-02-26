@@ -182,8 +182,9 @@
         dest: /home/{{ ansible_user }}/docker-compose.yml
 
     - name: Starte Docker Compose (up)
-      command: /usr/local/bin/docker-compose up -d
-      chdir: /home/{{ ansible_user }}
+      command: docker-compose up -d
+      args:
+        chdir: /home/{{ ansible_user }}
 
     - name: Prüfe den Status der Container
       command: docker ps
